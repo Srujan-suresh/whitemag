@@ -106,21 +106,23 @@
 </div>
 <!-- end all-cases -->
 <main>
-  <aside class="left-side">
+  <!-- ===== REPLACEMENT START ===== -->
+
+<aside class="left-side">
   <div class="logo">
     <a href="index.html">
-      <img src="images/logo.png" alt="Image" style="width: 120px; height: 120px;">
+<img src="images/logo.png" alt="Logo" 
+     style="width: 120px; height: 120px; position: relative; transform: translateY(-40px);">
     </a>
   </div>
 
-  <!-- Inline navigation (replaces hamburger) -->
+  <!-- Inline navigation -->
   <nav class="inline-menu">
     <ul>
-      <li><a href="index.html" class="active" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;">HOME</a></li>
-<li><a href="studio.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;">STUDIO</a></li>
-<li><a href="showcases.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"> SERVICES</a></li>
-<li><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;">CONTACT</a></li>
-
+      <li style="display: inline-block; margin-left: 20px;"><a href="index.html" class="active"><span>HOME</span></a></li>
+      <li style="display: inline-block; margin-left: 30px;"><a href="studio.html"><span>STUDIO</span></a></li>
+      <li style="display: inline-block; margin-left: 30px;"><a href="showcases.html"><span>SERVICES</span></a></li>
+      <li style="display: inline-block; margin-left: 30px;"><a href="contact.html"><span>CONTACT</span></a></li>
     </ul>
   </nav>
 
@@ -128,49 +130,33 @@
     <span></span><span></span><span></span><span></span>
   </div>
 </aside>
+
 <style>
-/* ===== INLINE SIDE NAV (REPLACES HAMBURGER) ===== */
-
-.navbar {
-  position: absolute;
-  top: 40px;
-  left: 180px; /* adjust this value as needed */
+/* ===== FIXED LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
+.left-side {
+  
   display: flex;
-  gap: 40px;
-  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+  background: transparent;       /* no bg so it blends */
+  border: none;
+  box-shadow: none;
+  background-image: none;
+  z-index: 9999;                 /* above everything */
+  pointer-events: auto;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
 
-.navbar ul li a {
-  font-size: 16px;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  transition: 0.3s ease;
-}
 
-.navbar ul li a:hover::after {
-  content: "/";
-  position: absolute;
-  right: -10px;
-  top: 0;
-  color: #75dab4;
-}
-
-/* === INLINE SIDE MENU (VISIBLE INSTEAD OF HAMBURGER) === */
-
+/* === INLINE SIDE MENU === */
 .inline-menu {
-  position: absolute;
-  top: 50%;
-  left: 10px; /* positioned closer to logo */
-  transform: translateY(-50%);
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .inline-menu ul {
@@ -182,52 +168,164 @@
   padding: 0;
 }
 
-/* Menu links */
+/* === LINK STYLING === */
 .inline-menu ul li a {
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 28px;
+  font-weight: 800;
   text-decoration: none;
   position: relative;
-  transition: all 0.3s ease;
+  overflow: visible;
+  transition: color 0.25s ease, transform 0.4s ease;
+  display: inline-block;
+  padding: 5px 0;
 }
 
-/* Hover effect: animated slash-through line */
+/* === WIPE EFFECT === */
 .inline-menu ul li a::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #75dab4; /* theme color */
+  left: -30%;
   transform: translateY(-50%);
-  transition: width 0.3s ease;
+  width: 0%;
+  height: 64px;
+  background-color: #65c8a7;
+  z-index: 0;
+  border-radius: 2px;
 }
 
-/* Animate line on hover */
+/* === SLASH LINE === */
+.inline-menu ul li a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background-color: #65c8a7;
+  opacity: 0;
+  transform-origin: center;
+  z-index: 3;
+  border-radius: 2px;
+}
+
+/* === TEXT === */
+.inline-menu ul li a span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.25s ease;
+}
+
+/* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  width: 100%;
+  animation: wipeAndDisappear 0.6s ease-in forwards;
 }
 
-/* Active link color only (no line visible before hover) */
-.inline-menu ul li a.active {
-  color: #75dab4;
+.inline-menu ul li a:hover::after {
+  animation: showSlash 1.8s ease 0.3s forwards;
 }
 
-/* Responsive fix */
+.inline-menu ul li a.active span {
+  color: #65c8a7;
+}
+
+/* === KEYFRAMES === */
+@keyframes wipeAndDisappear {
+  0% {
+    width: 0%;
+    left: -30%;
+    opacity: 1;
+  }
+  40% {
+    width: 150%;
+    left: -10%;
+    opacity: 1;
+  }
+  100% {
+    width: 150%;
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes showSlash {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  20% {
+    opacity: 1;
+    width: 100%;
+  }
+  80% {
+    opacity: 1;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+/* === CLICK INTERACTION === */
+.inline-menu ul li a.clicked {
+  transform: translateX(-12px);
+}
+
+.inline-menu ul li a.other {
+  transform: translateX(12px);
+  opacity: 0.8;
+}
+
+.inline-menu ul li a.reset {
+  animation: resetMotion 0.6s ease forwards;
+}
+
+@keyframes resetMotion {
+  0% { transform: translateX(12px); opacity: 0.8; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 991px) {
-  .inline-menu ul {
-    gap: 15px;
-  }
   .inline-menu ul li a {
-    font-size: 14px;
+    font-size: 20px;
+  }
+  .inline-menu ul li a::before {
+    height: 36px;
   }
 }
-
 </style>
-  <!-- end left-side -->
+
+<script>
+document.querySelectorAll('.inline-menu ul li a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    document.querySelectorAll('.inline-menu ul li a').forEach(el => {
+      el.classList.remove('clicked', 'other', 'reset');
+    });
+
+    link.classList.add('clicked');
+
+    document.querySelectorAll('.inline-menu ul li a').forEach(el => {
+      if (el !== link) el.classList.add('other');
+    });
+
+    setTimeout(() => {
+      document.querySelectorAll('.inline-menu ul li a').forEach(el => {
+        el.classList.add('reset');
+        el.classList.remove('clicked', 'other');
+      });
+    }, 700);
+  });
+});
+</script>
+
+
+
  <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>  <!-- end all-cases-link -->
   <header class="page-header">
   <div class="video-bg">

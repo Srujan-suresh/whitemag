@@ -107,34 +107,128 @@
 <!-- end all-cases -->
 <main>
   <aside class="left-side">
-    <div class="logo"> <a href="index.html"><img src="images/logo.png" style="width: 120px;height: 120px;" alt="Image"></a> </div>
-    <!-- end logo -->
-    <div class="hamburger" id="hamburger">
-      <div class="hamburger__line hamburger__line--01">
-        <div class="hamburger__line-in hamburger__line-in--01"></div>
-      </div>
-      <div class="hamburger__line hamburger__line--02">
-        <div class="hamburger__line-in hamburger__line-in--02"></div>
-      </div>
-      <div class="hamburger__line hamburger__line--03">
-        <div class="hamburger__line-in hamburger__line-in--03"></div>
-      </div>
-      <div class="hamburger__line hamburger__line--cross01">
-        <div class="hamburger__line-in hamburger__line-in--cross01"></div>
-      </div>
-      <div class="hamburger__line hamburger__line--cross02">
-        <div class="hamburger__line-in hamburger__line-in--cross02"></div>
-      </div>
-    </div>
-    <!-- end hamburger -->
-    <div class="follow-us"> FOLLOW US </div>
-    <!-- end follow-us -->
-    <div class="equalizer"> <span></span> <span></span> <span></span> <span></span> </div>
-    <!-- end equalizer --> 
-  </aside>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Image" style="width: 120px; height: 120px;">
+    </a>
+  </div>
+
+  <!-- Inline navigation (replaces hamburger) -->
+  <nav class="inline-menu">
+    <ul>
+      <li><a href="index.html" class="active" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;">HOME</a></li>
+<li><a href="studio.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;">STUDIO</a></li>
+<li><a href="showcases.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"> SERVICES</a></li>
+<li><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;">CONTACT</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="equalizer">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</aside>
+<style>
+/* ===== INLINE SIDE NAV (REPLACES HAMBURGER) ===== */
+
+.navbar {
+  position: absolute;
+  top: 40px;
+  left: 180px; /* adjust this value as needed */
+  display: flex;
+  gap: 40px;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  content: "/";
+  position: absolute;
+  right: -10px;
+  top: 0;
+  color: #75dab4;
+}
+
+/* === INLINE SIDE MENU (VISIBLE INSTEAD OF HAMBURGER) === */
+
+.inline-menu {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* positioned closer to logo */
+  transform: translateY(-50%);
+}
+
+.inline-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu links */
+.inline-menu ul li a {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect: animated slash-through line */
+.inline-menu ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #75dab4; /* theme color */
+  transform: translateY(-50%);
+  transition: width 0.3s ease;
+}
+
+/* Animate line on hover */
+.inline-menu ul li a:hover::before {
+  width: 100%;
+}
+
+/* Active link color only (no line visible before hover) */
+.inline-menu ul li a.active {
+  color: #75dab4;
+}
+
+/* Responsive fix */
+@media (max-width: 991px) {
+  .inline-menu ul {
+    gap: 15px;
+  }
+  .inline-menu ul li a {
+    font-size: 14px;
+  }
+}
+
+</style>
   <!-- end left-side -->
-  <div class="all-cases-link"> <span>ALL CASES</span> <b>+</b> </div>
-  <!-- end all-cases-link -->
+ <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>  <!-- end all-cases-link -->
   <header class="page-header">
   <div class="video-bg">
   	<video src="videos/video02.mp4" muted loop autoplay></video>

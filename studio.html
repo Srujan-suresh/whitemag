@@ -47,8 +47,10 @@
   <div class="layer"></div>
   <!-- end layer -->
   <div class="inner">
-    <figure> <img src="images/preloader.gif" alt="Image"> </figure>
-    <span>Site Loading</span> </div>
+    <!-- <figure> <img src="images/preloader.gif" alt="Image"> </figure>
+    <span>Site Loading</span>  -->
+  
+  </div>
   <!-- end inner -->
 </div>
 <!-- end preloader -->
@@ -111,17 +113,17 @@
   <div class="logo">
     <a href="index.html">
 <img src="images/logo.png" alt="Logo" 
-     style="width: 120px; height: 120px; position: relative; transform: translateY(-40px);">
+     style="width: 120px; height: 120px; position: relative; margin-left: 20px;margin-top: -20px;">
     </a>
   </div>
 
   <!-- Inline navigation -->
   <nav class="inline-menu">
-    <ul>
-      <li style="display: inline-block; margin-left: 20px;"><a href="index.html" class="active"><span>HOME</span></a></li>
-      <li style="display: inline-block; margin-left: 30px;"><a href="studio.html"><span>STUDIO</span></a></li>
-      <li style="display: inline-block; margin-left: 30px;"><a href="showcases.html"><span>SERVICES</span></a></li>
-      <li style="display: inline-block; margin-left: 30px;"><a href="contact.html"><span>CONTACT</span></a></li>
+      <ul>
+      <li style="display: inline-block; margin-left: 40px;"><a href="index.html" class="active"><span>HOME</span></a></li>
+      <li style="display: inline-block; margin-left: 66px;"><a href="studio.html"><span>STUDIO</span></a></li>
+      <li style="display: inline-block; margin-left: 100px;"><a href="showcases.html"><span>SERVICES</span></a></li>
+      <li style="display: inline-block; margin-left: 110px;"><a href="contact.html"><span>CONTACT</span></a></li>
     </ul>
   </nav>
 
@@ -133,21 +135,18 @@
 <style>
 /* ===== FIXED LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
 .left-side {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 40px 0;
-  background: transparent;       /* no bg so it blends */
+  background: transparent;
   border: none;
   box-shadow: none;
   background-image: none;
-  z-index: 9999;                 /* above everything */
+  z-index: 9999;
   pointer-events: auto;
 }
-
-
 
 /* === INLINE SIDE MENU === */
 .inline-menu {
@@ -171,7 +170,7 @@
 .inline-menu ul li a {
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
   text-decoration: none;
   position: relative;
@@ -186,7 +185,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -30%;
+  left: -120%; /* start far left (off-screen look) */
   transform: translateY(-50%);
   width: 0%;
   height: 64px;
@@ -200,8 +199,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: 10%;
-  right: 10%;
+  left: -120%; /* start from extreme left */
+  right: -10%;
   height: 4px;
   background-color: #65c8a7;
   opacity: 0;
@@ -219,11 +218,11 @@
 
 /* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  animation: wipeAndDisappear 0.6s ease-in forwards;
+  animation: wipeAndDisappear 1.6s ease-in forwards; /* slower and longer wipe */
 }
 
 .inline-menu ul li a:hover::after {
-  animation: showSlash 1.8s ease 0.3s forwards;
+  animation: showSlash 1.8s ease 0.3s forwards; /* smooth + delayed slash */
 }
 
 .inline-menu ul li a.active span {
@@ -234,17 +233,17 @@
 @keyframes wipeAndDisappear {
   0% {
     width: 0%;
-    left: -30%;
+    left: -120%;
     opacity: 1;
   }
-  40% {
-    width: 150%;
-    left: -10%;
+  50% {
+    width: 250%; /* extended to make sure it fully covers text */
+    left: -50%;
     opacity: 1;
   }
   100% {
-    width: 150%;
-    left: 100%;
+    width: 250%;
+    left: 120%;
     opacity: 0;
   }
 }
@@ -252,19 +251,23 @@
 @keyframes showSlash {
   0% {
     opacity: 0;
-    width: 0;
+    left: -120%; /* from extreme left */
+    width: 0%;
   }
-  20% {
+  30% {
     opacity: 1;
-    width: 100%;
+    left: -120%;
+    width: 250%; /* full swipe across text */
   }
   80% {
     opacity: 1;
-    width: 100%;
+    left: -120%;
+    width: 250%;
   }
   100% {
     opacity: 0;
-    width: 0;
+    left: 120%;
+    width: 250%;
   }
 }
 
@@ -299,6 +302,7 @@
 </style>
 
 <script>
+
 document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -668,7 +672,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </main>
 
 
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -683,17 +687,13 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
         <h2>Need more information or want <br>
           to get in touch?</h2>
         <a href="#" class="link">Get in touch</a> </div>
-      <!-- end col-12 -->
       <div class="col-12">
         <div class="footer-bar"> <span class="copyright">© 2025 WhiteMagStudio | All Rights Reserved</span> <span class="creation">Site created by <a href="#">Themezinho</a></span> </div>
-        <!-- end footer-bar -->
       </div>
-      <!-- end col-12 -->
     </div>
-    <!-- end row -->
   </div>
-  <!-- end container -->
-</footer>
+</footer> -->
+
 <!-- end footer -->
 
 <!-- JS FILES --> <script src="js/jquery.min.js"></script>

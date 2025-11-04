@@ -62,8 +62,7 @@
   <!-- end layer -->
   <div class="inner">
     <ul data-splitting>
-            <li><a href="index.html">HOME</a> <small>First page</small> </li>
-
+      <li><a href="index.html">HOME</a> <small>First page</small> </li>
       <li><a href="studio.html">STUDIO</a> <small>All About Us</small> </li>
       <li><a href="showcases.html">OUR SERVICES</a> <small>Our all projects</small> </li>
       <li><a href="contact.html">CONTACT</a> <small>Say hello</small> </li>
@@ -113,17 +112,19 @@
   <div class="logo">
     <a href="index.html">
 <img src="images/logo.png" alt="Logo" 
-     style="width: 120px; height: 120px; position: relative; transform: translateY(-40px);">
+     style="width: 120px; height: 120px; position: relative; margin-left: 20px;margin-top: -20px;">
     </a>
   </div>
 
+
+  
   <!-- Inline navigation -->
   <nav class="inline-menu">
     <ul>
-      <li style="display: inline-block; margin-left: 20px;"><a href="index.html" class="active"><span>HOME</span></a></li>
-      <li style="display: inline-block; margin-left: 30px;"><a href="studio.html"><span>STUDIO</span></a></li>
-      <li style="display: inline-block; margin-left: 30px;"><a href="showcases.html"><span>SERVICES</span></a></li>
-      <li style="display: inline-block; margin-left: 30px;"><a href="contact.html"><span>CONTACT</span></a></li>
+      <li style="display: inline-block; margin-left: 40px;"><a href="index.html" class="active"><span>HOME</span></a></li>
+      <li style="display: inline-block; margin-left: 66px;"><a href="studio.html"><span>STUDIO</span></a></li>
+      <li style="display: inline-block; margin-left: 100px;"><a href="showcases.html"><span>SERVICES</span></a></li>
+      <li style="display: inline-block; margin-left: 110px;"><a href="contact.html"><span>CONTACT</span></a></li>
     </ul>
   </nav>
 
@@ -135,21 +136,18 @@
 <style>
 /* ===== FIXED LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
 .left-side {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 40px 0;
-  background: transparent;       /* no bg so it blends */
+  background: transparent;
   border: none;
   box-shadow: none;
   background-image: none;
-  z-index: 9999;                 /* above everything */
+  z-index: 9999;
   pointer-events: auto;
 }
-
-
 
 /* === INLINE SIDE MENU === */
 .inline-menu {
@@ -173,7 +171,7 @@
 .inline-menu ul li a {
   color: #fff;
   font-family: 'Poppins', sans-serif;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
   text-decoration: none;
   position: relative;
@@ -188,7 +186,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -30%;
+  left: -120%; /* start far left (off-screen look) */
   transform: translateY(-50%);
   width: 0%;
   height: 64px;
@@ -202,8 +200,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: 10%;
-  right: 10%;
+  left: -120%; /* start from extreme left */
+  right: -10%;
   height: 4px;
   background-color: #65c8a7;
   opacity: 0;
@@ -221,11 +219,11 @@
 
 /* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  animation: wipeAndDisappear 0.6s ease-in forwards;
+  animation: wipeAndDisappear 1.6s ease-in forwards; /* slower and longer wipe */
 }
 
 .inline-menu ul li a:hover::after {
-  animation: showSlash 1.8s ease 0.3s forwards;
+  animation: showSlash 1.8s ease 0.3s forwards; /* smooth + delayed slash */
 }
 
 .inline-menu ul li a.active span {
@@ -236,17 +234,17 @@
 @keyframes wipeAndDisappear {
   0% {
     width: 0%;
-    left: -30%;
+    left: -120%;
     opacity: 1;
   }
-  40% {
-    width: 150%;
-    left: -10%;
+  50% {
+    width: 250%; /* extended to make sure it fully covers text */
+    left: -50%;
     opacity: 1;
   }
   100% {
-    width: 150%;
-    left: 100%;
+    width: 250%;
+    left: 120%;
     opacity: 0;
   }
 }
@@ -254,19 +252,23 @@
 @keyframes showSlash {
   0% {
     opacity: 0;
-    width: 0;
+    left: -120%; /* from extreme left */
+    width: 0%;
   }
-  20% {
+  30% {
     opacity: 1;
-    width: 100%;
+    left: -120%;
+    width: 250%; /* full swipe across text */
   }
   80% {
     opacity: 1;
-    width: 100%;
+    left: -120%;
+    width: 250%;
   }
   100% {
     opacity: 0;
-    width: 0;
+    left: 120%;
+    width: 250%;
   }
 }
 
@@ -299,6 +301,7 @@
   }
 }
 </style>
+
 
 <script>
 document.querySelectorAll('.inline-menu ul li a').forEach(link => {
@@ -354,9 +357,13 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       <span>03</span> </div> -->
 
       <!-- end slide-progress -->
-      <div class="swiper-button-prev">PREV</div>
+
+      <!-- <div class="swiper-button-prev">PREV</div> -->
+
       <!-- end button-prev -->
-      <div class="swiper-button-next">NEXT</div>
+
+      <!-- <div class="swiper-button-next">NEXT</div> -->
+
       <!-- end buttin-next -->
     </div>
     <!-- end gallery-top -->
@@ -374,28 +381,58 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 
   
-  <section class="intro">
+<section id="who-we-are" style="padding: 80px 10%; background-color: #f9f9f9; color: #333; font-family: 'Raleway', 'Montserrat', 'Helvetica Neue', sans-serif;">
+  <h1 style="font-size: 48px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 300;">
+    WHO WE ARE
+  </h1>
+
+  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+    WhiteMag Studio is a global VFX and animation studio redefining the art of visual storytelling. 
+    We fuse cutting-edge technology with world-class artistry to create imagery that inspires, immerses, and endures — 
+    from blockbuster Hollywood films and high-end episodic content to music, advertising, and immersive experiences.
+  </p>
+
+  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+    Our team of exceptional artists and supervisors collaborate closely with filmmakers, studios, and brands 
+    to craft visuals that elevate narrative and emotion. Whether integrating complex CG environments, perfecting digital doubles, 
+    or achieving seamless compositing, every frame reflects our pursuit of cinematic excellence.
+  </p>
+
+  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+    Respected for precision, creativity, and storytelling power, WhiteMag continues to push the boundaries of 
+    what’s possible in visual effects — shaping moments that are not just seen, but felt.
+  </p>
+
+  <p style="font-size: 18px; line-height: 1.8;">
+    At our core, we are creators driven by imagination, innovation, and a passion to deliver visuals that are truly 
+    <strong style="font-weight: 500;">A Cut Above Reality.</strong>
+  </p>
+</section>
+
+<!-- Add this inside <head> if you're using Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+
+  <!-- <section class="intro">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 wow" data-splitting>
           <h3 class="section-title">HOW WE MAKE <br>
             USER EXPERIENCES</h3>
           <a href="#">whitemagstudio.com</a> </div>
-        <!-- end col-5 -->
         <div class="col-lg-7 wow" data-splitting>
           <p>Crafting Impact Through Visual Brilliance We exist to elevate stories through visual effects that leave a mark. By blending creative artistry with technical precision, we craft visuals that go beyond spectacle, into emotion and narrative power. With a passionate, detail-driven team, we're here to push creative boundaries and support storytellers at every frame.</p>
-          <!-- <h6>Salvador Dali</h6>
-          <small>Digital Artisit</small> -->
            <b>12</b>
           <h4>YEARS OF<br>
             DIGITAL EXPERIENCE</h4>
         </div>
-        <!-- end col-7 -->
       </div>
-      <!-- end row -->
     </div>
-    <!-- end container -->
-  </section>
+  </section> -->
+
+  
+
   <!-- end intro -->
 
 
@@ -447,6 +484,149 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
   
 <style>
+  /* Fade-in animation */
+  .fade-section {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 4.5s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ========================================= */
+  /* Light Theme for Icon Content Section */
+  /* ========================================= */
+
+  .icon-content-block {
+    background: #ffffff;
+    color: #000000;
+    padding: 100px 0;
+  }
+
+  .icon-content-block .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .icon-content-block .content-block {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    padding: 40px 25px;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .icon-content-block .content-block:hover {
+    transform: translateY(-10px);
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 0 10px #000,
+      0 0 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .icon-content-block .content-block.selected {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+
+  .icon-content-block figure {
+    margin-bottom: 20px;
+  }
+
+  .icon-content-block figure img {
+    width: 80px;
+    height: auto;
+    filter: brightness(0); /* makes dark icons stand out on white */
+    transition: filter 0.3s ease;
+  }
+
+  .icon-content-block .content-block:hover figure img {
+    filter: brightness(0.3);
+  }
+
+  .icon-content-block h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 15px;
+  }
+
+  .icon-content-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .icon-content-block ul li {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+</style>
+
+<section class="icon-content-block fade-section" style="margin-top: 100px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 wow" data-splitting>
+        <h3 class="section-title">THE THINGS<br>WE BRING TO LIFE</h3>
+      </div>
+
+      <div class="col-lg-3 col-md-4 wow" data-splitting>
+        <div class="content-block">
+          <figure><img src="images/icon01.png" alt="VFX Icon"></figure>
+          <h6>VISUAL EFFECTS</h6>
+          <ul>
+            <li>Compositing & Cleanup</li>
+            <li>Green Screen & Roto</li>
+            <li>Set Extensions</li>
+            <li>Particle Simulations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 wow" data-splitting>
+        <div class="content-block selected">
+          <figure><img src="images/icon02.png" alt="CGI Icon"></figure>
+          <h6>CGI & ANIMATION</h6>
+          <ul>
+            <li>3D Modeling & Rendering</li>
+            <li>Character Animation</li>
+            <li>Environment Design</li>
+            <li>Product Visualization</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-4 wow" data-splitting>
+        <div class="content-block">
+          <figure><img src="images/icon03.png" alt="Post Production Icon"></figure>
+          <h6>POST-PRODUCTION</h6>
+          <ul>
+            <li>Color Grading</li>
+            <li>Motion Graphics</li>
+            <li>Editing & Finishing</li>
+            <li>Sound Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <style>
 .fade-section {
   opacity: 0;
   transform: translateY(30px);
@@ -509,24 +689,30 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 
- <style>
-  /* Hide the default cursor */
-  body {
+<style>
+  /* Hide cursor only inside the services section */
+  .services-section {
     cursor: none;
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background: radial-gradient(circle at top, #f9f9f9, #fff 80%);
+    color: #000;
+    overflow: hidden;
   }
 
-  /* Custom circular cursor */
-  .custom-cursor {
+  /* Custom circular cursor (scoped to services section) */
+  .services-section .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
     width: 30px;
     height: 30px;
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -534,27 +720,15 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       border 0.25s ease, transform 0.15s ease;
     mix-blend-mode: difference;
     z-index: 9999;
+    display: none; /* Hidden by default until mouse enters the section */
   }
 
   /* When hovering over interactive elements */
-  .cursor-hover {
+  .services-section .cursor-hover {
     width: 60px;
     height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  /* ========================================= */
-  /* Service Section Styles */
-  /* ========================================= */
-
-  .services-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    background: radial-gradient(circle at top, #0a0a0a, #000 80%);
-    color: #fff;
-    overflow: hidden;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.4);
   }
 
   .services-section .container {
@@ -571,7 +745,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #000;
     margin-bottom: 20px;
   }
 
@@ -579,7 +753,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     max-width: 800px;
     margin: 0 auto 60px auto;
     font-size: 1.1rem;
-    color: #bcbcbc;
+    color: #333;
     line-height: 1.8;
   }
 
@@ -590,26 +764,26 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
 
   .service-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 15px;
     padding: 30px 25px;
     position: relative;
     transition: transform 0.8s ease, box-shadow 0.8s ease, background 0.8s ease;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); /* subtle base shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   }
 
-  /* Neon white glow on hover */
+  /* Dark glow hover */
   .service-box:hover {
     transform: scale(1.15);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 
-      0 0 10px #fff,
-      0 0 20px #fff,
-      0 0 40px #fff,
-      0 0 60px #fff,
-      0 0 80px #fff;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 0 10px #000,
+      0 0 20px #000,
+      0 0 40px #000,
+      0 0 60px #000,
+      0 0 80px #000;
   }
 
   .service-box .num {
@@ -617,7 +791,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     top: 15px;
     right: 20px;
     font-size: 1.2rem;
-    color: #888;
+    color: #666;
     font-weight: 600;
   }
 
@@ -625,153 +799,20 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #f5f5f5;
+    color: #111;
   }
 
   .service-box p {
-    color: #bbb;
+    color: #444;
     font-size: 0.95rem;
     line-height: 1.6;
   }
 </style>
 
-<!-- Custom Cursor -->
-<div class="custom-cursor"></div>
-
-<script>
-  /* ===========================
-     CUSTOM CURSOR LOGIC
-  ============================*/
-  const cursor = document.querySelector('.custom-cursor');
-  let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
-  const speed = 0.15; // smoother/slower follow
-
-  // Track mouse position
-  document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  // Smooth follow animation
-  function animateCursor() {
-    currentX += (mouseX - currentX) * speed;
-    currentY += (mouseY - currentY) * speed;
-    cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
-    requestAnimationFrame(animateCursor);
-  }
-  animateCursor();
-
-  // Add cursor hover effect
-  const boxes = document.querySelectorAll('.service-box');
-  boxes.forEach((box) => {
-    box.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    box.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-  });
-</script>
-
-
-<br>
-<br>
-<div class="slider-grid" style="
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  justify-items: center;
-  max-width: 1500px;
-  margin: auto;
-  margin-top: 100px;
-">  
-
-  <!-- Slider 1 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/BEF.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/AFT.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider 2 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/BEFORE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/AFTER.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider 3 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/BE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/AF.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider 4 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/b.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/a.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- BeerSlider -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.css">
-<script src="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.min.js"></script>
-
-<style>
-/* 🎥 Zoom animation for each slider box */
-.slider-box {
-  width: 600px;
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-  will-change: transform;
-}
-
-/* Hover zoom effect */
-.slider-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-}
-
-/* Optional: small zoom out reset animation */
-.slider-box:not(:hover) {
-  transform: scale(1);
-}
-
-/* Smooth hover for BeerSlider handle too */
-.beer-slider,
-.beer-reveal img {
-  transition: transform 0.6s ease;
-}
-</style>
-
-<script>
-  // Initialize BeerSlider
-  document.querySelectorAll(".beer-slider").forEach(slider => {
-    new BeerSlider(slider, {
-      start: 50,
-      handleColor: "#ff4b2b",
-      barColor: "#ffffff",
-      barShadow: "0 0 10px rgba(0,0,0,0.3)"
-    });
-  });
-</script>
-
+<!-- Services Section with Scoped Cursor -->
 <section class="services-section">
+  <div class="custom-cursor"></div>
+
   <div class="container">
     <h3 class="section-title">OUR CORE SERVICES</h3>
     <h5 class="section-subtitle">
@@ -781,47 +822,42 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     </h5>
 
     <div class="services-grid">
-      <!-- Service 1 -->
       <div class="service-box">
         <span class="num">01</span>
         <h6>Rotoscoping & Paint</h6>
-        <p style="margin: 0; text-align: left;">
+        <p>
           High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.
         </p>
       </div>
 
-      <!-- Service 2 -->
       <div class="service-box">
         <span class="num">02</span>
         <h6>Compositing Services</h6>
-        <p style="margin: 0; text-align: left;">
+        <p>
           Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.
         </p>
       </div>
 
-      <!-- Service 3 -->
       <div class="service-box">
         <span class="num">03</span>
         <h6>Matchmoving & Camera Tracking</h6>
-        <p style="margin: 0; text-align: left;">
+        <p>
           Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.
         </p>
       </div>
 
-      <!-- Service 4 -->
       <div class="service-box">
         <span class="num">04</span>
         <h6>Green Screen / Chroma Keying</h6>
-        <p style="margin: 0; text-align: left;">
+        <p>
           Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.
         </p>
       </div>
 
-      <!-- Service 5 -->
       <div class="service-box">
         <span class="num">05</span>
         <h6>Additional VFX Enhancements</h6>
-        <p style="margin: 0; text-align: left;">
+        <p>
           Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.
         </p>
       </div>
@@ -829,8 +865,120 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </div>
 </section>
 
+<script>
+  /* Scoped Custom Cursor Logic */
+  const section = document.querySelector('.services-section');
+  const cursor = section.querySelector('.custom-cursor');
+  const boxes = section.querySelectorAll('.service-box');
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+  const speed = 0.15;
+
+  document.addEventListener('mousemove', (e) => {
+    if (section.matches(':hover')) {
+      cursor.style.display = 'block';
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    } else {
+      cursor.style.display = 'none';
+    }
+  });
+
+  function animateCursor() {
+    currentX += (mouseX - currentX) * speed;
+    currentY += (mouseY - currentY) * speed;
+    cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  boxes.forEach((box) => {
+    box.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+    box.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  });
+</script>
 
 
+
+
+
+
+
+
+<!-- ===== ORIGINAL FILM & TV SECTION ===== -->
+<section class="film-tv-section">
+  <div class="film-tv-overlay"></div>
+  <div class="film-tv-content">
+    <h1>ORIGINAL FILM & TV</h1>
+    <p>
+      WhiteMag Studio is setting the stage for its next chapter: developing original animated films and series for U.S. and global audiences.
+      These future projects will bring our creative vision to life through bold ideas, unforgettable characters, and visually stunning worlds.
+      It’s the beginning of a new era — where our storytelling invites audiences into unexpected journeys.
+    </p>
+  </div>
+</section>
+
+<style>/* ===== FILM & TV SECTION ===== */
+/* ===== FILM & TV SECTION ===== */
+.film-tv-section {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  background: url("images/mountain-fire.jpg") center center/cover no-repeat; /* Replace with your image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.film-tv-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.6); /* dark overlay */
+  z-index: 1;
+}
+
+.film-tv-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+.film-tv-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.film-tv-content p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  text-align: justify; /* ✅ Added this line */
+  text-justify: inter-word; /* makes spacing cleaner */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .film-tv-content h1 {
+    font-size: 30px;
+  }
+  .film-tv-content p {
+    font-size: 15px;
+  }
+}
+
+</style>
    
 
   <!-- <section class="clients">
@@ -874,17 +1022,14 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
         <h2>Need more information or want <br>
           to get in touch?</h2>
         <a href="#" class="link">Get in touch</a> </div>
-      <!-- end col-12 -->
       <div class="col-12">
         <div class="footer-bar"> <span class="copyright">© 2025 WhiteMagStudio | All Rights Reserved</span> <span class="creation">Site created by <a href="#">Themezinho</a></span> </div>
-        <!-- end footer-bar -->
       </div>
-      <!-- end col-12 -->
     </div>
-    <!-- end row -->
   </div>
-  <!-- end container -->
 </footer>
+
+
 <!-- end footer -->
 
 <script>

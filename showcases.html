@@ -116,20 +116,47 @@
     </a>
   </div>
 
-  <!-- Inline navigation -->
-  <nav class="inline-menu">
-      <ul>
-      <li style="display: inline-block; margin-left: 40px;"><a href="index.html" class="active"><span>HOME</span></a></li>
-      <li style="display: inline-block; margin-left: 66px;"><a href="studio.html"><span>STUDIO</span></a></li>
-      <li style="display: inline-block; margin-left: 100px;"><a href="showcases.html"><span>SERVICES</span></a></li>
-      <li style="display: inline-block; margin-left: 110px;"><a href="contact.html"><span>CONTACT</span></a></li>
-    </ul>
-  </nav>
+  <style>
+  .left-side .logo img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-left: 20px;
+    margin-top: -20px;
+    animation: bounce 2s infinite;
+}
 
-  <div class="equalizer">
-    <span></span><span></span><span></span><span></span>
-  </div>
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+</style>
+
+ 
+ <!-- Inline navigation -->
+<nav class="inline-menu">
+  <ul>
+    <li style="display: inline-block; margin-left: 40px;margin-top:-20px;"><a href="index.html" ><span>HOME</span></a></li>
+    <li style="display: inline-block; margin-left: 66px;margin-top:-20px;"><a href="studio.html"><span>STUDIO</span></a></li>
+    <li style="display: inline-block; margin-left: 100px;margin-top:-20px;"><a href="showcases.html"><span>SERVICES</span></a></li>
+    <li style="display: inline-block; margin-left: 110px;margin-top:-20px;"><a href="contact.html"><span>CONTACT</span></a></li>
+    <li style="display: inline-block; margin-left: 90px;margin-top:-20px;"><a href="career.html"><span>CAREERS</span></a></li>
+  </ul>
+</nav>
+
+<div class="equalizer">
+  <span></span><span></span><span></span><span></span>
+</div>
 </aside>
+
 <style>
 /* ===== FIXED LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
 .left-side {
@@ -178,12 +205,12 @@
   padding: 5px 0;
 }
 
-/* === WIPE EFFECT === */
+/* === GREEN WIPE EFFECT === */
 .inline-menu ul li a::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: -120%; /* start far left (off-screen look) */
+  left: -100%; /* start off-screen */
   transform: translateY(-50%);
   width: 0%;
   height: 64px;
@@ -197,15 +224,18 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -120%; /* start from extreme left */
-  right: -10%;
+  left: -20px; /* move it 20px left */
   height: 4px;
+  width: 0%;
   background-color: #65c8a7;
-  opacity: 0;
-  transform-origin: center;
+  opacity: 1; 
+  transform-origin: left;
   z-index: 3;
   border-radius: 2px;
 }
+
+
+
 
 /* === TEXT === */
 .inline-menu ul li a span {
@@ -216,11 +246,12 @@
 
 /* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  animation: wipeAndDisappear 1.6s ease-in forwards; /* slower and longer wipe */
+  animation: wipeToEndDisappear 0.35s ease forwards; /* faster green swipe */
 }
 
 .inline-menu ul li a:hover::after {
-  animation: showSlash 1.8s ease 0.3s forwards; /* smooth + delayed slash */
+  animation: showSlash 0.25s ease forwards;
+  animation-delay: 0.35s; /* start right after green swipe disappears */
 }
 
 .inline-menu ul li a.active span {
@@ -228,46 +259,28 @@
 }
 
 /* === KEYFRAMES === */
-@keyframes wipeAndDisappear {
+@keyframes wipeToEndDisappear {
   0% {
+    left: -100%;
     width: 0%;
-    left: -120%;
     opacity: 1;
   }
-  50% {
-    width: 250%; /* extended to make sure it fully covers text */
-    left: -50%;
+  99% {
+    left: 0%;
+    width: 100%;
     opacity: 1;
   }
   100% {
-    width: 250%;
-    left: 120%;
-    opacity: 0;
+    opacity: 0; /* disappears instantly at end */
   }
 }
 
 @keyframes showSlash {
-  0% {
-    opacity: 0;
-    left: -120%; /* from extreme left */
-    width: 0%;
-  }
-  30% {
-    opacity: 1;
-    left: -120%;
-    width: 250%; /* full swipe across text */
-  }
-  80% {
-    opacity: 1;
-    left: -120%;
-    width: 250%;
-  }
-  100% {
-    opacity: 0;
-    left: 120%;
-    width: 250%;
-  }
+  0% { width: 0%; opacity: 0; left: -20px; }
+  100% { width: calc(100% + 20px); opacity: 1; left: -20px; }
 }
+
+
 
 /* === CLICK INTERACTION === */
 .inline-menu ul li a.clicked {
@@ -325,6 +338,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </script>
 
 
+
+
  <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>  <!-- end all-cases-link -->
   <header class="page-header">
   <div class="video-bg">
@@ -342,80 +357,27 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </header>
   <!-- end page-header -->
 
-  <section class="services-section">
-  <div class="container">
-    <h3 class="section-title">OUR CORE SERVICES</h3>
-    <h5 class="section-subtitle">
-      At WhiteMag Studio, we craft visual experiences that blend creativity and
-      technology — bringing imagination to life through cinematic visuals and
-      cutting-edge artistry.
-    </h5>
 
-    <div class="services-grid">
-      <!-- Service 1 -->
-      <div class="service-box">
-        <span class="num">01</span>
-        <h6>Rotoscoping & Paint</h6>
-        <p style="margin: 0; text-align: left;">
-          High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.
-        </p>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="service-box">
-        <span class="num">02</span>
-        <h6>Compositing Services</h6>
-        <p style="margin: 0; text-align: left;">
-          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.
-        </p>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="service-box">
-        <span class="num">03</span>
-        <h6>Matchmoving & Camera Tracking</h6>
-        <p style="margin: 0; text-align: left;">
-          Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.
-        </p>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="service-box">
-        <span class="num">04</span>
-        <h6>Green Screen / Chroma Keying</h6>
-        <p style="margin: 0; text-align: left;">
-          Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.
-        </p>
-      </div>
-
-      <!-- Service 5 -->
-      <div class="service-box">
-        <span class="num">05</span>
-        <h6>Additional VFX Enhancements</h6>
-        <p style="margin: 0; text-align: left;">
-          Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
- <style>
-  /* Hide the default cursor */
-  body {
+<style>
+  /* Hide cursor only inside the services section */
+  .services-section {
     cursor: none;
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background: radial-gradient(circle at top, #f9f9f9, #fff 80%);
+    color: #000;
+    overflow: hidden;
   }
 
-  /* Custom circular cursor */
-  .custom-cursor {
+  /* Custom circular cursor (scoped to services section) */
+  .services-section .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
     width: 30px;
     height: 30px;
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -423,27 +385,15 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       border 0.25s ease, transform 0.15s ease;
     mix-blend-mode: difference;
     z-index: 9999;
+    display: none; /* Hidden by default until mouse enters the section */
   }
 
   /* When hovering over interactive elements */
-  .cursor-hover {
+  .services-section .cursor-hover {
     width: 60px;
     height: 60px;
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-
-  /* ========================================= */
-  /* Service Section Styles */
-  /* ========================================= */
-
-  .services-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    background: radial-gradient(circle at top, #0a0a0a, #000 80%);
-    color: #fff;
-    overflow: hidden;
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.4);
   }
 
   .services-section .container {
@@ -460,7 +410,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #000;
     margin-bottom: 20px;
   }
 
@@ -468,7 +418,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     max-width: 800px;
     margin: 0 auto 60px auto;
     font-size: 1.1rem;
-    color: #bcbcbc;
+    color: #333;
     line-height: 1.8;
   }
 
@@ -479,26 +429,26 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
 
   .service-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 15px;
     padding: 30px 25px;
     position: relative;
     transition: transform 0.8s ease, box-shadow 0.8s ease, background 0.8s ease;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); /* subtle base shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   }
 
-  /* Neon white glow on hover */
+  /* Dark glow hover */
   .service-box:hover {
     transform: scale(1.15);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 
-      0 0 10px #fff,
-      0 0 20px #fff,
-      0 0 40px #fff,
-      0 0 60px #fff,
-      0 0 80px #fff;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 0 10px #000,
+      0 0 20px #000,
+      0 0 40px #000,
+      0 0 60px #000,
+      0 0 80px #000;
   }
 
   .service-box .num {
@@ -506,7 +456,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     top: 15px;
     right: 20px;
     font-size: 1.2rem;
-    color: #888;
+    color: #666;
     font-weight: 600;
   }
 
@@ -514,35 +464,91 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 12px;
-    color: #f5f5f5;
+    color: #111;
   }
 
   .service-box p {
-    color: #bbb;
+    color: #444;
     font-size: 0.95rem;
     line-height: 1.6;
   }
 </style>
 
-<!-- Custom Cursor -->
-<div class="custom-cursor"></div>
+<!-- Services Section with Scoped Cursor -->
+<section class="services-section">
+  <div class="custom-cursor"></div>
+
+  <div class="container">
+    <h3 class="section-title">OUR CORE SERVICES</h3>
+    <h5 class="section-subtitle">
+      At WhiteMag Studio, we craft visual experiences that blend creativity and
+      technology — bringing imagination to life through cinematic visuals and
+      cutting-edge artistry.
+    </h5>
+
+    <div class="services-grid">
+      <div class="service-box">
+        <!-- <span class="num">01</span> -->
+        <h6>Rotoscoping & Paint</h6>
+        <p>
+          High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <!-- <span class="num">02</span> -->
+        <h6>Compositing Services</h6>
+        <p>
+          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <!-- <span class="num">03</span> -->
+        <h6>Matchmoving & Camera Tracking</h6>
+        <p>
+          Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <!-- <span class="num">04</span> -->
+        <h6>Green Screen / Chroma Keying</h6>
+        <p>
+          Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.
+        </p>
+      </div>
+
+      <div class="service-box">
+        <!-- <span class="num">05</span> -->
+        <h6>Additional VFX Enhancements</h6>
+        <p>
+          Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
-  /* ===========================
-     CUSTOM CURSOR LOGIC
-  ============================*/
-  const cursor = document.querySelector('.custom-cursor');
+  /* Scoped Custom Cursor Logic */
+  const section = document.querySelector('.services-section');
+  const cursor = section.querySelector('.custom-cursor');
+  const boxes = section.querySelectorAll('.service-box');
   let mouseX = 0, mouseY = 0;
   let currentX = 0, currentY = 0;
-  const speed = 0.15; // smoother/slower follow
+  const speed = 0.15;
 
-  // Track mouse position
   document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    if (section.matches(':hover')) {
+      cursor.style.display = 'block';
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    } else {
+      cursor.style.display = 'none';
+    }
   });
 
-  // Smooth follow animation
   function animateCursor() {
     currentX += (mouseX - currentX) * speed;
     currentY += (mouseY - currentY) * speed;
@@ -551,8 +557,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
   animateCursor();
 
-  // Add cursor hover effect
-  const boxes = document.querySelectorAll('.service-box');
   boxes.forEach((box) => {
     box.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
     box.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
@@ -570,7 +574,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   justify-items: center;
   max-width: 1500px;
   margin: auto;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  background-color: #fff;
 ">  
 
   <!-- Slider 1 -->
@@ -666,6 +671,11 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </main>
 <!-- end main -->
 
+
+<br>
+<br>
+<br>
+<br>
 
 <!-- <footer class="footer">
   <div class="container">

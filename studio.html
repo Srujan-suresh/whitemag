@@ -117,19 +117,45 @@
     </a>
   </div>
 
-  <!-- Inline navigation -->
-  <nav class="inline-menu">
-      <ul>
-      <li style="display: inline-block; margin-left: 40px;"><a href="index.html" class="active"><span>HOME</span></a></li>
-      <li style="display: inline-block; margin-left: 66px;"><a href="studio.html"><span>STUDIO</span></a></li>
-      <li style="display: inline-block; margin-left: 100px;"><a href="showcases.html"><span>SERVICES</span></a></li>
-      <li style="display: inline-block; margin-left: 110px;"><a href="contact.html"><span>CONTACT</span></a></li>
-    </ul>
-  </nav>
+  <style>
+  .left-side .logo img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-left: 20px;
+    margin-top: -20px;
+    animation: bounce 2s infinite;
+}
 
-  <div class="equalizer">
-    <span></span><span></span><span></span><span></span>
-  </div>
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+</style>
+
+  
+ <!-- Inline navigation -->
+<nav class="inline-menu">
+  <ul>
+    <li style="display: inline-block; margin-left: 40px;margin-top:-20px;"><a href="index.html" ><span>HOME</span></a></li>
+    <li style="display: inline-block; margin-left: 66px;margin-top:-20px;"><a href="studio.html"><span>STUDIO</span></a></li>
+    <li style="display: inline-block; margin-left: 100px;margin-top:-20px;"><a href="showcases.html"><span>SERVICES</span></a></li>
+    <li style="display: inline-block; margin-left: 110px;margin-top:-20px;"><a href="contact.html"><span>CONTACT</span></a></li>
+    <li style="display: inline-block; margin-left: 90px;margin-top:-20px;"><a href="career.html"><span>CAREERS</span></a></li>
+  </ul>
+</nav>
+
+<div class="equalizer">
+  <span></span><span></span><span></span><span></span>
+</div>
 </aside>
 
 <style>
@@ -180,12 +206,12 @@
   padding: 5px 0;
 }
 
-/* === WIPE EFFECT === */
+/* === GREEN WIPE EFFECT === */
 .inline-menu ul li a::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: -120%; /* start far left (off-screen look) */
+  left: -100%; /* start off-screen */
   transform: translateY(-50%);
   width: 0%;
   height: 64px;
@@ -199,15 +225,18 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -120%; /* start from extreme left */
-  right: -10%;
+  left: -20px; /* move it 20px left */
   height: 4px;
+  width: 0%;
   background-color: #65c8a7;
-  opacity: 0;
-  transform-origin: center;
+  opacity: 1; 
+  transform-origin: left;
   z-index: 3;
   border-radius: 2px;
 }
+
+
+
 
 /* === TEXT === */
 .inline-menu ul li a span {
@@ -218,11 +247,12 @@
 
 /* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  animation: wipeAndDisappear 1.6s ease-in forwards; /* slower and longer wipe */
+  animation: wipeToEndDisappear 0.35s ease forwards; /* faster green swipe */
 }
 
 .inline-menu ul li a:hover::after {
-  animation: showSlash 1.8s ease 0.3s forwards; /* smooth + delayed slash */
+  animation: showSlash 0.25s ease forwards;
+  animation-delay: 0.35s; /* start right after green swipe disappears */
 }
 
 .inline-menu ul li a.active span {
@@ -230,46 +260,28 @@
 }
 
 /* === KEYFRAMES === */
-@keyframes wipeAndDisappear {
+@keyframes wipeToEndDisappear {
   0% {
+    left: -100%;
     width: 0%;
-    left: -120%;
     opacity: 1;
   }
-  50% {
-    width: 250%; /* extended to make sure it fully covers text */
-    left: -50%;
+  99% {
+    left: 0%;
+    width: 100%;
     opacity: 1;
   }
   100% {
-    width: 250%;
-    left: 120%;
-    opacity: 0;
+    opacity: 0; /* disappears instantly at end */
   }
 }
 
 @keyframes showSlash {
-  0% {
-    opacity: 0;
-    left: -120%; /* from extreme left */
-    width: 0%;
-  }
-  30% {
-    opacity: 1;
-    left: -120%;
-    width: 250%; /* full swipe across text */
-  }
-  80% {
-    opacity: 1;
-    left: -120%;
-    width: 250%;
-  }
-  100% {
-    opacity: 0;
-    left: 120%;
-    width: 250%;
-  }
+  0% { width: 0%; opacity: 0; left: -20px; }
+  100% { width: calc(100% + 20px); opacity: 1; left: -20px; }
 }
+
+
 
 /* === CLICK INTERACTION === */
 .inline-menu ul li a.clicked {
@@ -302,7 +314,6 @@
 </style>
 
 <script>
-
 document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -326,6 +337,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   });
 });
 </script>
+
+
 
 
 
@@ -362,28 +375,24 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
 
       <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <small>01</small>
         <h6>VISUAL EFFECTS</h6>
         <p>Seamlessly merging reality with imagination through 
            high-end compositing, matte painting, and simulation.</p>
       </div>
 
       <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <small>02</small>
         <h6>CGI & ANIMATION</h6>
         <p>Creating lifelike 3D environments, characters, and product visuals 
            that bring stories and brands to life.</p>
       </div>
 
       <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <small>03</small>
         <h6>COLOR & COMPOSITING</h6>
         <p>Enhancing every frame with precision color grading 
            and compositing for cinematic excellence.</p>
       </div>
 
       <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <small>04</small>
         <h6>POST-PRODUCTION</h6>
         <p>Delivering polished, ready-for-screen content through 
             editing, cleanup, and final finishing.</p>
@@ -429,7 +438,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     </div>
   </section> -->
 
-  <br>
   <!-- end intro-image -->
   <!-- <section class="process wow" data-splitting>
     <div class="container">
@@ -442,10 +450,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     </div>
   </section> -->
 
-  <br>
-  <br>
-  <br>
-<section class="icon-content-block">
+  
+<!-- <section class="icon-content-block">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 wow" data-splitting>
@@ -493,83 +499,133 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-
- <section class="testimonials">
+<section class="testimonial-section">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="testimonials-slider">
-          <div class="swiper-wrapper">
+    <h2 class="section-title">OUR WORK SPEAKS<br>THROUGH OUR<br>PARTNERS' TRUST</h2>
 
-            <div class="swiper-slide">
-              <div class="testimonial wow" data-splitting>
-                <blockquote>
-                  Working with WhiteMag Studio was a creative revelation. Their VFX and compositing team turned our raw footage into something truly cinematic — every frame felt alive.
-                </blockquote>
-                <div class="reviewer">
-                  <div class="reviewer-infos">
-                    <h6>Rahul Verma</h6>
-                    <small>Director, Framehouse Films</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial">
-                <blockquote>
-                  The WhiteMag team combines artistry with technical mastery. Their CGI and color work elevated our campaign visuals to a world-class standard — seamless and powerful.
-                </blockquote>
-                <div class="reviewer">
-                  <div class="reviewer-infos">
-                    <h6>Emily Carter</h6>
-                    <small>Creative Head, Nova Advertising</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial">
-                <blockquote>
-                  From concept to final delivery, WhiteMag Studio delivered beyond expectations. Their attention to detail and commitment to storytelling made all the difference.
-                </blockquote>
-                <div class="reviewer">
-                  <div class="reviewer-infos">
-                    <h6>Aditya Rao</h6>
-                    <small>Producer, Silver Screen Studios</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
+    <div class="testimonial-wrapper">
+      <div class="testimonial-card">
+        <blockquote>
+          Working with WhiteMag Studio was a creative revelation. Their VFX and compositing team turned our raw footage into something truly cinematic — every frame felt alive.
+        </blockquote>
+        <div class="reviewer">
+          <strong>Rahul Verma</strong><br>
+          <small>Director, Framehouse Films</small>
         </div>
       </div>
 
-      <div class="col-lg-6 wow" data-splitting>
-        <h3 class="section-title">OUR WORK SPEAKS<br>
-          THROUGH OUR<br>
-          PARTNERS' TRUST</h3>
-        <a href="#"></a>
+      <div class="testimonial-card">
+        <blockquote>
+          The WhiteMag team combines artistry with technical mastery. Their CGI and color work elevated our campaign visuals to a world-class standard — seamless and powerful.
+        </blockquote>
+        <div class="reviewer">
+          <strong>Emily Carter</strong><br>
+          <small>Creative Head, Nova Advertising</small>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <blockquote>
+          From concept to final delivery, WhiteMag Studio delivered beyond expectations. Their attention to detail and commitment to storytelling made all the difference.
+        </blockquote>
+        <div class="reviewer">
+          <strong>Aditya Rao</strong><br>
+          <small>Producer, Silver Screen Studios</small>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+
+
+<style>/* Make the whole section full width with white bg */
+.testimonial-section {
+  width: 100vw; /* full viewport width */
+  background: #fff;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+/* Container to limit inner content width and center it */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* horizontal padding */
+  box-sizing: border-box;
+}
+
+/* Title style */
+.section-title {
+  font-weight: 600;
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 40px;
+  line-height: 1.3;
+  white-space: pre-line; /* respects line breaks */
+}
+
+/* Flex container for cards */
+.testimonial-wrapper {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card style */
+.testimonial-card {
+  background: #fefefe;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 25px 30px;
+  max-width: 350px;
+  flex: 1 1 300px;
+  color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Blockquote style */
+.testimonial-card blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Reviewer info */
+.reviewer strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.reviewer small {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+
+</style>
   
+<style>
+  .team{
+    background-color: #fff;
+  }
+</style>
   <section class="team">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 wow" data-splitting>
-          <h3 class="section-title">ALL ABOUT<br>
+          <h3 class="section-title" style="color: black;">ALL ABOUT<br>
             THE OUR TEAM</h3>
         </div>
         <!-- end col-8 -->
-        <div class="col-lg-6 wow" data-splitting>
+        <div class="col-lg-6 wow" data-splitting style="color: black;">
           <h5>We work closely with your development team. markettting profissionals and stakeholder to design and develop UX and UI that make your website. application or software a joy to use,</h5>
         </div>
         <!-- end col-4 -->
@@ -670,6 +726,12 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     </div>
   </section> -->
 </main>
+
+
+<br>
+<br>
+<br>
+<br>
 
 
 <!-- <footer class="footer">

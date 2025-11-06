@@ -41,8 +41,11 @@
 <link rel="stylesheet" href="css/swiper.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 <body>
+  
 <div class="preloader">
   <div class="layer"></div>
   <!-- end layer -->
@@ -111,35 +114,27 @@
 
 <aside class="left-side">
   <div class="logo">
-    <a href="index.html">
-<img src="images/logo.png" alt="Logo" 
-     style="width: 120px; height: 120px; position: relative; margin-left: 20px;margin-top: -20px;">
-    </a>
-  </div>
+  <a href="index.html">
+    <img src="images/logo.png" alt="Logo" class="zoom-logo"
+         style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
+  </a>
+</div>
 
-  <style>
-  .left-side .logo img {
-    width: 120px;
-    height: 120px;
-    position: relative;
-    margin-left: 20px;
-    margin-top: -20px;
-    animation: bounce 2s infinite;
+<style>
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);   /* Original size */
+  }
+  50% {
+    transform: scale(1.2); /* Zoomed in */
+  }
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
+.zoom-logo {
+  animation: zoomInOut 2s infinite ease-in-out; /* 2 seconds per cycle */
 }
-
 </style>
+
 
   
  <!-- Inline navigation -->
@@ -359,8 +354,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </header>
   <!-- end page-header -->
 
-
- <section class="text-content-block">
+<section class="text-content-block">
   <div class="container">
     <div class="row">
       <div class="col-12 wow" data-splitting>
@@ -368,10 +362,13 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
           FOR FILM, BRANDS & BEYOND</h3>
       </div>
       <div class="col-12 wow" data-splitting>
-        <h5>At WhiteMag Studio, we transform imagination into stunning visuals. 
-          From cinematic VFX and CGI to motion graphics and compositing, 
-          our creative team blends artistry with technology to deliver 
-          visuals that captivate and inspire audiences worldwide.</h5>
+       <h5 class="section-subtitle" style="text-align: justify;">
+  At WhiteMag Studio, we transform imagination into stunning visuals. 
+  From cinematic VFX and CGI to motion graphics and compositing, 
+  our creative team blends artistry with technology to deliver 
+  visuals that captivate and inspire audiences worldwide.
+</h5>
+
       </div>
 
       <div class="col-lg-3 col-md-6 wow" data-splitting>
@@ -400,6 +397,63 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     </div>
   </div>
 </section>
+
+<style>
+/* ===== TEXT CONTENT BLOCK ===== */
+.text-content-block {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  padding: 80px 10%;
+}
+
+.text-content-block .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.text-content-block .section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.text-content-block h6 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.text-content-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .text-content-block .section-title {
+    font-size: 2rem;
+  }
+  .text-content-block .section-subtitle {
+    font-size: 1rem;
+  }
+  .text-content-block h6 {
+    font-size: 1.1rem;
+  }
+  .text-content-block p {
+    font-size: 0.9rem;
+  }
+}
+</style>
 
 
   <!-- end text-content-block -->
@@ -501,7 +555,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </div>
 </section> -->
 
-<section class="testimonial-section">
+<!-- <section class="testimonial-section">
   <div class="container">
     <h2 class="section-title">OUR WORK SPEAKS<br>THROUGH OUR<br>PARTNERS' TRUST</h2>
 
@@ -537,7 +591,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 
@@ -728,10 +782,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </main>
 
 
-<br>
-<br>
-<br>
-<br>
+<div style="height:80px; background-color: #fff;"></div>
+
 
 
 <!-- <footer class="footer">

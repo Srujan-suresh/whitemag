@@ -61,7 +61,7 @@ theme.
 @mixin transition{-webkit-transition: .25s ease-in-out;-moz-transition: .25s ease-in-out;-ms-transition: .25s ease-in-out; -o-transition: .25s ease-in-out; transition: .25s ease-in-out;}
 
 @mixin transition-cubic{-webkit-transition: all 0.3s ease;	-moz-transition: all 0.3s ease;	transition: all 0.3s ease;
-	transition-duration: 500ms;	-webkit-transition-duration: 500ms;	transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+	transition-duration: 2500ms;	-webkit-transition-duration: 2500ms;	transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 	-webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1)}
 
 $color-main : #75dab4;
@@ -154,7 +154,7 @@ textarea{max-width: 100%; height: 140px; border: 1px solid #eee; padding:20px;}
 .reveal-effect>* { -webkit-animation-duration: 1s;  animation-duration: 1s;  -webkit-animation-fill-mode: forwards;  animation-fill-mode: forwards;  -webkit-animation-timing-function: cubic-bezier(.785,.135,.15,.86);  animation-timing-function: cubic-bezier(.785,.135,.15,.86); position: relative;}
 .reveal-effect>* { -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; }
 .reveal-effect { -webkit-transition-property: -webkit-transform; transition-property: -webkit-transform; transition-property: transform; transition-property: transform, -webkit-transform;}
-.reveal-effect {-webkit-transition-duration: 1.2s; transition-duration: 1.2s; -webkit-transition-timing-function: cubic-bezier(.25,.1,.25,1); transition-timing-function: cubic-bezier(.25,.1,.25,1);}
+.reveal-effect {-webkit-transition-duration: 2.2s; transition-duration: 2.2s; -webkit-transition-timing-function: cubic-bezier(.25,.1,.25,1); transition-timing-function: cubic-bezier(.25,.1,.25,1);}
 .reveal-effect.animated {-webkit-transform: translate(0,0); transform: translate(0,0);}
 .reveal-effect.animated * {-webkit-animation-name: show-img-1;animation-name: show-img-1;}
 .reveal-effect:after {-webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-timing-function: cubic-bezier(.785,.135,.15,.86); animation-timing-function: cubic-bezier(.785,.135,.15,.86);}
@@ -169,10 +169,10 @@ textarea{max-width: 100%; height: 140px; border: 1px solid #eee; padding:20px;}
 .swiper-pagination .swiper-pagination-bullet{ width: 12px; height: 12px; transform: scale(0.4); background: #fff; opacity: 1; border-radius: 50%;}
 .swiper-pagination .swiper-pagination-bullet:hover,
 .swiper-pagination .swiper-pagination-bullet-active {
-    -webkit-transition: box-shadow 0.3s ease, background-color 0.3s ease, -webkit-transform 0.3s ease;
-    transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transition: box-shadow 2.3s ease, background-color 2.3s ease, -webkit-transform 2.3s ease;
+    transition: box-shadow 2.3s ease, background-color 2.3s ease, transform 2.3s ease;
+    -webkit-transform: scale(2);
+    transform: scale(2);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
     border: 2px solid #fff;
     background: none;
@@ -183,12 +183,12 @@ textarea{max-width: 100%; height: 140px; border: 1px solid #eee; padding:20px;}
 
 
 /* PRELOADER */
-.preloader{width: 100%; height: 100%; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; position: fixed; left: 0; top: 0;  z-index: 11; background: $color-main; text-align: center; @include transition-cubic; overflow: hidden; transition-delay: 0.6s;
+.preloader{width: 100%; height: 100%; display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center; position: fixed; left: 0; top: 0;  z-index: 11; background: $color-main; text-align: center; @include transition-cubic; overflow: hidden; transition-delay: 2.6s;
 	*{@include transition-cubic;}
-	.layer{width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #1c1c1c; transition-delay: 0.30s; }
+	.layer{width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: #1c1c1c; transition-delay: 2.30s; }
 	.inner{display: inline-block; text-align: center; position: relative; z-index: 2; margin: 0 auto;
 		span{color: #fff; text-transform: uppercase; font-weight: 600; font-size: 13px;}
-		figure{ display: block; margin-bottom: 20px; transition-delay: 0.10s;
+		figure{ display: block; margin-bottom: 20px; transition-delay: 2.10s;
 			img{height: 40px; transform: translateX(-7px);}}}}
 
 

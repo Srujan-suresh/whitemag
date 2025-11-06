@@ -110,37 +110,32 @@
 
 
 <aside class="left-side">
-  <div class="logo">
-    <a href="index.html">
-<img src="images/logo.png" alt="Logo" 
-     style="width: 120px; height: 120px; position: relative; margin-left: 20px;margin-top: -20px;">
-    </a>
-  </div>
-
+<div class="logo">
+  <a href="index.html">
+    <img src="images/logo.png" alt="Logo" class="zoom-logo"
+         style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
+  </a>
+</div>
 
 <style>
-  .left-side .logo img {
-    width: 120px;
-    height: 120px;
-    position: relative;
-    margin-left: 20px;
-    margin-top: -20px;
-    animation: bounce 2s infinite;
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);   /* Original size */
+  }
+  50% {
+    transform: scale(1.2); /* Zoomed in */
+  }
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
+.zoom-logo {
+  animation: zoomInOut 2s infinite ease-in-out; /* 2 seconds per cycle */
 }
-
 </style>
+
+
+
+
+
 
  <!-- Inline navigation -->
 <nav class="inline-menu">
@@ -211,7 +206,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -100%; /* start off-screen */
+  left: -100%;
   transform: translateY(-50%);
   width: 0%;
   height: 64px;
@@ -225,7 +220,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -20px; /* move it 20px left */
+  left: -20px;
   height: 4px;
   width: 0%;
   background-color: #65c8a7;
@@ -234,9 +229,6 @@
   z-index: 3;
   border-radius: 2px;
 }
-
-
-
 
 /* === TEXT === */
 .inline-menu ul li a span {
@@ -247,12 +239,12 @@
 
 /* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  animation: wipeToEndDisappear 0.35s ease forwards; /* faster green swipe */
+  animation: wipeToEndDisappear 0.5s ease forwards; /* faster green swipe */
 }
 
 .inline-menu ul li a:hover::after {
   animation: showSlash 0.25s ease forwards;
-  animation-delay: 0.35s; /* start right after green swipe disappears */
+  animation-delay: 0.5s; /* match new swipe duration */
 }
 
 .inline-menu ul li a.active span {
@@ -280,8 +272,6 @@
   0% { width: 0%; opacity: 0; left: -20px; }
   100% { width: calc(100% + 20px); opacity: 1; left: -20px; }
 }
-
-
 
 /* === CLICK INTERACTION === */
 .inline-menu ul li a.clicked {
@@ -312,6 +302,9 @@
   }
 }
 </style>
+
+
+
 
 <script>
 document.querySelectorAll('.inline-menu ul li a').forEach(link => {
@@ -350,20 +343,47 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
   <!-- end left-side -->
 
-  <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>
+ <div class="all-cases-link">
+  <a href="contact.html" style="font-family: 'Poppins', sans-serif; font-size:20px; font-weight:600; color:#fff; text-decoration:none;">
+    <span>CONTACT US</span>
+  </a>
+</div>
+
 
   <!-- end all-cases-link -->
   <header class="slider">
     <div class="swiper-container gallery-top">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" data-background="images/slide01.jpg"></div>
-        <div class="swiper-slide">
-          <video src="videos/video03.mp4" muted autoplay loop></video>
-        </div>
-        <div class="swiper-slide" data-background="images/slide02.jpg"></div>
-      </div>
+    <div class="swiper-wrapper">
+  <div class="swiper-slide">
+    <img src="images/banner2.png" class="banner-img">
+  </div>
+  <div class="swiper-slide">
+    <video src="videos/video03.mp4" muted autoplay loop></video>
+  </div>
+  <div class="swiper-slide">
+    <img src="images/banner1.png" class="banner-img">
+  </div>
+</div>
 
-      <style>.swiper-slide video {
+
+
+      <style>
+      .banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomInOut 10s ease-in-out infinite;
+}
+
+@keyframes zoomInOut {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+      
+      .swiper-slide video {
   width: 110%;
   height: 100%;
   object-fit: cover; /* fills the slide while keeping aspect ratio */
@@ -401,10 +421,12 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 
   
-<section id="who-we-are" style="padding: 80px 10%; background-color: #f9f9f9; color: #333; font-family: 'Raleway', 'Montserrat', 'Helvetica Neue', sans-serif;">
-  <h1 style="font-size: 48px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 300;">
+<section id="who-we-are" style="padding: 80px 10%; background-color: #f9f9f9; color: #333; font-family: 'Poppins', sans-serif;">
+
+  <h1 style="font-family: 'Poppins', sans-serif; font-size: 48px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 800;">
     WHO WE ARE
-  </h1>
+</h1>
+
 
   <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
     WhiteMag Studio is a global VFX and animation studio redefining the art of visual storytelling. 
@@ -502,13 +524,13 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </section> -->
 
 
-  
-<style>
+  <style>
   /* Fade-in animation */
   .fade-section {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 4.5s ease forwards;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins globally */
   }
 
   @keyframes fadeInUp {
@@ -526,6 +548,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     background: #ffffff;
     color: #000000;
     padding: 100px 0;
+    font-family: 'Poppins', sans-serif; /* Ensure Poppins */
   }
 
   .icon-content-block .section-title {
@@ -536,6 +559,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     margin-bottom: 60px;
     letter-spacing: 2px;
     text-align: center;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 
   .icon-content-block .content-block {
@@ -546,6 +570,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     padding: 40px 25px;
     transition: all 0.5s ease;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 
   .icon-content-block .content-block:hover {
@@ -568,7 +593,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   .icon-content-block figure img {
     width: 80px;
     height: auto;
-    filter: brightness(0); /* makes dark icons stand out on white */
+    filter: brightness(0);
     transition: filter 0.3s ease;
   }
 
@@ -581,22 +606,25 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-weight: 600;
     color: #111;
     margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 
   .icon-content-block ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 
   .icon-content-block ul li {
     font-size: 0.95rem;
     color: #333;
     margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 </style>
 
-<section class="icon-content-block fade-section" >
+<section class="icon-content-block fade-section">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 wow" data-splitting>
@@ -644,7 +672,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     </div>
   </div>
 </section>
-
 
 <!-- <style>
 .fade-section {
@@ -711,8 +738,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </div>
 </section> -->
 
-
-
 <style>
   /* Hide cursor only inside the services section */
   .services-section {
@@ -723,6 +748,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     background: radial-gradient(circle at top, #f9f9f9, #fff 80%);
     color: #000;
     overflow: hidden;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins globally */
   }
 
   /* Custom circular cursor (scoped to services section) */
@@ -767,6 +793,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     text-transform: uppercase;
     color: #000;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
   }
 
   .section-subtitle {
@@ -775,6 +802,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 1.1rem;
     color: #333;
     line-height: 1.8;
+    font-family: 'Poppins', sans-serif;
   }
 
   .services-grid {
@@ -792,6 +820,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     transition: transform 0.8s ease, box-shadow 0.8s ease, background 0.8s ease;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 
   /* Dark glow hover */
@@ -813,6 +842,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 1.2rem;
     color: #666;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
   }
 
   .service-box h6 {
@@ -820,12 +850,14 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-weight: 600;
     margin-bottom: 12px;
     color: #111;
+    font-family: 'Poppins', sans-serif;
   }
 
   .service-box p {
     color: #444;
     font-size: 0.95rem;
     line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
   }
 </style>
 
@@ -843,7 +875,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
     <div class="services-grid">
       <div class="service-box">
-        <!-- <span class="num">01</span> -->
         <h6>Rotoscoping & Paint</h6>
         <p>
           High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.
@@ -851,7 +882,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
 
       <div class="service-box">
-        <!-- <span class="num">02</span> -->
         <h6>Compositing Services</h6>
         <p>
           Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.
@@ -859,7 +889,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
 
       <div class="service-box">
-        <!-- <span class="num">03</span> -->
         <h6>Matchmoving & Camera Tracking</h6>
         <p>
           Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.
@@ -867,7 +896,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
 
       <div class="service-box">
-        <!-- <span class="num">04</span> -->
         <h6>Green Screen / Chroma Keying</h6>
         <p>
           Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.
@@ -875,7 +903,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       </div>
 
       <div class="service-box">
-        <!-- <span class="num">05</span> -->
         <h6>Additional VFX Enhancements</h6>
         <p>
           Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.
@@ -922,9 +949,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 
 
-
-
-
 <!-- ===== ORIGINAL FILM & TV SECTION ===== -->
 <section class="film-tv-section">
   <div class="film-tv-overlay"></div>
@@ -938,7 +962,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </div>
 </section>
 
-<style>/* ===== FILM & TV SECTION ===== */
+<style>
 /* ===== FILM & TV SECTION ===== */
 .film-tv-section {
   position: relative;
@@ -951,7 +975,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   text-align: center;
   overflow: hidden;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Apply Poppins globally */
 }
 
 .film-tv-overlay {
@@ -972,20 +996,21 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 }
 
 .film-tv-content h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif; /* switched from Montserrat to Poppins */
   font-size: 42px;
-  font-weight: 600;
+  font-weight: 700; /* slightly bolder for headings */
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 25px;
 }
 
 .film-tv-content p {
+  font-family: 'Poppins', sans-serif;
   font-size: 17px;
   line-height: 1.8;
   color: #e0e0e0;
-  text-align: justify; /* ✅ Added this line */
-  text-justify: inter-word; /* makes spacing cleaner */
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Responsive */
@@ -997,8 +1022,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 15px;
   }
 }
-
 </style>
+
    
 
   <!-- <section class="clients">

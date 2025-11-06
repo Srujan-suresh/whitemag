@@ -109,36 +109,28 @@
   <!-- ===== REPLACEMENT START ===== -->
 
 <aside class="left-side">
-  <div class="logo">
-    <a href="index.html">
-<img src="images/logo.png" alt="Logo" 
-     style="width: 120px; height: 120px; position: relative; margin-left: 20px;margin-top: -20px;">
-    </a>
-  </div>
+<div class="logo">
+  <a href="index.html">
+    <img src="images/logo.png" alt="Logo" class="zoom-logo"
+         style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
+  </a>
+</div>
 
-  <style>
-  .left-side .logo img {
-    width: 120px;
-    height: 120px;
-    position: relative;
-    margin-left: 20px;
-    margin-top: -20px;
-    animation: bounce 2s infinite;
+<style>
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);   /* Original size */
+  }
+  50% {
+    transform: scale(1.2); /* Zoomed in */
+  }
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
+.zoom-logo {
+  animation: zoomInOut 2s infinite ease-in-out; /* 2 seconds per cycle */
 }
-
 </style>
+
 
  
  <!-- Inline navigation -->
@@ -564,19 +556,63 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </script>
 
 
+<div style="
+  background-color: #fff; /* white background */
+  padding-left: 50px;
+  padding-right: 50px;
+">
+<!-- Ensure full white background -->
+<style>
+ 
 
+  /* 🎥 Zoom animation for each slider box */
+  .slider-box {
+    width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    will-change: transform;
+  }
 
+  /* Hover zoom effect */
+  .slider-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  }
 
-<div class="slider-grid" style="
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  justify-items: center;
-  max-width: 1500px;
-  margin: auto;
-  /* margin-top: 100px; */
-  background-color: #fff;
-">  
+  .slider-box:not(:hover) {
+    transform: scale(1);
+  }
+
+  .beer-slider,
+  .beer-reveal img {
+    transition: transform 0.6s ease;
+  }
+
+  /* Responsive grid for smaller screens */
+  .slider-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+    max-width: 1500px;
+    margin: auto;
+    background-color: #fff;
+    padding: 50px 0; /* optional vertical spacing */
+  }
+
+  @media (max-width: 768px) {
+    .slider-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+</style>
+
+<div class="slider-grid">  
 
   <!-- Slider 1 -->
   <div class="slider-box">
@@ -624,36 +660,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.css">
 <script src="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.min.js"></script>
 
-<style>
-/* 🎥 Zoom animation for each slider box */
-.slider-box {
-  width: 600px;
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
-  will-change: transform;
-}
-
-/* Hover zoom effect */
-.slider-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-}
-
-/* Optional: small zoom out reset animation */
-.slider-box:not(:hover) {
-  transform: scale(1);
-}
-
-/* Smooth hover for BeerSlider handle too */
-.beer-slider,
-.beer-reveal img {
-  transition: transform 0.6s ease;
-}
-</style>
-
 <script>
   // Initialize BeerSlider
   document.querySelectorAll(".beer-slider").forEach(slider => {
@@ -667,15 +673,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </script>
 
 
-  <!-- end clients --> 
-</main>
-<!-- end main -->
 
-
-<br>
-<br>
-<br>
-<br>
+<div style="height:120px; background-color: #fff;"></div>
 
 <!-- <footer class="footer">
   <div class="container">

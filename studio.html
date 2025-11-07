@@ -46,22 +46,84 @@
 </head>
 <body>
   
-<div class="preloader">
+
+  <div class="custom-transition" id="custom-preloader">
   <div class="layer"></div>
-  <!-- end layer -->
-  <div class="inner">
-    <!-- <figure> <img src="images/preloader.gif" alt="Image"> </figure>
-    <span>Site Loading</span>  -->
-  
-  </div>
-  <!-- end inner -->
 </div>
-<!-- end preloader -->
+
+<style>
+  /* CUSTOM PAGE TRANSITION PRELOADER */
+  .custom-transition {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    background: #75dab4; /* green background */
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: opacity 1s ease, visibility 1s ease; /* slower fade */
+  }
+
+  .custom-transition .layer {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #1c1c1c; /* black layer */
+    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1); /* slower width slide */
+  }
+
+  .custom-transition.active .layer {
+    width: 100%;
+  }
+
+  .custom-transition.hide-layer .layer {
+    width: 0;
+    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .custom-transition.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
+
+<script>
+  const preloader = document.getElementById('custom-preloader');
+
+  // Step 1: Start with green background visible, black layer width 0
+  setTimeout(() => {
+    preloader.classList.add('active'); // green → black
+  }, 100); // small delay to trigger animation
+
+  // Step 2: Slide out black layer (black → green)
+  setTimeout(() => {
+    preloader.classList.remove('active');
+    preloader.classList.add('hide-layer');
+  }, 3200); // black layer visible for ~3.1s
+
+  // Step 3: Hide whole preloader (fade out)
+  setTimeout(() => {
+    preloader.classList.add('hide');
+  }, 5600); // fade out after black layer slides out
+</script>
+
+
+
+<!-- <div class="preloader">
+  <div class="layer"></div>
+  <div class="inner">
+  </div>
+</div>
 <div class="page-transition">
   <div class="layer"></div>
-  <!-- end layer -->
-</div>
-<!-- end page-transition -->
+</div> -->
+
+
 <nav class="site-navigation">
   <div class="layer"></div>
   <!-- end layer -->
@@ -338,21 +400,117 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 
  <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>  <!-- end all-cases-link -->
-  <header class="page-header">
-    <div class="video-bg">
-      <video src="videos/video02.mp4" muted loop autoplay></video>
+  
+<header class="page-header">
+  <img src="images/banner1.png" class="banner-img" alt="Studio Banner">
+
+  <div class="overlay"></div>
+
+  <div class="inner">
+    <div class="container">
+      <h1>STUDIO</h1>
+      <p>We provide a free day to experience our benefits of digital world</p>
     </div>
-    <!-- end video-bg -->
-    <div class="inner">
-      <div class="container">
-        <h1>STUDIO</h1>
-        <p>We provide a free day to experience our benefits of digital world</p>
-      </div>
-      <!-- end container -->
-    </div>
-    <!-- end inner -->
-  </header>
-  <!-- end page-header -->
+  </div>
+</header>
+
+<style>
+/* ===== Base Styles ===== */
+.page-header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full viewport height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background image */
+.banner-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  animation: zoomInOut 10s ease-in-out infinite;
+}
+
+/* Overlay for readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Centered text content */
+.inner {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 900px;
+}
+
+/* Typography */
+.inner h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.inner p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Zoom animation */
+@keyframes zoomInOut {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .inner h1 {
+    font-size: 4rem;
+  }
+  .inner p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner h1 {
+    font-size: 3rem;
+  }
+  .inner p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner h1 {
+    font-size: 2.2rem;
+  }
+  .inner p {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+
 
 <section class="text-content-block">
   <div class="container">

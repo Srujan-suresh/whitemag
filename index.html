@@ -43,20 +43,85 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<div class="custom-transition" id="custom-preloader">
+  <div class="layer"></div>
+</div>
+
+<style>
+  /* CUSTOM PAGE TRANSITION PRELOADER */
+  .custom-transition {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    background: #75dab4; /* green background */
+    opacity: 1;
+    visibility: visible;
+    overflow: hidden;
+    transition: opacity 1s ease, visibility 1s ease; /* slower fade */
+  }
+
+  .custom-transition .layer {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #1c1c1c; /* black layer */
+    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1); /* slower width slide */
+  }
+
+  .custom-transition.active .layer {
+    width: 100%;
+  }
+
+  .custom-transition.hide-layer .layer {
+    width: 0;
+    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .custom-transition.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
+
+<script>
+  const preloader = document.getElementById('custom-preloader');
+
+  // Step 1: Start with green background visible, black layer width 0
+  setTimeout(() => {
+    preloader.classList.add('active'); // green → black
+  }, 100); // small delay to trigger animation
+
+  // Step 2: Slide out black layer (black → green)
+  setTimeout(() => {
+    preloader.classList.remove('active');
+    preloader.classList.add('hide-layer');
+  }, 3200); // black layer visible for ~3.1s
+
+  // Step 3: Hide whole preloader (fade out)
+  setTimeout(() => {
+    preloader.classList.add('hide');
+  }, 5600); // fade out after black layer slides out
+</script>
+
+
 <div class="preloader">
   <div class="layer"></div>
-  <!-- end layer -->
   <div class="inner">
     <figure> <img src="images/preloader.gif" alt="Image"> </figure>
     <span>Site Loading</span> </div>
-  <!-- end inner -->
 </div>
-<!-- end preloader -->
 <div class="page-transition">
   <div class="layer"></div>
-  <!-- end layer -->
 </div>
-<!-- end page-transition -->
+
+
+
 <nav class="site-navigation">
   <div class="layer"></div>
   <!-- end layer -->
@@ -360,9 +425,9 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   <div class="swiper-slide">
     <video src="videos/video03.mp4" muted autoplay loop></video>
   </div>
-  <div class="swiper-slide">
+  <!-- <div class="swiper-slide">
     <img src="images/banner1.png" class="banner-img">
-  </div>
+  </div> -->
 </div>
 
 

@@ -178,7 +178,7 @@
 
 
 <aside class="left-side">
-<div class="logo">
+ <div class="logo">
   <a href="index.html">
     <img src="images/logo.png" alt="Logo" class="zoom-logo"
          style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
@@ -200,11 +200,7 @@
 }
 </style>
 
-
-
-
-
-
+  
  <!-- Inline navigation -->
 <nav class="inline-menu">
   <ul>
@@ -274,7 +270,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -100%;
+  left: -100%; /* start off-screen */
   transform: translateY(-50%);
   width: 0%;
   height: 64px;
@@ -288,7 +284,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -20px;
+  left: -20px; /* move it 20px left */
   height: 4px;
   width: 0%;
   background-color: #65c8a7;
@@ -297,6 +293,9 @@
   z-index: 3;
   border-radius: 2px;
 }
+
+
+
 
 /* === TEXT === */
 .inline-menu ul li a span {
@@ -307,12 +306,12 @@
 
 /* === ANIMATION ON HOVER === */
 .inline-menu ul li a:hover::before {
-  animation: wipeToEndDisappear 0.5s ease forwards; /* faster green swipe */
+  animation: wipeToEndDisappear 0.35s ease forwards; /* faster green swipe */
 }
 
 .inline-menu ul li a:hover::after {
   animation: showSlash 0.25s ease forwards;
-  animation-delay: 0.5s; /* match new swipe duration */
+  animation-delay: 0.35s; /* start right after green swipe disappears */
 }
 
 .inline-menu ul li a.active span {
@@ -340,6 +339,8 @@
   0% { width: 0%; opacity: 0; left: -20px; }
   100% { width: calc(100% + 20px); opacity: 1; left: -20px; }
 }
+
+
 
 /* === CLICK INTERACTION === */
 .inline-menu ul li a.clicked {
@@ -371,9 +372,6 @@
 }
 </style>
 
-
-
-
 <script>
 document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   link.addEventListener('click', e => {
@@ -398,7 +396,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   });
 });
 </script>
-
 
 
 

@@ -61,7 +61,7 @@
     opacity: 1;
     visibility: visible;
     overflow: hidden;
-    transition: opacity 1s ease, visibility 1s ease; /* slower fade */
+    transition: opacity 0.6s ease, visibility 0.6s ease; /* a bit faster fade */
   }
 
   .custom-transition .layer {
@@ -71,7 +71,7 @@
     right: 0;
     top: 0;
     background: #1c1c1c; /* black layer */
-    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1); /* slower width slide */
+    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1); /* slightly faster width slide */
   }
 
   .custom-transition.active .layer {
@@ -80,7 +80,7 @@
 
   .custom-transition.hide-layer .layer {
     width: 0;
-    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   .custom-transition.hide {
@@ -95,19 +95,22 @@
   // Step 1: Start with green background visible, black layer width 0
   setTimeout(() => {
     preloader.classList.add('active'); // green → black
-  }, 100); // small delay to trigger animation
+  }, 100); // trigger animation after short delay
 
   // Step 2: Slide out black layer (black → green)
   setTimeout(() => {
     preloader.classList.remove('active');
     preloader.classList.add('hide-layer');
-  }, 3200); // black layer visible for ~3.1s
+  }, 1800); // black layer visible for ~1.7s
 
   // Step 3: Hide whole preloader (fade out)
   setTimeout(() => {
     preloader.classList.add('hide');
-  }, 5600); // fade out after black layer slides out
+  }, 3000); // fade out after black layer slides out
 </script>
+
+
+
 
 
 <div class="preloader">
@@ -804,45 +807,18 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </section> -->
 
 <style>
-  /* Hide cursor only inside the services section */
+  /* Removed cursor styles */
+
   .services-section {
-    cursor: none;
     position: relative;
     width: 100%;
     padding: 100px 0;
     background: radial-gradient(circle at top, #f9f9f9, #fff 80%);
     color: #000;
     overflow: hidden;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins globally */
   }
 
-  /* Custom circular cursor (scoped to services section) */
-  .services-section .custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 30px;
-    height: 30px;
-    border: 2px solid rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.25s ease, height 0.25s ease, background 0.25s ease,
-      border 0.25s ease, transform 0.15s ease;
-    mix-blend-mode: difference;
-    z-index: 9999;
-    display: none; /* Hidden by default until mouse enters the section */
-  }
-
-  /* When hovering over interactive elements */
-  .services-section .cursor-hover {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.4);
-  }
-
-  .services-section .container {
+  .container {
     position: relative;
     z-index: 2;
     width: 85%;
@@ -858,7 +834,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     text-transform: uppercase;
     color: #000;
     margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif;
   }
 
   .section-subtitle {
@@ -867,7 +842,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 1.1rem;
     color: #333;
     line-height: 1.8;
-    font-family: 'Poppins', sans-serif;
   }
 
   .services-grid {
@@ -885,7 +859,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     transition: transform 0.8s ease, box-shadow 0.8s ease, background 0.8s ease;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    font-family: 'Poppins', sans-serif; /* Apply Poppins */
   }
 
   /* Dark glow hover */
@@ -907,7 +880,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-size: 1.2rem;
     color: #666;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
   }
 
   .service-box h6 {
@@ -915,21 +887,17 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     font-weight: 600;
     margin-bottom: 12px;
     color: #111;
-    font-family: 'Poppins', sans-serif;
   }
 
   .service-box p {
     color: #444;
     font-size: 0.95rem;
     line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
   }
 </style>
 
-<!-- Services Section with Scoped Cursor -->
+<!-- Services Section -->
 <section class="services-section">
-  <div class="custom-cursor"></div>
-
   <div class="container">
     <h3 class="section-title">OUR CORE SERVICES</h3>
     <h5 class="section-subtitle">
@@ -977,38 +945,45 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </div>
 </section>
 
+<!-- No JavaScript related to cursor -->
+<div id="custom-cursor" style="
+  width: 40px;           
+  height: 40px;
+  border: 3px solid #1c1c1c; 
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: rgba(28,28,28,0.05);
+"></div>
+
 <script>
-  /* Scoped Custom Cursor Logic */
-  const section = document.querySelector('.services-section');
-  const cursor = section.querySelector('.custom-cursor');
-  const boxes = section.querySelectorAll('.service-box');
-  let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
-  const speed = 0.15;
+  const cursor = document.getElementById('custom-cursor');
 
-  document.addEventListener('mousemove', (e) => {
-    if (section.matches(':hover')) {
-      cursor.style.display = 'block';
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    } else {
-      cursor.style.display = 'none';
-    }
+  let mouseX = 0, mouseY = 0;  // real mouse position
+  let posX = 0, posY = 0;      // cursor displayed position
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   });
 
-  function animateCursor() {
-    currentX += (mouseX - currentX) * speed;
-    currentY += (mouseY - currentY) * speed;
-    cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
-    requestAnimationFrame(animateCursor);
+  function animate() {
+    posX += (mouseX - posX) * 0.15;
+    posY += (mouseY - posY) * 0.15;
+    cursor.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
   }
-  animateCursor();
 
-  boxes.forEach((box) => {
-    box.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    box.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-  });
+  animate();
 </script>
+
+<style>
+  body, a, button, input, textarea {
+    cursor: none !important;
+  }
+</style>
 
 
 

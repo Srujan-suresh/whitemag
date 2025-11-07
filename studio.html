@@ -64,7 +64,7 @@
     opacity: 1;
     visibility: visible;
     overflow: hidden;
-    transition: opacity 1s ease, visibility 1s ease; /* slower fade */
+    transition: opacity 0.6s ease, visibility 0.6s ease; /* a bit faster fade */
   }
 
   .custom-transition .layer {
@@ -74,7 +74,7 @@
     right: 0;
     top: 0;
     background: #1c1c1c; /* black layer */
-    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1); /* slower width slide */
+    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1); /* slightly faster width slide */
   }
 
   .custom-transition.active .layer {
@@ -83,7 +83,7 @@
 
   .custom-transition.hide-layer .layer {
     width: 0;
-    transition: width 2s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   .custom-transition.hide {
@@ -98,18 +98,18 @@
   // Step 1: Start with green background visible, black layer width 0
   setTimeout(() => {
     preloader.classList.add('active'); // green → black
-  }, 100); // small delay to trigger animation
+  }, 100); // trigger animation after short delay
 
   // Step 2: Slide out black layer (black → green)
   setTimeout(() => {
     preloader.classList.remove('active');
     preloader.classList.add('hide-layer');
-  }, 3200); // black layer visible for ~3.1s
+  }, 1800); // black layer visible for ~1.7s
 
   // Step 3: Hide whole preloader (fade out)
   setTimeout(() => {
     preloader.classList.add('hide');
-  }, 5600); // fade out after black layer slides out
+  }, 3000); // fade out after black layer slides out
 </script>
 
 
@@ -401,33 +401,33 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
  <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>  <!-- end all-cases-link -->
   
-<header class="page-header">
-  <img src="images/banner1.png" class="banner-img" alt="Studio Banner">
+<header class="studio-header">
+  <img src="images/banner1.png" class="studio-bg-img" alt="Studio Banner">
 
-  <div class="overlay"></div>
+  <div class="studio-overlay"></div>
 
-  <div class="inner">
-    <div class="container">
-      <h1>STUDIO</h1>
-      <p>We provide a free day to experience our benefits of digital world</p>
+  <div class="studio-inner">
+    <div class="studio-container">
+      <h1 class="studio-title">STUDIO</h1>
+      <p class="studio-subtitle">We provide a free day to experience our benefits of digital world</p>
     </div>
   </div>
 </header>
 
 <style>
-/* ===== Base Styles ===== */
-.page-header {
+/* ===== STUDIO HEADER SECTION ===== */
+.studio-header {
   position: relative;
   width: 100%;
-  height: 100vh; /* full viewport height */
+  height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Background image */
-.banner-img {
+/* ===== Background Image ===== */
+.studio-bg-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -435,80 +435,140 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  animation: zoomInOut 10s ease-in-out infinite;
+  animation: studioZoom 10s ease-in-out infinite;
 }
 
-/* Overlay for readability */
-.overlay {
+/* ===== Overlay ===== */
+.studio-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.55);
   z-index: 2;
 }
 
-/* Centered text content */
-.inner {
+/* ===== Text Layer ===== */
+.studio-inner {
   position: relative;
   z-index: 3;
-  color: #fff;
   text-align: center;
+  color: #fff;
   padding: 0 20px;
   max-width: 900px;
 }
 
-/* Typography */
-.inner h1 {
-  font-size: 5rem;
+.studio-title, .studio-subtitle {
+  opacity: 0;
+  transform: translateY(60px) scale(0.9);
+  animation-fill-mode: forwards;
+}
+
+/* ===== Title and Subtitle Animation ===== */
+.studio-title {
+  font-size: 3rem; /* same as Service header */
   font-weight: 800;
   letter-spacing: 2px;
   margin-bottom: 20px;
   line-height: 1.1;
+  animation: fadeMoveScale 1s ease-out forwards;
 }
 
-.inner p {
-  font-size: 1.3rem;
+.studio-subtitle {
+  font-size: 1.5rem; /* same as Service subtitle */
   font-weight: 300;
   line-height: 1.5;
+  animation: fadeMoveScale 1s ease-out forwards;
+  animation-delay: 0.6s;
 }
 
-/* Zoom animation */
-@keyframes zoomInOut {
+/* Fade + move + scale animation */
+@keyframes fadeMoveScale {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Zoom animation for background image */
+@keyframes studioZoom {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
-/* ===== Responsive Design ===== */
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
-  .inner h1 {
-    font-size: 4rem;
-  }
-  .inner p {
-    font-size: 1.1rem;
-  }
+  .studio-title { font-size: 3.5rem; }
+  .studio-subtitle { font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) {
-  .inner h1 {
-    font-size: 3rem;
-  }
-  .inner p {
-    font-size: 1rem;
-  }
+  .studio-title { font-size: 2.8rem; }
+  .studio-subtitle { font-size: 1.1rem; }
 }
 
 @media (max-width: 480px) {
-  .inner h1 {
-    font-size: 2.2rem;
-  }
-  .inner p {
-    font-size: 0.95rem;
-  }
+  .studio-title { font-size: 2.2rem; }
+  .studio-subtitle { font-size: 0.95rem; }
 }
 </style>
+
+<script>
+  // Trigger animations after page load
+  window.addEventListener('load', () => {
+    const title = document.querySelector('.studio-title');
+    const subtitle = document.querySelector('.studio-subtitle');
+    title.style.animationPlayState = 'running';
+    subtitle.style.animationPlayState = 'running';
+  });
+</script>
+
+
+<div id="custom-cursor" style="
+  width: 40px;           
+  height: 40px;
+  border: 3px solid #1c1c1c; 
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: rgba(28,28,28,0.05);
+"></div>
+
+<script>
+  const cursor = document.getElementById('custom-cursor');
+
+  let mouseX = 0, mouseY = 0;  // real mouse position
+  let posX = 0, posY = 0;      // cursor displayed position
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    posX += (mouseX - posX) * 0.15;
+    posY += (mouseY - posY) * 0.15;
+    cursor.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
+<style>
+  body, a, button, input, textarea {
+    cursor: none !important;
+  }
+</style>
+
 
 
 

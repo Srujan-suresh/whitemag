@@ -401,8 +401,10 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   <!-- Text Layer -->
   <div class="service-inner">
     <div class="service-container">
+      <br>
+      <br>
       <h1 class="service-title">OUR SERVICES</h1>
-      <p class="service-subtitle">We provide a free day to experience our benefits of digital world</p>
+      <!-- <p class="service-subtitle">We provide a free day to experience our benefits of digital world</p> -->
     </div>
   </div>
 </header>
@@ -692,13 +694,26 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
 </style>
 
+<section class="demo-reels-section">
+  <h2>Demo Reels</h2>
 
-<div style="
-  background-color: #fff; /* white background */
-  padding-left: 10px;
-  padding-right: 10px;
-">
-<!-- Ensure full white background -->
+  <div class="video-holder">
+    <div class="video-box">
+      <video controls aria-label="Demo reel 1">
+        <source src="videos/demo2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="video-box">
+      <video controls aria-label="Demo reel 2">
+        <source src="videos/demo2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
 <style>
   .demo-reels-section {
     background: #fff;
@@ -726,76 +741,112 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   .video-box {
     flex: 1 1 400px;
     max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     overflow: hidden;
-    background: #000; /* black background behind video */
+    background: #fff; /* white background */
+    transition: transform 0.3s ease;
+  }
+
+  .video-box:hover {
+    transform: scale(1.05);
   }
 
   .video-box video {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    background: #fff; /* ensures white behind transparent parts */
+    object-fit: cover; /* fills the box, crops edges if needed */
   }
+
+  @media (max-width: 768px) {
+    .demo-reels-section {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .video-holder {
+      gap: 15px;
+    }
+
+    .video-box {
+      flex: 1 1 100%;
+    }
+  }
+  .demo-reels-section {
+  background: #fff;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 0; /* remove side padding */
+  text-align: center;
+  width: 100vw; /* full viewport width */
+  margin-left: calc(50% - 50vw); /* ensures it breaks out of parent padding */
+}
+
 </style>
 
-<section class="demo-reels-section">
-  <h2>demo reels</h2>
 
-  <div class="video-holder">
-    <div class="video-box">
-      <video controls>
-        <source src="videos/demo2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+<!-- 🎬 BEFORE & AFTER SLIDER SECTION -->
+<section class="slider-section">
+  <div class="slider-grid">
+
+    <!-- Slider 1 -->
+    <div class="slider-box">
+      <div class="beer-slider" data-start="50">
+        <img src="images/BEF.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
+        <div class="beer-reveal">
+          <img src="images/AFT.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
     </div>
 
-    <div class="video-box">
-      <video controls>
-        <source src="videos/demo2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <!-- Slider 2 -->
+    <div class="slider-box">
+      <div class="beer-slider" data-start="50">
+        <img src="images/BEFORE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
+        <div class="beer-reveal">
+          <img src="images/AFTER.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
     </div>
+
+    <!-- Slider 3 -->
+    <div class="slider-box">
+      <div class="beer-slider" data-start="50">
+        <img src="images/BE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
+        <div class="beer-reveal">
+          <img src="images/AF.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider 4 -->
+    <div class="slider-box">
+      <div class="beer-slider" data-start="50">
+        <img src="images/b.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
+        <div class="beer-reveal">
+          <img src="images/a.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- BeerSlider Library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.css">
+<script src="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.min.js"></script>
 
-<div style="
-  background-color: #fff; /* white background */
-  padding-left: 10px;
-  padding-right: 10px;
-">
-<!-- Ensure full white background -->
 <style>
- 
-
-  /* 🎥 Zoom animation for each slider box */
-  .slider-box {
-    width: 600px;
-    height: 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-    will-change: transform;
+  /* 🌟 Force this entire section to have a pure white background */
+  .slider-section {
+    background: #fff;
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(50% - 50vw); /* Breaks out of any centered wrapper */
+    padding: 60px 0;
   }
 
-  /* Hover zoom effect */
-  .slider-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-  }
-
-  .slider-box:not(:hover) {
-    transform: scale(1);
-  }
-
-  .beer-slider,
-  .beer-reveal img {
-    transition: transform 0.6s ease;
-  }
-
-  /* Responsive grid for smaller screens */
   .slider-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -804,65 +855,44 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     max-width: 1500px;
     margin: auto;
     background-color: #fff;
-    padding: 50px 0; /* optional vertical spacing */
   }
 
+  .slider-box {
+    width: 600px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    will-change: transform;
+    background: #fff; /* ✅ ensures white around all edges */
+  }
+
+  .slider-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+  }
+
+  .beer-slider,
+  .beer-reveal img {
+    transition: transform 0.6s ease;
+  }
+
+  /* 📱 Responsive adjustments for mobile */
   @media (max-width: 768px) {
     .slider-grid {
       grid-template-columns: 1fr;
       gap: 20px;
+      padding: 20px;
+    }
+
+    .slider-box {
+      width: 100%;
+      max-width: 90vw;
+      height: auto;
     }
   }
-  
 </style>
-
-<div class="slider-grid">  
-
-  <!-- Slider 1 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/BEF.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/AFT.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider 2 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/BEFORE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/AFTER.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider 3 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/BE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/AF.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Slider 4 -->
-  <div class="slider-box">
-    <div class="beer-slider" data-start="50">
-      <img src="images/b.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-      <div class="beer-reveal">
-        <img src="images/a.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- BeerSlider -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.css">
-<script src="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.min.js"></script>
 
 <script>
   // Initialize BeerSlider
@@ -878,7 +908,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 
 
-<div style="height:120px; background-color: #fff;"></div>
+<div style="height:0px; background-color: #fff;"></div>
 
 <!-- <footer class="footer">
   <div class="container">

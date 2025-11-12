@@ -47,69 +47,66 @@
 <body>
   
 
-  <div class="custom-transition" id="custom-preloader">
-  <div class="layer"></div>
+    
+<!-- PAGE TRANSITION PRELOADER -->
+<div id="page-preloader">
+  <div class="layer layer1"></div>
+  <div class="layer layer2"></div>
+  <div class="layer layer3"></div>
 </div>
 
 <style>
-  /* CUSTOM PAGE TRANSITION PRELOADER */
-  .custom-transition {
-    width: 100%;
-    height: 100%;
+  /* FULLSCREEN PRELOADER */
+  #page-preloader {
     position: fixed;
-    right: 0;
     top: 0;
-    z-index: 9999;
-    background: #75dab4; /* green background */
-    opacity: 1;
-    visibility: visible;
-    overflow: hidden;
-    transition: opacity 0.6s ease, visibility 0.6s ease; /* a bit faster fade */
-  }
-
-  .custom-transition .layer {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: #1c1c1c; /* black layer */
-    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1); /* slightly faster width slide */
-  }
-
-  .custom-transition.active .layer {
+    left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow: hidden;
+    pointer-events: none;
   }
 
-  .custom-transition.hide-layer .layer {
-    width: 0;
-    transition: width 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
   }
 
-  .custom-transition.hide {
+  .layer1 { background: #75dab4; }
+  .layer2 { background: #1c1c1c; }
+  .layer3 { background: #75dab4; }
+
+  /* smooth sliding animation */
+  .layer.show {
+    transform: translateY(0);
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  /* fade out whole preloader */
+  #page-preloader.hide {
     opacity: 0;
-    visibility: hidden;
+    transition: opacity 0.7s ease;
   }
 </style>
 
 <script>
-  const preloader = document.getElementById('custom-preloader');
+  const preloader = document.getElementById('page-preloader');
+  const layers = [
+    preloader.querySelector('.layer1'),
+    preloader.querySelector('.layer2'),
+    preloader.querySelector('.layer3')
+  ];
 
-  // Step 1: Start with green background visible, black layer width 0
-  setTimeout(() => {
-    preloader.classList.add('active'); // green → black
-  }, 100); // trigger animation after short delay
-
-  // Step 2: Slide out black layer (black → green)
-  setTimeout(() => {
-    preloader.classList.remove('active');
-    preloader.classList.add('hide-layer');
-  }, 1800); // black layer visible for ~1.7s
-
-  // Step 3: Hide whole preloader (fade out)
-  setTimeout(() => {
-    preloader.classList.add('hide');
-  }, 3000); // fade out after black layer slides out
+  // Animate with slight overlaps, slower timing
+  setTimeout(() => layers[0].classList.add('show'), 300);   // green slides down
+  setTimeout(() => layers[1].classList.add('show'), 900);   // black slides down, starts overlapping green
+  setTimeout(() => layers[2].classList.add('show'), 1500);  // green slides down, overlapping black
+  setTimeout(() => preloader.classList.add('hide'), 3000);  // fade out all smoothly
 </script>
 
 
@@ -182,20 +179,7 @@
   </a>
 </div>
 
-<style>
-@keyframes zoomInOut {
-  0%, 100% {
-    transform: scale(1);   /* Original size */
-  }
-  50% {
-    transform: scale(1.2); /* Zoomed in */
-  }
-}
 
-.zoom-logo {
-  animation: zoomInOut 2s infinite ease-in-out; /* 2 seconds per cycle */
-}
-</style>
 
   
  <!-- Inline navigation -->

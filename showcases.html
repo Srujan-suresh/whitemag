@@ -41,6 +41,9 @@
 <link rel="stylesheet" href="css/swiper.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
+<!-- AOS Scroll Animation Library -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 </head>
 <body>
 
@@ -100,10 +103,10 @@
   ];
 
   // Animate with slight overlaps, slower timing
-  setTimeout(() => layers[0].classList.add('show'), 300);   // green slides down
-  setTimeout(() => layers[1].classList.add('show'), 900);   // black slides down, starts overlapping green
-  setTimeout(() => layers[2].classList.add('show'), 1500);  // green slides down, overlapping black
-  setTimeout(() => preloader.classList.add('hide'), 3000);  // fade out all smoothly
+  setTimeout(() => layers[0].classList.add('show'), 150);   // green slides down
+  setTimeout(() => layers[1].classList.add('show'), 450);   // black slides down, starts overlapping green
+  setTimeout(() => layers[2].classList.add('show'), 1000);  // green slides down, overlapping black
+  setTimeout(() => preloader.classList.add('hide'), 1500);  // fade out all smoothly
 </script>
 
 
@@ -552,14 +555,14 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
   /* Dark glow hover */
   .service-box:hover {
-    transform: scale(1.15);
+    transform: scale(1.03);
     background: rgba(0, 0, 0, 0.05);
     box-shadow:
-      0 0 10px #000,
-      0 0 20px #000,
-      0 0 40px #000,
-      0 0 60px #000,
-      0 0 80px #000;
+      0 0 10px gray,
+      0 0 20px gray,
+      0 0 40px gray,
+      0 0 60px gray,
+      0 0 80px gray;
   }
 
   .service-box .num {
@@ -585,54 +588,50 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
 </style>
 
-<!-- Services Section -->
-<section class="services-section">
+<!-- Services Section --><section class="services-section" data-aos="fade-up">
   <div class="container">
-    <h3 class="section-title">OUR CORE SERVICES</h3>
-    <h5 class="section-subtitle">
+
+    <h3 class="section-title" data-aos="fade-up" data-aos-delay="100">
+      OUR CORE SERVICES
+    </h3>
+
+    <h5 class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
       At WhiteMag Studio, we craft visual experiences that blend creativity and
       technology — bringing imagination to life through cinematic visuals and
       cutting-edge artistry.
     </h5>
 
     <div class="services-grid">
-      <div class="service-box">
+
+      <div class="service-box" data-aos="fade-up" data-aos-delay="200">
         <h6>Rotoscoping & Paint</h6>
-        <p>
-          High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.
-        </p>
+        <p style="text-align: left;">   High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.</p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="300">
         <h6>Compositing Services</h6>
-        <p>
-          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.
-        </p>
+        <p style="text-align: left;">          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.</p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="400">
         <h6>Matchmoving & Camera Tracking</h6>
-        <p>
-          Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.
-        </p>
+        <p style="text-align: left;">   Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.</p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="500">
         <h6>Green Screen / Chroma Keying</h6>
-        <p>
-          Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.
-        </p>
+        <p style="text-align: left;">        Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.</p>
       </div>
 
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-up" data-aos-delay="600">
         <h6>Additional VFX Enhancements</h6>
-        <p>
-          Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.
-        </p>
+        <p style="text-align: left;">     Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.</p>
       </div>
+
     </div>
   </div>
 </section>
+
 
 <!-- No JavaScript related to cursor -->
 <div id="custom-cursor" style="
@@ -674,145 +673,127 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
 </style>
 
-<section class="demo-reels-section">
-  <h2>Demo Reels</h2>
 
-  <div class="video-holder">
-    <div class="video-box">
-      <video controls aria-label="Demo reel 1">
-        <source src="videos/demo2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
 
-    <div class="video-box">
-      <video controls aria-label="Demo reel 2">
-        <source src="videos/demo2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
+<section class="demo-reel-section" data-aos="fade-up">
+  <h2 class="demo-title" data-aos="fade-up" data-aos-delay="100">Demo Reel</h2>
+
+  <div class="demo-video-wrapper" data-aos="zoom-in" data-aos-delay="200">
+    <video class="demo-video" autoplay muted loop playsinline>
+      <source src="videos/demo2.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
+
+
+
+
 <style>
-  .demo-reels-section {
-    background: #fff;
-    color: #000;
-    font-family: 'Poppins', sans-serif;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .demo-reels-section h2 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-  }
-
-  .video-holder {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  .video-box {
-    flex: 1 1 400px;
-    max-width: 500px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    background: #fff; /* white background */
-    transition: transform 0.3s ease;
-  }
-
-  .video-box:hover {
-    transform: scale(1.05);
-  }
-
-  .video-box video {
+/* ===== Demo Reel Section ===== */
+.demo-reel-section {
     width: 100%;
-    height: 100%;
-    display: block;
-    background: #fff; /* ensures white behind transparent parts */
-    object-fit: cover; /* fills the box, crops edges if needed */
-  }
-
-  @media (max-width: 768px) {
-    .demo-reels-section {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .video-holder {
-      gap: 15px;
-    }
-
-    .video-box {
-      flex: 1 1 100%;
-    }
-  }
-  .demo-reels-section {
-  background: #fff;
-  color: #000;
-  font-family: 'Poppins', sans-serif;
-  padding: 60px 0; /* remove side padding */
-  text-align: center;
-  width: 100vw; /* full viewport width */
-  margin-left: calc(50% - 50vw); /* ensures it breaks out of parent padding */
+    padding: 40px 0;
+    background: #fff;
+    text-align: center;
+    overflow: hidden;
 }
+
+/* Title */
+.demo-title {
+    font-size: 48px;
+    font-weight: 700;
+  font-family: 'Anton', sans-serif;
+    color: #000;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeDown 1s ease forwards;
+}
+
+/* Video wrapper */
+.demo-video-wrapper {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+
+    animation: fadeInZoom 1.5s ease forwards;
+}
+
+/* Video */
+.demo-video {
+    width: 100%;
+    height: 105vh; /* Increase height */
+    object-fit: cover; /* Full cinematic effect */
+    border-radius: 12px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 </style>
 
 
 <!-- 🎬 BEFORE & AFTER SLIDER SECTION -->
-<section class="slider-section">
+<section class="slider-section" data-aos="fade-up">
+
   <div class="slider-grid">
 
-    <!-- Slider 1 -->
-    <div class="slider-box">
+    <div class="slider-box" data-aos="zoom-in" data-aos-delay="100">
       <div class="beer-slider" data-start="50">
-        <img src="images/BEF.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-        <div class="beer-reveal">
-          <img src="images/AFT.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-        </div>
+        <img src="images/BEF.jpg">
+        <div class="beer-reveal"><img src="images/AFT.jpg"></div>
       </div>
     </div>
 
-    <!-- Slider 2 -->
-    <div class="slider-box">
+    <div class="slider-box" data-aos="zoom-in" data-aos-delay="200">
       <div class="beer-slider" data-start="50">
-        <img src="images/BEFORE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-        <div class="beer-reveal">
-          <img src="images/AFTER.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-        </div>
+        <img src="images/BEFORE.jpg">
+        <div class="beer-reveal"><img src="images/AFTER.jpg"></div>
       </div>
     </div>
 
-    <!-- Slider 3 -->
-    <div class="slider-box">
+    <div class="slider-box" data-aos="zoom-in" data-aos-delay="300">
       <div class="beer-slider" data-start="50">
-        <img src="images/BE.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-        <div class="beer-reveal">
-          <img src="images/AF.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-        </div>
+        <img src="images/BE.jpg">
+        <div class="beer-reveal"><img src="images/AF.jpg"></div>
       </div>
     </div>
 
-    <!-- Slider 4 -->
-    <div class="slider-box">
+    <div class="slider-box" data-aos="zoom-in" data-aos-delay="400">
       <div class="beer-slider" data-start="50">
-        <img src="images/b.jpg" alt="Before" style="width:100%; height:100%; object-fit:cover;">
-        <div class="beer-reveal">
-          <img src="images/a.jpg" alt="After" style="width:100%; height:100%; object-fit:cover;">
-        </div>
+        <img src="images/b.jpg">
+        <div class="beer-reveal"><img src="images/a.jpg"></div>
       </div>
     </div>
 
   </div>
+
 </section>
+
 
 <!-- BeerSlider Library -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beerslider/dist/BeerSlider.css">
@@ -913,6 +894,16 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </footer> -->
 
 <!-- end footer -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+    easing: "ease-out-cubic"
+  });
+</script>
+
 
 <!-- JS FILES --> <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 

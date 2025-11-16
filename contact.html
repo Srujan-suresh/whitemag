@@ -172,81 +172,89 @@
   <!-- Logo -->
   <div class="logo">
     <a href="index.html">
-      <img src="images/logo.png" alt="Logo" class="zoom-logo">
-    </a>
+    <img src="images/logo.png" alt="Logo" class="zoom-logo"
+         style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
+  </a>
   </div>
 
-  <!-- Inline navigation -->
-  <nav class="inline-menu">
-    <ul>
-      <li><a href="index.html"><span>HOME</span></a></li>
-      <li><a href="studio.html"><span>STUDIO</span></a></li>
-      <li><a href="showcases.html"><span>SERVICES</span></a></li>
-      <li><a href="contact.html"><span>CONTACT</span></a></li>
-      <li><a href="career.html"><span>CAREERS</span></a></li>
-    </ul>
-  </nav>
 
-  <div class="equalizer">
-    <span></span><span></span><span></span><span></span>
-  </div>
+  <!-- Import Anton font -->
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+<!-- Inline navigation -->
+<nav class="inline-menu">
+  <ul>
+    <li style="display: inline-block; margin-left: 0px;margin-top:-20px;"><a href="index.html"><span>HOME</span></a></li>
+    <li style="display: inline-block; margin-left: 0px;margin-top:-20px;"><a href="studio.html"><span>STUDIO</span></a></li>
+    <li style="display: inline-block; margin-left: 0px;margin-top:-20px;"><a href="showcases.html"><span>SERVICES</span></a></li>
+    <li style="display: inline-block; margin-left: 0px;margin-top:-20px;"><a href="contact.html"><span>CONTACT</span></a></li>
+    <li style="display: inline-block; margin-left: 0px;margin-top:-20px;"><a href="career.html"><span>CAREERS</span></a></li>
+  </ul>
+</nav>
+
+<div class="equalizer">
+  <span></span><span></span><span></span><span></span>
+</div>
 </aside>
 
 <style>
-/* === LOGO === */
-.logo {
-  margin-left: 20px;
-  margin-top: -20px;
-}
-
-.logo img {
-  width: 120px !important;
-  height: 120px !important;
-  position: relative;
-}
-
-
-
-/* ===== LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
+/* ===== FIXED LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
 .left-side {
-  display: block; /* break flex to avoid shrinking logo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
   background: transparent;
   border: none;
   box-shadow: none;
+  background-image: none;
   z-index: 9999;
   pointer-events: auto;
-  padding: 40px 0 40px 0;
 }
 
 /* === INLINE SIDE MENU === */
 .inline-menu {
-  margin-top: 20px; /* space between logo and menu */
-  padding-left: 20px; /* push menu a bit right */
-  text-align: left;
+  position: relative;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  padding-left: 30px; /* fully left */
 }
 
 .inline-menu ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
+  gap: 22px;
   margin: 0;
   padding: 0;
+
+  /* PUSH EVERYTHING LEFT */
+  align-items: flex-start;
 }
 
-/* === LINK STYLING === */
+/* =================================================================== TEXT STYLE =================================================================== */
 .inline-menu ul li a {
   color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
+  font-family: 'Anton', sans-serif;
+  font-size: 5.6vh;
+  font-weight: 400;
   text-decoration: none;
   position: relative;
   overflow: visible;
-  transition: color 0.25s ease, transform 0.4s ease;
   display: inline-block;
-  padding: 4px 0;
+
+  /* ALIGN TEXT LEFT */
+  padding: 0;
+  text-align: left;
+
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.27);
+  transition: color 0.25s ease, transform 0.4s ease;
 }
 
 /* === GREEN WIPE EFFECT === */
@@ -257,7 +265,7 @@
   left: -100%;
   transform: translateY(-50%);
   width: 0%;
-  height: 64px;
+  height: 40px;
   background-color: #65c8a7;
   z-index: 0;
   border-radius: 2px;
@@ -278,14 +286,13 @@
   border-radius: 2px;
 }
 
-/* === TEXT === */
 .inline-menu ul li a span {
   position: relative;
   z-index: 2;
   transition: color 0.25s ease;
 }
 
-/* === ANIMATION ON HOVER === */
+/* === HOVER ANIMATION === */
 .inline-menu ul li a:hover::before {
   animation: wipeToEndDisappear 0.35s ease forwards;
 }
@@ -299,7 +306,7 @@
   color: #65c8a7;
 }
 
-/* === KEYFRAMES === */
+/* KEYFRAMES */
 @keyframes wipeToEndDisappear {
   0% { left: -100%; width: 0%; opacity: 1; }
   99% { left: 0%; width: 100%; opacity: 1; }
@@ -311,43 +318,20 @@
   100% { width: calc(100% + 20px); opacity: 1; left: -20px; }
 }
 
-/* === CLICK INTERACTION === */
-.inline-menu ul li a.clicked {
-  transform: translateX(-12px);
-}
-
-.inline-menu ul li a.other {
-  transform: translateX(12px);
-  opacity: 0.8;
-}
-
-.inline-menu ul li a.reset {
-  animation: resetMotion 0.6s ease forwards;
-}
+/* CLICK BEHAVIOR */
+.inline-menu ul li a.clicked { transform: translateX(-12px); }
+.inline-menu ul li a.other { transform: translateX(12px); opacity: 0.8; }
+.inline-menu ul li a.reset { animation: resetMotion 0.6s ease forwards; }
 
 @keyframes resetMotion {
   0% { transform: translateX(12px); opacity: 0.8; }
   100% { transform: translateX(0); opacity: 1; }
 }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE */
 @media (max-width: 991px) {
-  .inline-menu {
-    padding-left: 25px;
-    margin-top: 25px;
-  }
-
-  .inline-menu ul {
-    gap: 8px;
-  }
-
-  .inline-menu ul li a {
-    font-size: 20px;
-  }
-
-  .inline-menu ul li a::before {
-    height: 36px;
-  }
+  .inline-menu ul li a { font-size: 4vh; }
+  .inline-menu ul li a::before { height: 36px; }
 }
 </style>
 
@@ -390,7 +374,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   <div class="inner">
   	<div class="container">
   	<div style="width: 100%; text-align: center;">
-    <h1 style="font-size: 3rem;">CONTACT</h1>
+    <h1 style="font-size: 3rem;" style="  font-family: 'Anton', sans-serif;
+">CONTACT</h1>
     <p style="font-size: 1.5rem;">We provide a free day to experience our benefits of digital world</p>
   </div>
   	</div>
@@ -403,7 +388,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     <div class="container">
     	<div class="row">
     	<div class="col-lg-5">
-    		<h3 class="section-title">SAY HELLO <br>TO REACH US</h3>
+    		<h3 class="section-title" >SAY HELLO <br>TO REACH US</h3>
     	</div>
     	<!-- end col-5 -->
     	<div class="col-lg-4 col-md-6">

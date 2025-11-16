@@ -53,14 +53,14 @@
       autoplay = $('#play-music').hasClass('autoplay') ? true : false;
 
       // add hash to links
-      $(".home-menu a").each(function (index, element) {
-        var menu_link = $(this);
-        var file_url = menu_link.attr("href");
-        var slug = menu_link.data("slug");
+      // $(".home-menu a").each(function (index, element) {
+      //   var menu_link = $(this);
+      //   var file_url = menu_link.attr("href");
+      //   var slug = menu_link.data("slug");
 
-        menu_link.attr("href", "#/" + slug);
-        menu_link.data("file-url", file_url);
-      });
+      //   menu_link.attr("href", "#/" + slug);
+      //   menu_link.data("file-url", file_url);
+      // });
 
       $(".close-page").on("click", function (event) {
         // event.preventDefault();
@@ -585,30 +585,30 @@
 
   // ------------------------------
   // PORTFOLIO SINGLE AJAX
-  function setupAjax() {
+  // function setupAjax() {
     // PORTFOLIO DETAILS
     // Show details
-    $(
-      ".one-page-layout .media-box .ajax, .one-page-layout .portfolio-nav .ajax a"
-    ).on("click", function (event) {
-      event.preventDefault();
+  //   $(
+  //     ".one-page-layout .media-box .ajax, .one-page-layout .portfolio-nav .ajax a"
+  //   ).on("click", function (event) {
+  //     event.preventDefault();
 
-      var url = $(this).attr("href");
-      var baseUrl = $.address.baseURL();
-      var detailUrl = giveDetailUrl();
+  //     var url = $(this).attr("href");
+  //     var baseUrl = $.address.baseURL();
+  //     var detailUrl = giveDetailUrl();
 
-      if (url.indexOf(baseUrl) !== -1) {
-        // full url
-        var total = url.length;
-        detailUrl = url.slice(baseUrl.length + 1, total);
-        $.address.path("/" + detailUrl);
-      } else {
-        // relative url
-        detailUrl = url;
-        $.address.path(portfolioKeyword + "/" + detailUrl);
-      }
-    });
-  }
+  //     if (url.indexOf(baseUrl) !== -1) {
+  //       // full url
+  //       var total = url.length;
+  //       detailUrl = url.slice(baseUrl.length + 1, total);
+  //       $.address.path("/" + detailUrl);
+  //     } else {
+  //       // relative url
+  //       detailUrl = url;
+  //       $.address.path(portfolioKeyword + "/" + detailUrl);
+  //     }
+  //   });
+  // }
   // ------------------------------
 
   // ------------------------------

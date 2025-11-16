@@ -1,1133 +1,219 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="no-js one-page-layout sound-effects" data-audio-tick="audio/tick.mp3" data-click-ripple-animation="yes">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#75dab4"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ikonik - Responsive HTML5 vCard Template">
+    <meta name="keywords" content="vcard, html5, portfolio">
+    <meta name="author" content="Pixelwars">
+    <meta name="theme-color" content="#1755cf" />
 <title>White Mag Studio | Best VFX Studio In Coimbatore</title>
-<meta name="author" content="Themezinho">
-<meta name="description" content="Tourog | Creative Agensy for Digital Age">
-<meta name="keywords" content="creative, works, showcase, portfolio, highlight, projects, modern, tourog, digital, studio, css, animation, transition, freelancers">
-
-<!-- SOCIAL MEDIA META -->
-<meta property="og:description" content="Tourog | Creative Agensy for Digital Age">
-<meta property="og:image" content="http://www.themezinho.net/tourog/preview.png">
-<meta property="og:site_name" content="tourog">
-<meta property="og:title" content="tourog">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://www.themezinho.net/tourog">
-
-<!-- TWITTER META -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@tourog">
-<meta name="twitter:creator" content="@tourog">
-<meta name="twitter:title" content="tourog">
-<meta name="twitter:description" content="Tourog | Creative Agensy for Digital Age">
-<meta name="twitter:image" content="http://www.themezinho.net/tourog/preview.png">
-
-<!-- FAVICON FILES -->
-<link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon" sizes="144x144">
-<link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
-<link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
-<link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
-<link href="ico/favicon.png" rel="shortcut icon">
-
-<!-- CSS FILES -->
-<link rel="stylesheet" href="css/fontawesome.min.css">
-<link rel="stylesheet" href="css/fancybox.min.css">
-<link rel="stylesheet" href="css/hamburger.min.css">
-<link rel="stylesheet" href="css/odometer.min.css">
-<link rel="stylesheet" href="css/swiper.min.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-  
-<!-- PAGE TRANSITION PRELOADER -->
-<div id="page-preloader">
-  <div class="layer layer1"></div>
-  <div class="layer layer2"></div>
-  <div class="layer layer3"></div>
-</div>
-
-<style>
-  /* FULLSCREEN PRELOADER */
-  #page-preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(-100%);
-  }
-
-  .layer1 { background: #75dab4; }
-  .layer2 { background: #1c1c1c; }
-  .layer3 { background: #75dab4; }
-
-  /* smooth sliding animation */
-  .layer.show {
-    transform: translateY(0);
-    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
-  }
-
-  /* fade out whole preloader */
-  #page-preloader.hide {
-    opacity: 0;
-    transition: opacity 0.7s ease;
-  }
-</style>
-
-<script>
-  const preloader = document.getElementById('page-preloader');
-  const layers = [
-    preloader.querySelector('.layer1'),
-    preloader.querySelector('.layer2'),
-    preloader.querySelector('.layer3')
-  ];
-
-  // Animate with slight overlaps, slower timing
-  setTimeout(() => layers[0].classList.add('show'), 300);   // green slides down
-  setTimeout(() => layers[1].classList.add('show'), 900);   // black slides down, starts overlapping green
-  setTimeout(() => layers[2].classList.add('show'), 1500);  // green slides down, overlapping black
-  setTimeout(() => preloader.classList.add('hide'), 3000);  // fade out all smoothly
-</script>
-
-
-
-
-
-
-
-
-
-<!-- <div class="preloader">
-  <div class="layer"></div>
-  <div class="inner">
-    <figure> <img src="images/preloader.gif" alt="Image"> </figure>
-    <span>Site Loading</span> </div>
-</div>
-<div class="page-transition">
-  <div class="layer"></div>
-</div> -->
-
-
-
-<nav class="site-navigation">
-  <div class="layer"></div>
-  <!-- end layer -->
-  <div class="inner">
-    <ul data-splitting>
-      <li><a href="index.html">HOME</a> <small>First page</small> </li>
-      <li><a href="studio.html">STUDIO</a> <small>All About Us</small> </li>
-      <li><a href="showcases.html">OUR SERVICES</a> <small>Our all projects</small> </li>
-      <li><a href="contact.html">CONTACT</a> <small>Say hello</small> </li>
-    </ul>
-  </div>
-
-  <!-- <li><a href="blog.html">BLOG</a> <small>Recent posts</small> </li> -->
-
-  <!-- end inner -->
-</nav>
-<!-- end site-navigation -->
-<div class="social-media">
-  <div class="layer"> </div>
-  <!-- end layer -->
-  <div class="inner">
-    <h5>Social Share </h5>
-    <ul>
-      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-      <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-    </ul>
-  </div>
-</div>
-<!-- end social-media -->
-<div class="all-cases">
-  <div class="layer"> </div>
-  <!-- end layer -->
-  <div class="inner">
-    <ul>
-      <li><a href="#">Darkness</a></li>
-      <li><a href="#">Goddes</a></li>
-      <li><a href="#">Employee</a></li>
-      <li><a href="#">Berry</a></li>
-      <li><a href="#">Roosters</a></li>
-      <li><a href="#">Primero</a></li>
-    </ul>
-  </div>
-  <!-- end inner -->
-</div>
-<!-- end all-cases -->
-<main>
-  <!-- ===== REPLACEMENT START ===== -->
-
-
-<aside class="left-side">
- <div class="logo">
-  <a href="index.html">
-    <img src="images/logo.png" alt="Logo" class="zoom-logo"
-         style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
-  </a>
-</div>
-
-
-
-  
- <!-- Inline navigation -->
-<nav class="inline-menu">
-  <ul>
-    <li style="display: inline-block; margin-left: 40px;margin-top:-20px;"><a href="index.html" ><span>HOME</span></a></li>
-    <li style="display: inline-block; margin-left: 66px;margin-top:-20px;"><a href="studio.html"><span>STUDIO</span></a></li>
-    <li style="display: inline-block; margin-left: 100px;margin-top:-20px;"><a href="showcases.html"><span>SERVICES</span></a></li>
-    <li style="display: inline-block; margin-left: 110px;margin-top:-20px;"><a href="contact.html"><span>CONTACT</span></a></li>
-    <li style="display: inline-block; margin-left: 90px;margin-top:-20px;"><a href="career.html"><span>CAREERS</span></a></li>
-  </ul>
-</nav>
-
-<div class="equalizer">
-  <span></span><span></span><span></span><span></span>
-</div>
-</aside>
-
-<style>
-/* ===== FIXED LEFT SIDE NAVBAR (ALWAYS VISIBLE) ===== */
-.left-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  background-image: none;
-  z-index: 9999;
-  pointer-events: auto;
-}
-
-/* === INLINE SIDE MENU === */
-.inline-menu {
-  position: relative;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.inline-menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-/* === LINK STYLING === */
-.inline-menu ul li a {
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  text-decoration: none;
-  position: relative;
-  overflow: visible;
-  transition: color 0.25s ease, transform 0.4s ease;
-  display: inline-block;
-  padding: 5px 0;
-}
-
-/* === GREEN WIPE EFFECT === */
-.inline-menu ul li a::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -100%; /* start off-screen */
-  transform: translateY(-50%);
-  width: 0%;
-  height: 64px;
-  background-color: #65c8a7;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-/* === SLASH LINE === */
-.inline-menu ul li a::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -20px; /* move it 20px left */
-  height: 4px;
-  width: 0%;
-  background-color: #65c8a7;
-  opacity: 1; 
-  transform-origin: left;
-  z-index: 3;
-  border-radius: 2px;
-}
-
-
-
-
-/* === TEXT === */
-.inline-menu ul li a span {
-  position: relative;
-  z-index: 2;
-  transition: color 0.25s ease;
-}
-
-/* === ANIMATION ON HOVER === */
-.inline-menu ul li a:hover::before {
-  animation: wipeToEndDisappear 0.35s ease forwards; /* faster green swipe */
-}
-
-.inline-menu ul li a:hover::after {
-  animation: showSlash 0.25s ease forwards;
-  animation-delay: 0.35s; /* start right after green swipe disappears */
-}
-
-.inline-menu ul li a.active span {
-  color: #65c8a7;
-}
-
-/* === KEYFRAMES === */
-@keyframes wipeToEndDisappear {
-  0% {
-    left: -100%;
-    width: 0%;
-    opacity: 1;
-  }
-  99% {
-    left: 0%;
-    width: 100%;
-    opacity: 1;
-  }
-  100% {
-    opacity: 0; /* disappears instantly at end */
-  }
-}
-
-@keyframes showSlash {
-  0% { width: 0%; opacity: 0; left: -20px; }
-  100% { width: calc(100% + 20px); opacity: 1; left: -20px; }
-}
-
-
-
-/* === CLICK INTERACTION === */
-.inline-menu ul li a.clicked {
-  transform: translateX(-12px);
-}
-
-.inline-menu ul li a.other {
-  transform: translateX(12px);
-  opacity: 0.8;
-}
-
-.inline-menu ul li a.reset {
-  animation: resetMotion 0.6s ease forwards;
-}
-
-@keyframes resetMotion {
-  0% { transform: translateX(12px); opacity: 0.8; }
-  100% { transform: translateX(0); opacity: 1; }
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 991px) {
-  .inline-menu ul li a {
-    font-size: 20px;
-  }
-  .inline-menu ul li a::before {
-    height: 36px;
-  }
-}
-</style>
-
-<script>
-document.querySelectorAll('.inline-menu ul li a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-
-    document.querySelectorAll('.inline-menu ul li a').forEach(el => {
-      el.classList.remove('clicked', 'other', 'reset');
-    });
-
-    link.classList.add('clicked');
-
-    document.querySelectorAll('.inline-menu ul li a').forEach(el => {
-      if (el !== link) el.classList.add('other');
-    });
-
-    setTimeout(() => {
-      document.querySelectorAll('.inline-menu ul li a').forEach(el => {
-        el.classList.add('reset');
-        el.classList.remove('clicked', 'other');
-      });
-    }, 700);
-  });
-});
-</script>
-
-
-
-
-
-
-
-<!-- Remove the old site-navigation block entirely -->
-<!-- ===== REPLACEMENT END ===== -->
-
-  <!-- end left-side -->
-
- <div class="all-cases-link">
-  <a href="contact.html" style="font-family: 'Poppins', sans-serif; font-size:20px; font-weight:600; color:#fff; text-decoration:none;">
-    <span>CONTACT US</span>
-  </a>
-</div>
-
-
-  <!-- end all-cases-link -->
-  <header class="slider">
-    <div class="swiper-container gallery-top">
-    <div class="swiper-wrapper">
-  <div class="swiper-slide">
-    <img src="images/banner2.png" class="banner-img">
-  </div>
-  <!-- <div class="swiper-slide">
-    <video src="videos/video03.mp4" muted autoplay loop></video>
-  </div> -->
-  <!-- <div class="swiper-slide">
-    <img src="images/banner1.png" class="banner-img">
-  </div> -->
-</div>
-
-
-
-      <style>
-      .banner-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  animation: zoomInOut 10s ease-in-out infinite;
-}
-
-@keyframes zoomInOut {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-
-      
-      .swiper-slide video {
-  width: 110%;
-  height: 100%;
-  object-fit: cover; /* fills the slide while keeping aspect ratio */
-}
-</style>
-
-      <!-- end swiper-wrapper -->
-
-      <!-- <div class="slide-progress"> <span>01</span>
-        <div class="swiper-pagination"></div>
-      <span>03</span> </div> -->
-
-      <!-- end slide-progress -->
-
-      <!-- <div class="swiper-button-prev">PREV</div> -->
-
-      <!-- end button-prev -->
-
-      <!-- <div class="swiper-button-next">NEXT</div> -->
-
-      <!-- end buttin-next -->
-    </div>
-    <!-- end gallery-top -->
-    <div class="swiper-container gallery-thumbs">
-      <div class="swiper-wrapper">
-        <!-- <div class="swiper-slide"><span>DISCOVER</span> <a href="#">DISCOVER CASE</a> </div>
-        <div class="swiper-slide"><span>EXCLUSION</span> <a href="#">DISCOVER CASE</a></div>
-        <div class="swiper-slide"><span>EDITIONAL</span> <a href="#">DISCOVER CASE</a></div> -->
-      </div>
-      <!-- end swiper-wrapper -->
-    </div>
-    <!-- end gallery-thumbs -->
-  </header>
-  <!-- end slider -->
-
-
-  
-<section id="who-we-are" style="padding: 80px 10%; background-color: #f9f9f9; color: #333; font-family: 'Poppins', sans-serif;">
-
-  <h1 style="font-family: 'Poppins', sans-serif; font-size: 48px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 800;">
-    WHO WE ARE
-</h1>
-
-
-  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
-    WhiteMag Studio is a global VFX and animation studio redefining the art of visual storytelling. 
-    We fuse cutting-edge technology with world-class artistry to create imagery that inspires, immerses, and endures — 
-    from blockbuster Hollywood films and high-end episodic content to music, advertising, and immersive experiences.
-  </p>
-
-  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
-    Our team of exceptional artists and supervisors collaborate closely with filmmakers, studios, and brands 
-    to craft visuals that elevate narrative and emotion. Whether integrating complex CG environments, perfecting digital doubles, 
-    or achieving seamless compositing, every frame reflects our pursuit of cinematic excellence.
-  </p>
-
-  <p style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
-    Respected for precision, creativity, and storytelling power, WhiteMag continues to push the boundaries of 
-    what’s possible in visual effects — shaping moments that are not just seen, but felt.
-  </p>
-
-  <p style="font-size: 18px; line-height: 1.8;">
-    At our core, we are creators driven by imagination, innovation, and a passion to deliver visuals that are truly 
-    <strong style="font-weight: 500;">A Cut Above Reality.</strong>
-  </p>
-</section>
-
-<!-- Add this inside <head> if you're using Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
-
-
-
-  <!-- <section class="intro">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 wow" data-splitting>
-          <h3 class="section-title">HOW WE MAKE <br>
-            USER EXPERIENCES</h3>
-          <a href="#">whitemagstudio.com</a> </div>
-        <div class="col-lg-7 wow" data-splitting>
-          <p>Crafting Impact Through Visual Brilliance We exist to elevate stories through visual effects that leave a mark. By blending creative artistry with technical precision, we craft visuals that go beyond spectacle, into emotion and narrative power. With a passionate, detail-driven team, we're here to push creative boundaries and support storytellers at every frame.</p>
-           <b>12</b>
-          <h4>YEARS OF<br>
-            DIGITAL EXPERIENCE</h4>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-  
-
-  <!-- end intro -->
-
-
-
-
-
-
-
-
-
-  <!-- <section class="intro-image">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="office-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <figure class="reveal-effect masker wow"> <img src="images/office01.jpg" alt="Image">
-                  <figcaption>
-                    <h6> HEADQUARTOR OF TOUROG</h6>
-                  </figcaption>
-                </figure>
-              </div> -->
-              <!-- end swiper-slide -->
-              <!-- <div class="swiper-slide">
-                <figure> <img src="images/office02.jpg" alt="Image">
-                  <figcaption>
-                    <h6> TORONTO OFFICE</h6>
-                  </figcaption>
-                </figure>
-              </div> -->
-              <!-- end swiper-slide -->
-              <!-- <div class="swiper-slide">
-                <figure> <img src="images/office03.jpg" alt="Image">
-                  <figcaption>
-                    <h6> HEADQUARTOR OF TOUROG</h6>
-                  </figcaption>
-                </figure>
-              </div> -->
-              <!-- end swiper-slide -->
-            <!-- </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-
-  <style>
-  /* Fade-in animation */
-  .fade-section {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 4.5s ease forwards;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins globally */
-  }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* ========================================= */
-  /* Light Theme for Icon Content Section */
-  /* ========================================= */
-
-  .icon-content-block {
-    background: #ffffff;
-    color: #000000;
-    padding: 100px 0;
-    font-family: 'Poppins', sans-serif; /* Ensure Poppins */
-  }
-
-  .icon-content-block .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 60px;
-    letter-spacing: 2px;
-    text-align: center;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins */
-  }
-
-  .icon-content-block .content-block {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    text-align: center;
-    padding: 40px 25px;
-    transition: all 0.5s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    font-family: 'Poppins', sans-serif; /* Apply Poppins */
-  }
-
-  .icon-content-block .content-block:hover {
-    transform: translateY(-10px);
-    background: rgba(0, 0, 0, 0.05);
-    box-shadow:
-      0 0 10px #000,
-      0 0 20px rgba(0, 0, 0, 0.6);
-  }
-
-  .icon-content-block .content-block.selected {
-    background: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.15);
-  }
-
-  .icon-content-block figure {
-    margin-bottom: 20px;
-  }
-
-  .icon-content-block figure img {
-    width: 80px;
-    height: auto;
-    filter: brightness(0);
-    transition: filter 0.3s ease;
-  }
-
-  .icon-content-block .content-block:hover figure img {
-    filter: brightness(0.3);
-  }
-
-  .icon-content-block h6 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #111;
-    margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins */
-  }
-
-  .icon-content-block ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins */
-  }
-
-  .icon-content-block ul li {
-    font-size: 0.95rem;
-    color: #333;
-    margin-bottom: 8px;
-    font-family: 'Poppins', sans-serif; /* Apply Poppins */
-  }
-</style>
-
-<section class="icon-content-block fade-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 wow" data-splitting>
-        <h3 class="section-title">THE THINGS<br>WE BRING TO LIFE</h3>
-      </div>
-
-      <div class="col-lg-3 col-md-4 wow" data-splitting>
-        <div class="content-block">
-          <figure><img src="images/icon01.png" alt="VFX Icon"></figure>
-          <h6>VISUAL EFFECTS</h6>
-          <ul>
-            <li>Compositing & Cleanup</li>
-            <li>Green Screen & Roto</li>
-            <li>Set Extensions</li>
-            <li>Particle Simulations</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 wow" data-splitting>
-        <div class="content-block selected">
-          <figure><img src="images/icon02.png" alt="CGI Icon"></figure>
-          <h6>CGI & ANIMATION</h6>
-          <ul>
-            <li>3D Modeling & Rendering</li>
-            <li>Character Animation</li>
-            <li>Environment Design</li>
-            <li>Product Visualization</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 wow" data-splitting>
-        <div class="content-block">
-          <figure><img src="images/icon03.png" alt="Post Production Icon"></figure>
-          <h6>POST-PRODUCTION</h6>
-          <ul>
-            <li>Color Grading</li>
-            <li>Motion Graphics</li>
-            <li>Editing & Finishing</li>
-            <li>Sound Design</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- <style>
-.fade-section {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 4.5s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
-
-<section class="icon-content-block fade-section" style="margin-top: 100px;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 wow" data-splitting>
-        <h3 class="section-title">THE THINGS<br>
-          WE BRING TO LIFE</h3>
-      </div>
-
-      <div class="col-lg-3 col-md-4 wow" data-splitting>
-        <div class="content-block">
-          <figure> <img src="images/icon01.png" alt="VFX Icon"> </figure>
-          <h6>VISUAL EFFECTS</h6>
-          <ul>
-            <li>Compositing & Cleanup</li>
-            <li>Green Screen & Roto</li>
-            <li>Set Extensions</li>
-            <li>Particle Simulations</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 wow" data-splitting>
-        <div class="content-block selected">
-          <figure> <img src="images/icon02.png" alt="CGI Icon"> </figure>
-          <h6>CGI & ANIMATION</h6>
-          <ul>
-            <li>3D Modeling & Rendering</li>
-            <li>Character Animation</li>
-            <li>Environment Design</li>
-            <li>Product Visualization</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 wow" data-splitting>
-        <div class="content-block">
-          <figure> <img src="images/icon03.png" alt="Post Production Icon"> </figure>
-          <h6>POST-PRODUCTION</h6>
-          <ul>
-            <li>Color Grading</li>
-            <li>Motion Graphics</li>
-            <li>Editing & Finishing</li>
-            <li>Sound Design</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<style>
-  /* Removed cursor styles */
-
-  .services-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    background: radial-gradient(circle at top, #f9f9f9, #fff 80%);
-    color: #000;
-    overflow: hidden;
-  }
-
-  .container {
-    position: relative;
-    z-index: 2;
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 20px;
-  }
-
-  .section-subtitle {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.8;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-  }
-
-  .service-box {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 15px;
-    padding: 30px 25px;
-    position: relative;
-    transition: transform 0.8s ease, box-shadow 0.8s ease, background 0.8s ease;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Dark glow hover */
-  .service-box:hover {
-    transform: scale(1.15);
-    background: rgba(0, 0, 0, 0.05);
-    box-shadow:
-      0 0 10px #000,
-      0 0 20px #000,
-      0 0 40px #000,
-      0 0 60px #000,
-      0 0 80px #000;
-  }
-
-  .service-box .num {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: 600;
-  }
-
-  .service-box h6 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #111;
-  }
-
-  .service-box p {
-    color: #444;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-</style>
-
-<!-- Services Section -->
-<section class="services-section">
-  <div class="container">
-    <h3 class="section-title">OUR CORE SERVICES</h3>
-    <h5 class="section-subtitle">
-      At WhiteMag Studio, we craft visual experiences that blend creativity and
-      technology — bringing imagination to life through cinematic visuals and
-      cutting-edge artistry.
-    </h5>
-
-    <div class="services-grid">
-      <div class="service-box">
-        <h6>Rotoscoping & Paint</h6>
-        <p>
-          High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.
-        </p>
-      </div>
-
-      <div class="service-box">
-        <h6>Compositing Services</h6>
-        <p>
-          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.
-        </p>
-      </div>
-
-      <div class="service-box">
-        <h6>Matchmoving & Camera Tracking</h6>
-        <p>
-          Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.
-        </p>
-      </div>
-
-      <div class="service-box">
-        <h6>Green Screen / Chroma Keying</h6>
-        <p>
-          Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.
-        </p>
-      </div>
-
-      <div class="service-box">
-        <h6>Additional VFX Enhancements</h6>
-        <p>
-          Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- No JavaScript related to cursor -->
-<div id="custom-cursor" style="
-  width: 40px;           
-  height: 40px;
-  border: 3px solid #1c1c1c; 
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background: rgba(28,28,28,0.05);
-"></div>
-
-<script>
-  const cursor = document.getElementById('custom-cursor');
-
-  let mouseX = 0, mouseY = 0;  // real mouse position
-  let posX = 0, posY = 0;      // cursor displayed position
-
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animate() {
-    posX += (mouseX - posX) * 0.15;
-    posY += (mouseY - posY) * 0.15;
-    cursor.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-</script>
-
-<style>
-  body, a, button, input, textarea {
-    cursor: none !important;
-  }
-</style>
-
-
-
-
-
-<!-- ===== ORIGINAL FILM & TV SECTION ===== -->
-<section class="film-tv-section">
-  <div class="film-tv-overlay"></div>
-  <div class="film-tv-content">
-    <h1>ORIGINAL FILM & TV</h1>
-    <p>
-      WhiteMag Studio is setting the stage for its next chapter: developing original animated films and series for U.S. and global audiences.
-      These future projects will bring our creative vision to life through bold ideas, unforgettable characters, and visually stunning worlds.
-      It’s the beginning of a new era — where our storytelling invites audiences into unexpected journeys.
-    </p>
-  </div>
-</section>
-
-<style>
-/* ===== FILM & TV SECTION ===== */
-.film-tv-section {
-  position: relative;
-  width: 100%;
-  min-height: 90vh;
-  background: url("images/mountain-fire.jpg") center center/cover no-repeat; /* Replace with your image */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  color: #fff;
-  font-family: 'Poppins', sans-serif; /* Apply Poppins globally */
-}
-
-.film-tv-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.6); /* dark overlay */
-  z-index: 1;
-}
-
-.film-tv-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 40px 20px;
-}
-
-.film-tv-content h1 {
-  font-family: 'Poppins', sans-serif; /* switched from Montserrat to Poppins */
-  font-size: 42px;
-  font-weight: 700; /* slightly bolder for headings */
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 25px;
-}
-
-.film-tv-content p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 17px;
-  line-height: 1.8;
-  color: #e0e0e0;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .film-tv-content h1 {
-    font-size: 30px;
-  }
-  .film-tv-content p {
-    font-size: 15px;
-  }
-}
-</style>
-
-   
-
-  <!-- <section class="clients">
-    <div class="container">
-      <div class="row"> <div class="col-lg-5 wow" data-splitting>
-          <h3 class="section-title">AGENSY PROUD<br>
-            IS QUALITY OF<br>
-            PARTNERS</h3>
-        </div>
-        <div class="col-lg-7">
-          <ul>
-            <li class="reveal-effect masker wow"> <img src="images/logo01.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo02.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo03.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo04.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo05.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo06.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo07.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo08.png" alt="Image"> </li>
-            <li class="reveal-effect masker wow"> <img src="images/logo09.png" alt="Image"> </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section> -->
-</main>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <ul>
-          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-          <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        </ul>
-        <h6>LET’S HAVE A TALK ABOUT YOUR PROJECT.</h6>
-        <h2>Need more information or want <br>
-          to get in touch?</h2>
-        <a href="#" class="link">Get in touch</a> </div>
-      <div class="col-12">
-        <div class="footer-bar"> <span class="copyright">© 2025 WhiteMagStudio | All Rights Reserved</span> <span class="creation">Site created by <a href="#">Themezinho</a></span> </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-<!-- end footer -->
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const section = document.querySelector('.fade-section');
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
+    <!-- FAV and TOUCH ICONS -->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png">
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="css/fonts/jost/jost.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="js/nprogress/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery.magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts/fontello/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/768.css">
+
+    <style>
+        /* Logo top-left */
+        #logo-top {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 9999;
         }
-      });
-    },
-    { threshold: 0.3 }
-  );
-  observer.observe(section);
-});
+        #logo-top img { width: 160px; }
+
+        /* Video background */
+        .home-bg-video {
+            position: absolute !important;
+            top: 0; left: 0;
+            width: 100% !important; height: 100% !important;
+            overflow: hidden;
+            z-index: -1 !important;
+        }
+        .home-bg-video video {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 110%; height: 110%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            filter: brightness(0.7);
+        }
+
+        /* Music toggle */
+        #music-control-small {
+            position: fixed;
+            right: 25px; bottom: 25px;
+            background: rgba(255,255,255,0.85);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+        }
+        #music-control-small:hover { background:white; }
+
+        /* Studio Services Cards - 4 in a row */
+        .studio-services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .studio-services .service {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            flex: 1 1 calc(25% - 20px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .studio-services .service.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Team Grid - 3 in a row */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .team-member {
+            flex: 1 1 calc(33.33% - 20px);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .team-member.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .team-member img { max-width: 100%; border-radius: 10px; }
+    </style>
+</head>
+
+<body>
+<div class="home-wrap">
+    <!-- VIDEO BACKGROUND -->
+    <div class="home-bg-video">
+        <video autoplay muted loop playsinline>
+            <source src="videos/video03.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- LOGO TOP LEFT -->
+    <div id="logo-top">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+
+    <!-- NAV -->
+ <nav class="home-menu">
+    <a href="studio.html"><span class="item-name">STUDIO</span></a>
+    <a href="showcases.html"><span class="item-name">SERVICES</span></a>
+    <a href="contact.html"><span class="item-name">CONTACT</span></a>
+    <a href="career.html"><span class="item-name">CAREERS</span></a>
+</nav>
+
+
+    <!-- SOCIAL & FOOTER -->
+    <p class="home-social">
+        <a class="social-link facebook" href="#"></a>
+        <a class="social-link linkedin" href="#"></a>
+        <a class="social-link behance" href="#"></a>
+        <a class="social-link dribbble" href="#"></a>
+    </p>
+    <p class="home-footer">&copy; 2025 BrightAds</p>
+
+    <!-- BG MUSIC -->
+    <audio id="bg-music" loop src="audio/music2.mp3"></audio>
+    <div id="music-control-small" onclick="toggleMusicSmall()">Music Off</div>
+</div>
+
+<!-- ONE PAGE CONTENT -->
+<div class="one-page-content">
+    <a href="/" class="close-page"><span class="close-text"></span></a>
+    <div class="content-wrap"></div>
+</div>
+
+<!-- PAGE OVERLAYS -->
+<div class="overlay overlay-1"></div>
+<div class="overlay overlay-2"></div>
+
+<!-- PORTFOLIO AJAX OVERLAYS -->
+<div class="p-overlay"></div>
+<div class="p-overlay"></div>
+
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/tween-max.js"></script>
+<script src="js/jquery-address.js"></script>
+<script src="js/nprogress/nprogress.js"></script>
+<script src="js/jquery-isotope.js"></script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/jquery-fitvids.js"></script>
+<script src="js/jquery.magnific-popup/jquery-magnific-popup.js"></script>
+<script src="js/jquery-easing.js"></script>
+<script src="js/jquery-validate.js"></script>
+<script src="js/resize-sensor.js"></script>
+<script src="js/jquery-sticky-sidebar.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+    // MUSIC TOGGLE
+    let musicPlaying = false;
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-control-small");
+    function toggleMusicSmall() {
+        if (musicPlaying) { music.pause(); btn.innerText="Music Off"; musicPlaying=false; }
+        else { music.play(); btn.innerText="Music On"; musicPlaying=true; }
+    }
+
+    // FADE IN ELEMENTS
+    function fadeInOnScroll() {
+        const elements = document.querySelectorAll('.service, .team-member');
+        const windowBottom = window.innerHeight + window.scrollY;
+        elements.forEach(el => {
+            if (windowBottom > el.offsetTop + 100) el.classList.add('visible');
+            else el.classList.remove('visible');
+        });
+    }
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+
+    // INITIALIZE ABOUT SECTION AFTER AJAX LOAD
+    function initAboutSection() {
+        const studioContainers = document.querySelectorAll('.studio-services');
+        studioContainers.forEach(c => c.style.display='flex');
+        const teamContainers = document.querySelectorAll('.team-grid');
+        teamContainers.forEach(c => c.style.display='flex');
+        fadeInOnScroll();
+    }
+
+    // Hook into dynamic content load
+    $(document).on('content-loaded', function() {
+        initAboutSection();
+    });
 </script>
-<!-- JS FILES -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/swiper.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src='js/splitting.min.js'></script>
-<script src='js/odometer.min.js'></script>
-<script src='js/fancybox.min.js'></script>
-<script src="js/scripts.js"></script>
 </body>
 </html>

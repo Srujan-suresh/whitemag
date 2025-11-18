@@ -8,6 +8,7 @@
     <meta name="author" content="Pixelwars">
     <meta name="theme-color" content="#1755cf" />
 <title>White Mag Studio | Best VFX Studio In Coimbatore</title>
+
     <!-- FAV and TOUCH ICONS -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png">
@@ -15,6 +16,9 @@
     <!-- FONTS -->
     <link rel="stylesheet" href="css/fonts/jost/jost.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
     <!-- STYLES -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -26,6 +30,20 @@
     <link rel="stylesheet" type="text/css" href="css/768.css">
 
     <style>
+        /* ENABLE SCROLLBAR FIX */
+        html, body {
+            overflow-y: auto !important;
+            height: auto !important;
+        }
+
+        .one-page-layout {
+            overflow-y: auto !important;
+        }
+
+        .home-wrap {
+            height: 100vh;
+        }
+
         /* Logo top-left */
         #logo-top {
             position: absolute;
@@ -135,7 +153,6 @@
     <a href="career.html"><span class="item-name">CAREERS</span></a>
 </nav>
 
-
     <!-- SOCIAL & FOOTER -->
     <p class="home-social">
         <a class="social-link facebook" href="#"></a>
@@ -149,6 +166,31 @@
     <audio id="bg-music" loop src="audio/music2.mp3"></audio>
     <div id="music-control-small" onclick="toggleMusicSmall()">Music Off</div>
 </div>
+
+<!-- ⭐ WHO WE ARE SECTION — WITH AOS ADDED -->
+<section id="who-we-are" data-aos="fade-up" style="padding: 80px 10%; background-color: #f9f9f9; color: #333; font-family: 'Poppins', sans-serif;">
+    <h1 data-aos="fade-down" style="font-family: 'Poppins', sans-serif; font-size: 48px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; font-weight: 800;">
+        WHO WE ARE
+    </h1>
+
+     <p data-aos="fade-up" style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+        WhiteMag Studio is a global VFX and animation studio redefining the art of visual storytelling. We fuse cutting-edge technology with world-class artistry to create imagery that inspires, immerses, and endures — from blockbuster Hollywood films and high-end episodic content to music, advertising, and immersive experiences.
+    </p>
+
+    <p data-aos="fade-up" style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+        Our team of exceptional artists and supervisors collaborate closely with filmmakers, studios, and brands to craft visuals that elevate narrative and emotion. Whether integrating complex CG environments, perfecting digital doubles, or achieving seamless compospositing, every frame reflects our pursuit of cinematic excellence.
+    </p>
+
+    <p data-aos="fade-up" style="font-size: 18px; line-height: 1.8; margin-bottom: 25px;">
+        Respected for precision, creativity, and storytelling power, WhiteMag continues to push the boundaries of what’s possible in visual effects shaping moments that are not just seen, but felt.
+    </p>
+
+    <p data-aos="fade-up" style="font-size: 18px; line-height: 1.8;">
+        At our core, we are creators driven by imagination, innovation, and a passion to deliver visuals that are truly
+        <strong style="font-weight: 500;">A Cut Above Reality.</strong>
+    </p>
+</section>
+<!-- END WHO WE ARE -->
 
 <!-- ONE PAGE CONTENT -->
 <div class="one-page-content">
@@ -164,7 +206,7 @@
 <div class="p-overlay"></div>
 <div class="p-overlay"></div>
 
-<!-- SCRIPTS -->
+<!-- SCRIPT FILES -->
 <script src="js/jquery.js"></script>
 <script src="js/tween-max.js"></script>
 <script src="js/jquery-address.js"></script>
@@ -201,7 +243,6 @@
     window.addEventListener('scroll', fadeInOnScroll);
     window.addEventListener('load', fadeInOnScroll);
 
-    // INITIALIZE ABOUT SECTION AFTER AJAX LOAD
     function initAboutSection() {
         const studioContainers = document.querySelectorAll('.studio-services');
         studioContainers.forEach(c => c.style.display='flex');
@@ -210,10 +251,20 @@
         fadeInOnScroll();
     }
 
-    // Hook into dynamic content load
     $(document).on('content-loaded', function() {
         initAboutSection();
     });
 </script>
+
+<!-- ⭐ AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+    easing: "ease-out-cubic"
+  });
+</script>
+
 </body>
 </html>

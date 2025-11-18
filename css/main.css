@@ -2926,10 +2926,10 @@ button:hover,
 .home-menu .item-name::after,
 .overlay-2,
 .mfp-bg  {
- 	background-color: #00E5FF;
+ 	background-color: #00E5FF ;
 	}
 *::-webkit-scrollbar-thumb {
-	background-color: #00E5FF;
+	background-color: #00E5FF ;
 	}
 .bypostauthor > article,
 .event h3,

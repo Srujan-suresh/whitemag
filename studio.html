@@ -31,7 +31,7 @@
 <link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon" sizes="114x114">
 <link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon" sizes="72x72">
 <link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon">
-<link href="ico/favicon.png" rel="shortcut icon">
+<link href="ico/android-chrome-192x192.png" rel="shortcut icon">
 
 <!-- CSS FILES -->
 <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -78,7 +78,7 @@
   }
 
   .layer1 { background: #fff; }
-  .layer2 { background: #1c1c1c; }
+  .layer2 { background: #1851f1; }
   .layer3 { background: #fff; }
 
   /* smooth sliding animation */
@@ -269,7 +269,7 @@
   transform: translateY(-50%);
   width: 0%;
   height: 40px;
-  background-color:#000;  z-index: 0;
+  background-color:#1851f1;  z-index: 0;
   border-radius: 2px;
 }
 
@@ -281,7 +281,7 @@
   left: -20px;
   height: 4px;
   width: 0%;
-  background-color:#000;  opacity: 1;
+  background-color:#1851f1;  opacity: 1;
   transform-origin: left;
   z-index: 3;
   border-radius: 2px;
@@ -380,8 +380,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   </div>
 </header>
 
-<style>
-/* ===== STUDIO HEADER SECTION ===== */
+<style>/* ===== STUDIO HEADER SECTION ===== */
 .studio-header {
   position: relative;
   width: 100%;
@@ -433,7 +432,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 /* ===== Title and Subtitle Animation ===== */
 .studio-title {
-  font-size: 3rem; /* same as Service header */
+  font-size: 3rem;
   font-weight: 800;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -442,7 +441,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 }
 
 .studio-subtitle {
-  font-size: 1.5rem; /* same as Service subtitle */
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.5;
   animation: fadeMoveScale 1s ease-out forwards;
@@ -461,11 +460,11 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   }
 }
 
-/* Zoom animation for background image */
+/* ===== Zoom OUT ONLY animation ===== */
 @keyframes studioZoom {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1.1); }   /* start zoomed in */
+  99% { transform: scale(1); }    /* zoom out */
+  100% { transform: scale(1.1); } /* reset for loop */
 }
 
 /* ===== Responsive ===== */
@@ -483,6 +482,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   .studio-title { font-size: 2.2rem; }
   .studio-subtitle { font-size: 0.95rem; }
 }
+
 </style>
 
 <script>

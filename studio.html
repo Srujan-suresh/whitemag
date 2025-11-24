@@ -78,7 +78,7 @@
   }
 
   .layer1 { background: #fff; }
-  .layer2 { background: #1851f1; }
+  .layer2 { background: #000; }
   .layer3 { background: #fff; }
 
   /* smooth sliding animation */
@@ -269,7 +269,7 @@
   transform: translateY(-50%);
   width: 0%;
   height: 40px;
-  background-color:#1851f1;  z-index: 0;
+  background-color:#000;  z-index: 0;
   border-radius: 2px;
 }
 
@@ -281,7 +281,7 @@
   left: -20px;
   height: 4px;
   width: 0%;
-  background-color:#1851f1;  opacity: 1;
+  background-color:#000;  opacity: 1;
   transform-origin: left;
   z-index: 3;
   border-radius: 2px;
@@ -555,32 +555,35 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
       </div>
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>VISUAL EFFECTS</h6>
-        <p>Seamlessly merging reality with imagination through 
-           high-end compositing, matte painting, and simulation.</p>
-      </div>
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>CGI & ANIMATION</h6>
-        <p>Creating lifelike 3D environments, characters, and product visuals 
-           that bring stories and brands to life.</p>
-      </div>
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>COLOR & COMPOSITING</h6>
-        <p>Enhancing every frame with precision color grading 
-           and compositing for cinematic excellence.</p>
-      </div>
+ <div class="row">
+  <div class="col-lg-3 col-md-6 wow" data-splitting>
+    <h6>VISUAL EFFECTS</h6>
+    <p>Seamlessly merging reality with imagination through high-end compositing, matte painting, and simulation.</p>
+  </div>
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>POST-PRODUCTION</h6>
-        <p>Delivering polished, ready-for-screen content through 
-            editing, cleanup, and final finishing.</p>
-      </div>
+  <div class="col-lg-3 col-md-6 wow" data-splitting>
+    <h6>CGI & ANIMATION</h6>
+    <p>Creating lifelike 3D environments, characters, and product visuals that bring stories and brands to life.</p>
+  </div>
+
+  <div class="col-lg-3 col-md-6 wow" data-splitting>
+    <h6>COLOR & COMPOSITING</h6>
+    <p>Enhancing every frame with precision color grading and compositing for cinematic excellence.</p>
+  </div>
+
+  <div class="col-lg-3 col-md-6 wow" data-splitting>
+    <h6>POST-PRODUCTION</h6>
+    <p>Delivering polished, ready-for-screen content through editing, cleanup, and final finishing.</p>
+  </div>
+</div>
+
+
     </div>
   </div>
 </section>
+
 
 <style>
 /* ===== TEXT CONTENT BLOCK ===== */

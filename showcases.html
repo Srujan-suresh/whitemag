@@ -97,7 +97,7 @@
   }
 
   .layer1 { background: #fff; }
-  .layer2 { background: #1851f1; }
+  .layer2 { background: #000; }
   .layer3 { background: #fff; }
 
   /* smooth sliding animation */
@@ -276,7 +276,7 @@
   transform: translateY(-50%);
   width: 0%;
   height: 40px;
-  background-color: #1851f1;
+  background-color: #000;
   z-index: 0;
   border-radius: 2px;
 }
@@ -289,7 +289,7 @@
   left: -20px;
   height: 4px;
   width: 0%;
-  background-color: #1851f1;
+  background-color: #000;
   opacity: 1;
   transform-origin: left;
   z-index: 3;
@@ -601,9 +601,9 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       OUR CORE SERVICES
     </h3>
 
-    <h5 class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
+    <h5 class="section-subtitle" data-aos="fade-up" data-aos-delay="200" style="text-align: justify;">
       At WhiteMag Studio, we craft visual experiences that blend creativity and
-      technology — bringing imagination to life through cinematic visuals and
+      technology bringing imagination to life through cinematic visuals and
       cutting-edge artistry.
     </h5>
 
@@ -611,28 +611,50 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
       <div class="service-box" data-aos="fade-up" data-aos-delay="200">
         <h6>Rotoscoping & Paint</h6>
-        <p style="text-align: left;">   High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.</p>
+        <p style="text-align: justify;">   High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.</p>
       </div>
 
       <div class="service-box" data-aos="fade-up" data-aos-delay="300">
         <h6>Compositing Services</h6>
-        <p style="text-align: left;">          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.</p>
+        <p style="text-align: justify;">          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.</p>
       </div>
 
       <div class="service-box" data-aos="fade-up" data-aos-delay="400">
         <h6>Matchmoving & Camera Tracking</h6>
-        <p style="text-align: left;">   Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.</p>
+        <p style="text-align: justify;">   Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.</p>
       </div>
 
       <div class="service-box" data-aos="fade-up" data-aos-delay="500">
         <h6>Green Screen / Chroma Keying</h6>
-        <p style="text-align: left;">        Precision keying and spill suppression for flawless background replacements, virtual production integration, and green screen shoots.</p>
+        <p style="text-align: justify;">Precision keying and spill suppression for flawless background replacements, virtual production integration and green screen shoots.</p>
       </div>
 
       <div class="service-box" data-aos="fade-up" data-aos-delay="600">
         <h6>Additional VFX Enhancements</h6>
-        <p style="text-align: left;">     Advanced visual effects techniques including cleanup, tracking, and seamless integration to elevate every project to cinematic quality.</p>
+        <p style="text-align: justify;">Advanced visual effects techniques including cleanup, tracking and seamless integration to elevate every project to cinematic quality.</p>
       </div>
+      <style>
+  .service-box {
+    max-width: 300px;
+    margin: 20px auto;
+  }
+
+  .service-box p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    word-break: break-word;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    .service-box p {
+      text-align: left !important;
+    }
+  }
+</style>
 
     </div>
   </div>

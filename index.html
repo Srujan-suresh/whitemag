@@ -87,10 +87,6 @@
 
 /* Remove background from the wrapper */
 
-
-
-
-
     .who-wrapper.visible {
         opacity: 1;
         transform: translateY(0);
@@ -104,9 +100,11 @@
     background: none !important;
     backdrop-filter: none !important;
     text-align: justify;  /* paragraphs stay justified */
-    opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    opacity: 1;          /* always visible */
+    transform: translateY(0);
+    transition: none;    /* no animation */
+
+
 }
 
 .who-wrapper h1 {

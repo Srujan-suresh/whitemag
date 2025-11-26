@@ -24,89 +24,105 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/768.css">
 
-    <style>
-    html, body { overflow-y: auto !important; height: auto !important; }
-    .one-page-layout { overflow-y: auto !important; }
+   <style>
+/* ==== GLOBAL ==== */
+html, body { 
+    overflow-y: auto !important; 
+    height: auto !important; 
+}
+.one-page-layout { overflow-y: auto !important; }
 
-    .home-wrap { height: 100vh; }
-
-    /* LOGO */
-    #logo-top { position: absolute; top: 10px; left: 10px; z-index: 9999; }
-    #logo-top img { width: 160px; }
-
-    /* === FIXED VIDEO BEHIND EVERYTHING (APPLE STYLE) === */
-    .home-bg-video {
-        position: fixed !important;
-        top: 0; left: 0;
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden;
-        z-index: -1 !important;
-    }
-
-    .home-bg-video video {
-        position: absolute;
-        top: 50%; left: 50%;
-        width: 110%; height: 110%;
-        transform: translate(-50%, -50%);
-        object-fit: cover;
-        filter: brightness(0.7);
-    }
-
-    /* MUSIC TOGGLE */
-    #music-control-small {
-        position: fixed;
-        right: 25px;
-        bottom: 25px;
-        background: rgba(255,255,255,0.85);
-        padding: 10px 18px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-size: 14px;
-        z-index: 9999;
-        box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
-    }
-    #music-control-small:hover { background:white; }
-
-    /* ===== WHO WE ARE SECTION (APPLE OVERLAP EFFECT) ===== */
-
-    #who-we-are {
-        position: relative;
-        z-index: 2;
-        padding-top: 18vh;   /* perfect sweet spot */
-        padding-bottom: 80px;
-    }
-
-    /* FULL-WIDTH TRANSPARENT BACKGROUND (Apple style) */
-    /* Move transparency to the entire section */
-#who-we-are {
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(10px);
-    padding-bottom: 100px; /* fills the bottom fully */
+.home-wrap { 
+    height: 50vh;   /* VIDEO ONLY TAKES TOP HALF OF SCREEN */
+    position: relative;
 }
 
-/* Remove background from the wrapper */
+/* ==== LOGO ==== */
+#logo-top { 
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    z-index: 9999; 
+}
+#logo-top img { width: 160px; }
 
-    .who-wrapper.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* ==== FIXED VIDEO ONLY IN TOP HALF ==== */
+.home-bg-video {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;  /* ONLY HALF SCREEN */
+    overflow: hidden;
+    z-index: -1;
+}
 
-  .who-wrapper {
+.home-bg-video video {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    width: 110%; 
+    height: 110%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.75); /* mild dark so text later looks clean */
+}
+
+/* ==== MUSIC BUTTON ==== */
+#music-control-small {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background: rgba(255,255,255,0.85);
+    padding: 10px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 9999;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
+}
+#music-control-small:hover { background:white; }
+
+/* ========================================================= */
+/* === WHO WE ARE — APPLE STYLE SCROLL OVER VIDEO ======== */
+/* ========================================================= */
+
+#who-we-are {
+    position: relative;
+    z-index: 5;
+    margin-top: 40vh; /* pushes section up INTO the video like Apple */
+    padding: 15vh 0 100px 0;
+
+    /* THIS is the glass background that moves over video */
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(8px);
+}
+
+.who-wrapper {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     padding: 50px 5%;
     background: none !important;
     backdrop-filter: none !important;
-    text-align: justify;  /* paragraphs stay justified */
-    opacity: 1;          /* always visible */
+    text-align: justify;
+
+    /* Always visible */
+    opacity: 1;
     transform: translateY(0);
-    transition: none;    /* no animation */
-
-
+    transition: none; 
 }
 
+.who-wrapper.visible {
+    opacity: 1;
+    transform: none;
+}
+nav {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+
+/* === TEXT === */
 .who-wrapper h1 {
     font-size: 48px;
     letter-spacing: 2px;
@@ -114,22 +130,34 @@
     margin-bottom: 25px;
     font-weight: 800;
     color: #fff;
-    text-align: center;   /* center the title */
+    text-align: center;
 }
 
 .who-wrapper p {
     font-size: 18px;
     line-height: 1.8;
     color: #eee;
+    text-align: center;
     hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    word-spacing: normal;
     overflow-wrap: break-word;
 }
+/* ====== FIX NAVBAR ABOVE VIDEO ====== */
+nav, 
+#topnav, 
+.menu-wrapper {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999 !important; /* OVER EVERYTHING */
+    margin-top: 200px;
+}
+.home-bg-video {
+    z-index: -1 !important;
+}
 
-    </style>
+</style>
+
 </head>
 
 <body>
@@ -148,7 +176,7 @@
     </div>
 
     <!-- NAVIGATION -->
-    <nav class="home-menu">
+    <nav class="home-menu" >
         <a href="studio.html"><span class="item-name">STUDIO</span></a>
         <a href="showcases.html"><span class="item-name">SERVICES</span></a>
         <a href="contact.html"><span class="item-name">CONTACT</span></a>
@@ -250,6 +278,27 @@ function revealWho() {
 window.addEventListener('scroll', revealWho);
 window.addEventListener('load', revealWho);
 </script>
+<script>
+let lastScroll = 0;
+let nav = document.querySelector("nav");
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 50) {
+        // scrolling down → hide navbar
+        nav.style.transform = "translateY(-120px)";
+        nav.style.opacity = "0";
+    } else {
+        // scrolling up → show navbar
+        nav.style.transform = "translateY(0)";
+        nav.style.opacity = "1";
+    }
+
+    lastScroll = currentScroll;
+});
+</script>
+
 
 </body>
 </html>

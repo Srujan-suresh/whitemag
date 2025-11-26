@@ -540,107 +540,103 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 <section class="text-content-block">
   <div class="container">
+
+    <!-- Title -->
     <div class="row">
       <div class="col-12 wow" data-splitting>
-        <h3 class="section-title">CRAFTING VISUAL MAGIC <br>
-          FOR FILM, BRANDS & BEYOND</h3>
+        <h3 class="section-title center-block-text">
+          CRAFTING VISUAL MAGIC <br> FOR FILM, BRANDS & BEYOND
+        </h3>
       </div>
+
       <div class="col-12 wow" data-splitting>
-       <h5 class="section-subtitle" style="text-align: center;margin-left: 100px;">
-  At WhiteMag Studio, we transform imagination into stunning visuals. 
-  From cinematic VFX and CGI to motion graphics and compositing, 
-  our creative team blends artistry with technology to deliver 
-  visuals that captivate and inspire audiences worldwide.
-</h5>
+        <h5 class="section-subtitle center-block-text" style="margin-left: 250px;">
+          At WhiteMag Studio, we transform imagination into stunning visuals.
+          From cinematic VFX and CGI to motion graphics and compositing,
+          our creative team blends artistry with technology to deliver visuals
+          that captivate and inspire audiences worldwide.
+        </h5>
+      </div>
+    </div>
 
+    <!-- 4 Columns -->
+    <div class="row text-center">
+
+      <div class="col-lg-3 col-md-6 wow" data-splitting>
+        <h6>VISUAL EFFECTS</h6>
+        <p>Seamlessly merging reality with imagination through high-end compositing, matte painting, and simulation.</p>
       </div>
 
+      <div class="col-lg-3 col-md-6 wow" data-splitting>
+        <h6>CGI & ANIMATION</h6>
+        <p>Creating lifelike 3D environments, characters, and product visuals that bring stories and brands to life.</p>
+      </div>
 
+      <div class="col-lg-3 col-md-6 wow" data-splitting>
+        <h6>COLOR & COMPOSITING</h6>
+        <p>Enhancing every frame with precision color grading and compositing for cinematic excellence.</p>
+      </div>
 
- <div class="row">
-  <div class="col-lg-3 col-md-6 wow" data-splitting >
-    <h6>VISUAL EFFECTS</h6>
-    <p style="text-align: center;">Seamlessly merging reality with imagination through high-end compositing, matte painting, and simulation.</p>
-  </div>
-
-  <div class="col-lg-3 col-md-6 wow" data-splitting>
-    <h6>CGI & ANIMATION</h6>
-    <p style="text-align: center ;">Creating lifelike 3D environments, characters, and product visuals that bring stories and brands to life.</p>
-  </div>
-
-  <div class="col-lg-3 col-md-6 wow" data-splitting>
-    <h6>COLOR & COMPOSITING</h6>
-    <p style="text-align: center ;">Enhancing every frame with precision color grading and compositing for cinematic excellence.</p>
-  </div>
-
-  <div class="col-lg-3 col-md-6 wow" data-splitting>
-    <h6>POST-PRODUCTION</h6>
-    <p style="text-align: center ;">Delivering polished, ready-for-screen content through editing, cleanup, and final finishing.</p>
-  </div>
-</div>
-
+      <div class="col-lg-3 col-md-6 wow" data-splitting>
+        <h6>POST-PRODUCTION</h6>
+        <p>Delivering polished, ready-for-screen content through editing, cleanup, and final finishing.</p>
+      </div>
 
     </div>
+
   </div>
 </section>
 
 
+
 <style>
-/* ===== TEXT CONTENT BLOCK ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
 .text-content-block {
-  font-family: 'Poppins', sans-serif;
-  color: #222;
-  padding: 80px 10%;
+    font-family: 'Poppins', sans-serif;
 }
 
-.text-content-block .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
-  text-align: center;
+/* Center alignment for everything */
+.center-block-text,
+.text-content-block h3,
+.text-content-block h5,
+.text-content-block h6,
+.text-content-block p {
+    text-align: center;
 }
 
-.text-content-block .section-subtitle {
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 1.8;
-  color: #555;
-  max-width: 900px;
-  margin: 0 auto 60px auto;
-  text-align: center;
+/* Title styling */
+.section-title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 20px;
 }
 
+/* Subtitle styling */
+.section-subtitle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto 40px auto; /* centers & adds spacing */
+}
+
+/* Service columns */
 .text-content-block h6 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #111;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 25px;
 }
 
 .text-content-block p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .text-content-block .section-title {
-    font-size: 2rem;
-  }
-  .text-content-block .section-subtitle {
-    font-size: 1rem;
-  }
-  .text-content-block h6 {
-    font-size: 1.1rem;
-  }
-  .text-content-block p {
-    font-size: 0.9rem;
-  }
-}
-</style>
+    font-weight: 300;
+    font-size: 15px;
+    padding: 0 10px;
+}</style>
 
 
 

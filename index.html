@@ -90,7 +90,7 @@ html, body {
 #who-we-are {
     position: relative;
     z-index: 5;
-    margin-top: 40vh; /* pushes section up INTO the video like Apple */
+    margin-top: 50vh; /* pushes section up INTO the video like Apple */
     padding: 15vh 0 100px 0;
 
     /* THIS is the glass background that moves over video */
@@ -148,7 +148,6 @@ nav,
     position: fixed !important;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 999999 !important; /* OVER EVERYTHING */
     margin-top: 200px;
 }
@@ -157,10 +156,55 @@ nav,
 }
 
 </style>
+<div id="custom-cursor" style="
+  width: 40px;           
+  height: 40px;
+  border: 3px solid #1c1c1c; 
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: rgba(28,28,28,0.05);
+
+"></div>
+
+<script>
+const cursor = document.getElementById('custom-cursor');
+
+let mouseX = 0, mouseY = 0;
+let posX = 0, posY = 0;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.opacity = 1;   // show when moving
+});
+
+function animate() {
+    posX += (mouseX - posX) * 0.35;  // smooth but fast
+    posY += (mouseY - posY) * 0.35;
+
+    cursor.style.transform = `translate(${posX}px, ${posY}px) translate(-50%, -50%)`;
+
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+
+<style>
+  body, a, button, input, textarea {
+    cursor: none !important;
+  }
+</style>
 
 </head>
 
 <body>
+
+
+
 <div class="home-wrap">
 
     <!-- VIDEO -->
@@ -216,6 +260,9 @@ nav,
 
     </div>
 </section>
+
+
+
 
 <!-- ONE PAGE CONTENT (unchanged) -->
 <div class="one-page-content">

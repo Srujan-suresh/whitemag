@@ -171,13 +171,20 @@
 <main>
   <!-- ===== REPLACEMENT START ===== -->
 
-<aside class="left-side">
- <div class="logo">
-  <a href="index.html">
-    <img src="images/logo.png" alt="Logo" class="zoom-logo"
-         style="width: 120px; height: 120px; position: relative; margin-left: 20px; margin-top: -20px;">
-  </a>
-</div>
+<aside class="left-side" 
+       style="width: 200px; height: 100vh; display: flex; flex-direction: column; position: absolute; left: 0; top: 0; z-index: 10; text-align: center; padding: 30px 0; opacity: 1; transition: all 0.5s cubic-bezier(0.86,0,0.07,1);">
+
+  <div class="logo" style="width: 100%; text-align: center; margin-bottom: 30px;">
+    <a href="index.html">
+      <img src="images/logo.png" 
+           alt="Logo" 
+           class="zoom-logo"
+           style="width: 80%; height: auto; display: block; margin: 0 auto;">
+    </a>
+  </div>
+
+  <!-- Add your sidebar menu items here -->
+
 
 
 
@@ -562,27 +569,77 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     <!-- 4 Columns -->
     <div class="row text-center">
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>VISUAL EFFECTS</h6>
-        <p>Seamlessly merging reality with imagination through high-end compositing, matte painting, and simulation.</p>
-      </div>
+     <!-- Include Font Awesome CDN in <head> if not already -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>CGI & ANIMATION</h6>
-        <p>Creating lifelike 3D environments, characters, and product visuals that bring stories and brands to life.</p>
-      </div>
+<style>
+  /* Thick black border with rounded corners */
+  .card-rounded-border {
+    border: 3px solid #000;   /* Thick black border */
+    border-radius: 20px;      /* Rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover */
+  }
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>COLOR & COMPOSITING</h6>
-        <p>Enhancing every frame with precision color grading and compositing for cinematic excellence.</p>
-      </div>
+  /* Optional hover effect for modern feel */
+  .card-rounded-border:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 
-      <div class="col-lg-3 col-md-6 wow" data-splitting>
-        <h6>POST-PRODUCTION</h6>
-        <p>Delivering polished, ready-for-screen content through editing, cleanup, and final finishing.</p>
-      </div>
+  /* Icon color and spacing */
+  .card-rounded-border i {
+    color: #000;
+  }
+</style>
 
+<!-- 4 Cards Row -->
+<div class="row text-center g-4">
+
+  <div class="col-lg-3 col-md-6">
+    <div class="card h-100 card-rounded-border wow" data-splitting>
+      <div class="card-body">
+        <i class="fas fa-magic fa-3x mb-3"></i>
+        <h6 class="card-title">VISUAL EFFECTS</h6>
+        <p class="card-text">Seamlessly merging reality with imagination through high-end compositing, matte painting, and simulation.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="card h-100 card-rounded-border wow" data-splitting>
+      <div class="card-body">
+        <i class="fas fa-film fa-3x mb-3"></i>
+        <h6 class="card-title">CGI & ANIMATION</h6>
+        <p class="card-text">Creating lifelike 3D environments, characters, and product visuals that bring stories and brands to life.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="card h-100 card-rounded-border wow" data-splitting>
+      <div class="card-body">
+        <i class="fas fa-palette fa-3x mb-3"></i>
+        <h6 class="card-title">COLOR & COMPOSITING</h6>
+        <p class="card-text">Enhancing every frame with precision color grading and compositing for cinematic excellence.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6">
+    <div class="card h-100 card-rounded-border wow" data-splitting>
+      <div class="card-body">
+        <i class="fas fa-video fa-3x mb-3"></i>
+        <h6 class="card-title">POST-PRODUCTION</h6>
+        <p class="card-text">Delivering polished, ready-for-screen content through editing, cleanup, and final finishing.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 
   </div>
 </section>
@@ -716,20 +773,18 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     background-color: #fff;
   }
 </style>
-  <section class="team">
+ 
+<!-- <section class="team">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 wow" data-splitting>
           <h3 class="section-title" style="color: black;">ALL ABOUT<br>
             THE OUR TEAM</h3>
         </div>
-        <!-- end col-8 -->
         <div class="col-lg-6 wow" data-splitting style="color: black;">
           <h5>We work closely with your development team. markettting profissionals and stakeholder to design and develop UX and UI that make your website. application or software a joy to use,</h5>
         </div>
-        <!-- end col-4 -->
       </div>
-      <!-- end row -->
       <div class="row">
         <div class="col">
           <figure class="reveal-effect masker wow">
@@ -742,7 +797,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
             <figcaption class="wow" data-splitting> <h6>Alexander O'neil</h6> <small>EXECUTIVE CHIEF</small> </figcaption>
           </figure>
         </div>
-        <!-- end col -->
 
         <div class="col">
           <figure class="reveal-effect masker wow">
@@ -755,7 +809,6 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
             <figcaption class="wow" data-splitting> <h6>Jessica Tanana</h6> <small>SENIOR ENGINEER</small> </figcaption>
           </figure>
         </div>
-        <!-- end col -->
 
         <div class="col">
           <figure class="reveal-effect masker wow">
@@ -768,7 +821,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
             <figcaption class="wow" data-splitting> <h6>Steven Mc'Laren</h6> <small>CREATIVE HEAD CHIEF</small> </figcaption>
           </figure>
         </div>
-        <!-- end col -->
+
         <div class="col">
           <figure class="reveal-effect masker wow">
             <ul>
@@ -780,7 +833,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
             <figcaption class="wow" data-splitting> <h6>Dasha Avdeieva</h6> <small>ACCOUNT MANAGER</small> </figcaption>
           </figure>
         </div>
-        <!-- end col -->
+
         <div class="col">
           <figure class="reveal-effect masker wow">
             <ul>
@@ -792,13 +845,12 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
             <figcaption class="wow" data-splitting> <h6>Dmitry Samohin</h6> <small>DIGITAL PRODUCER</small> </figcaption>
           </figure>
         </div>
-        <!-- end col -->
       </div>
-      <!-- end row -->
     </div>
-    <!-- end container -->
-  </section>
+  </section> -->
+
   <!-- end team -->
+
 
   
   <!-- <section class="clients">

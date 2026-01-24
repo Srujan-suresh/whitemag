@@ -912,6 +912,172 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </script>
 
 
+<footer class="energy-footer">
+  <div class="energy-overlay"></div>
+  <div class="energy-glow"></div>
+
+  <div class="energy-content">
+    <img src="images/logo.png" class="energy-logo" alt="PhantomFX">
+
+    <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
+
+    <nav class="energy-nav">
+      <a href="#">Home</a>
+      <a href="#">Studio</a>
+      <a href="#">Services</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="energy-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+
+    <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In Coimbatore</span>
+  </div>
+</footer>
+
+<style>
+
+  .energy-footer {
+  width: 150vw;
+  margin-left: -50px; /* same as sidebar width */
+}
+
+  .energy-footer {
+  position: relative;
+  background: url("images/hii.jpg") center / cover no-repeat;
+  padding: 120px 20px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* cinematic dark pass */
+.energy-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.8) 70%),
+    linear-gradient(to bottom, rgba(0,0,0,0.4), #000);
+}
+
+/* moving energy glow */
+.energy-glow {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  background:
+    radial-gradient(circle at 50% 50%, var(--glow), transparent 60%);
+  animation: drift 14s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.energy-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.energy-logo {
+  max-width: 240px;
+  filter: drop-shadow(0 0 22px var(--glow));
+}
+
+.energy-tagline {
+  margin: 18px 0 30px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  opacity: 0.9;
+  color: var(--accent);
+}
+
+/* nav */
+.energy-nav a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+
+.energy-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.energy-nav a:hover::after {
+  width: 120%;
+}
+
+/* socials */
+.energy-socials {
+  margin: 30px 0;
+}
+
+.energy-socials a {
+  margin: 0 10px;
+  color: var(--accent);
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.energy-socials a:hover {
+  text-shadow: 0 0 12px var(--glow);
+}
+
+.energy-copy {
+  font-size: 12px;
+  opacity: 0.6;
+}
+:root {
+  /* --accent: #7df9ff;
+  --glow: rgba(125, 249, 255, 0.45);
+
+  --accent: #4fd1c5;
+     --glow: rgba(79, 209, 197, 0.4); */
+
+    
+  /* --accent: #e6ebef;           
+  --glow: rgba(230,235,239,0.35); */
+
+
+  /* --accent: #cfd8dc;
+  --glow: rgba(207,216,220,0.3); */
+
+  
+  --accent: #f2f2ee;
+  --glow: rgba(242,242,238,0.3);
+
+
+
+}
+
+</style>
+
 <!-- JS FILES --> <script src="js/jquery.min.js"></script> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/swiper.min.js"></script> 

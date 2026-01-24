@@ -296,31 +296,28 @@ animate();
   </div>
 </section>
 
+
 <style>
-
-/* ===== WHY CHOOSE US - Clean Modern with Gradient ===== */
+/* ===== WHY CHOOSE US — CINEMATIC B&W ===== */
+/* ===== WHY CHOOSE US — LIGHT (OPPOSITE OF FOOTER) ===== */
 #why-choose-us {
-  background: linear-gradient(135deg, #f9fafb 0%, #e1e8f0 100%);
-  /* soft light gradient for subtle depth */
-  padding: 120px 5% 100px;
+  background: #ffffff;
+  padding: 60px 5% 60px;
   text-align: center;
-    box-shadow: 0 0 45px rgba(0, 80, 160, 0.3);
-  border-color: #004080;
-
-  color: #222;
+  color: #111;
   font-family: 'Poppins', sans-serif;
 }
 
+/* Title */
 .why-title {
   font-size: 48px;
   letter-spacing: 3px;
   font-weight: 800;
   margin-bottom: 80px;
-  color: #007BFF;
-  text-shadow: none;
+  color: #111;
 }
 
-/* Grid layout */
+/* Grid */
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -329,71 +326,57 @@ animate();
   margin: 0 auto;
 }
 
-/* Card style */
+/* Cards — WHITE */
 .why-item {
   padding: 60px 40px;
-    border-color: #004080;
-
-  background: linear-gradient(145deg, #ffffff, #f0f5ff);
-  /* subtle white-to-light-blue gradient */
-  border: 2px solid #d1d9e6;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* Card hover effect */
+/* Hover */
 .why-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 45px rgba(0, 80, 160, 0.3);
-  border-color: #0056b3;
-  background: linear-gradient(145deg, #e6f0ff, #cce0ff);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
 }
 
-/* Icon style */
-/* Icon style */
+/* Icons — BLACK */
 .why-icon {
   font-size: 60px;
   margin-bottom: 30px;
-  color: #007BFF;
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: #111;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .why-item:hover .why-icon {
-  transform: scale(1.3) rotate(10deg);
-  color: #003d80;
+  transform: scale(1.25);
 }
 
-
-
-/* Card heading */
+/* Heading */
 .why-item h3 {
   font-size: 22px;
   letter-spacing: 2px;
   margin-bottom: 15px;
   font-weight: 800;
   text-transform: uppercase;
-  color: #222;
+  color: #111;
 }
 
-/* Optional description */
+/* Text */
 .why-item p {
   font-size: 16px;
   line-height: 1.7;
-  color: #666;
+  color: #444;
 }
 
-/* Highlight middle card */
+/* Highlight card (still subtle, no color) */
 .why-item.highlighted {
-  border-color: #004080;
-  /* background: linear-gradient(145deg, #d9e8ff, #a8c5ff); */
-  box-shadow: 0 0 45px rgba(0, 80, 160, 0.3);
-}
-
-.why-item.highlighted .why-icon {
-  color: #004080;
+  border-color: #111;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.18);
 }
 
 /* Responsive */
@@ -406,10 +389,11 @@ animate();
     padding: 50px 30px;
   }
 }
+
 </style>
 
 <!-- ===== FOOTER ===== -->
-<footer id="site-footer">
+<!-- <footer id="site-footer">
   <div class="footer-container">
 
     <div class="footer-column about">
@@ -446,15 +430,211 @@ animate();
   <div class="footer-bottom">
     <p>© 2026 WhiteMagStudio | All Rights Reserved</p>
   </div>
-</footer>
+</footer> -->
 
+
+<div class="energy-scope">
+  <footer class="energy-footer">
+    <div class="energy-overlay"></div>
+    <div class="energy-glow"></div>
+
+    <div class="energy-content">
+      <img src="images/logo.png" class="energy-logo" alt="PhantomFX">
+
+      <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
+
+      <nav class="energy-nav">
+        <a href="#">Home</a>
+        <a href="#">Studio</a>
+        <a href="#">Services</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="energy-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In Coimbatore</span>
+    </div>
+  </footer>
+</div>
 
 <style>
-  /* ===== FOOTER - Blue & White Style (Updated) ===== */
+  .energy-scope {
+  --accent: #f2f2ee;
+  --glow: rgba(242,242,238,0.3);
+
+  isolation: isolate; /* critical */
+}
+
+/* footer base */
+.energy-scope .energy-footer {
+  position: relative;
+  background: url("images/hii.jpg") center / cover no-repeat;
+  padding: 120px 20px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* dark overlay */
+.energy-scope .energy-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.8) 70%),
+    linear-gradient(to bottom, rgba(0,0,0,0.4), #000);
+  z-index: 1;
+}
+
+/* === ENERGY FOOTER HARD FIX === */
+
+.energy-footer {
+  position: relative;
+  z-index: 50;
+  min-height: 420px;
+}
+
+/* kill global nav rules */
+.energy-footer nav {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  margin-top: 0 !important;
+  z-index: auto !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* protect links */
+.energy-footer a {
+  position: relative;
+}
+
+/* ensure overlays render correctly */
+.energy-footer .energy-overlay,
+.energy-footer .energy-glow {
+  pointer-events: none;
+}
+
+
+/* glow */
+.energy-scope .energy-glow {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  background:
+    radial-gradient(circle at 50% 50%, var(--glow), transparent 60%);
+  animation: drift 14s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+@keyframes drift {
+  to { transform: rotate(360deg); }
+}
+
+/* content */
+.energy-scope .energy-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+/* logo */
+.energy-scope .energy-logo {
+  max-width: 240px;
+  display: inline-block;
+  filter: drop-shadow(0 0 22px var(--glow));
+}
+
+/* tagline */
+.energy-scope .energy-tagline {
+  margin: 18px 0 30px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  opacity: 0.9;
+  color: var(--accent);
+}
+
+/* nav */
+.energy-scope .energy-nav {
+  margin: 0;
+}
+
+.energy-scope .energy-nav a {
+  margin: 0 16px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+
+.energy-scope .energy-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+
+.energy-scope .energy-nav a:hover::after {
+  width: 120%;
+}
+
+/* socials */
+.energy-scope .energy-socials {
+  margin: 30px 0;
+}
+
+.energy-scope .energy-socials a {
+  margin: 0 10px;
+  font-size: 18px;
+  color: var(--accent);
+  transition: 0.3s;
+}
+
+.energy-scope .energy-socials a:hover {
+  text-shadow: 0 0 12px var(--glow);
+}
+
+/* copyright */
+.energy-scope .energy-copy {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* mobile safety */
+@media (max-width: 600px) {
+  .energy-scope .energy-nav a {
+    display: inline-block;
+    margin: 8px 10px;
+  }
+
+  .energy-scope .energy-logo {
+    max-width: 180px;
+  }
+}
+
+</style>
+
+<!-- <style>
 #site-footer {
-  background: linear-gradient(135deg, #e6f0ff, #cce0ff); /* more blue */
+  background: linear-gradient(135deg, #e6f0ff, #cce0ff); 
   color: #222;
-  font-family: 'Poppins', sans-serif; /* font applied */
+  font-family: 'Poppins', sans-serif; 
   padding: 60px 5% 30px;
   box-shadow: inset 0 -10px 20px rgba(0, 123, 255, 0.1);
   user-select: none;
@@ -465,9 +645,9 @@ animate();
   margin: 0 auto;
   display: flex;
   gap: 60px;
-  justify-content: flex-end; /* push columns slightly to right */
+  justify-content: flex-end; 
   flex-wrap: wrap;
-    padding-left: 50px; /* extra push to right */
+    padding-left: 50px; 
 
 }
 
@@ -480,7 +660,7 @@ animate();
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 25px;
-  color: #007BFF; /* blue accent */
+  color: #007BFF;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-family: 'Poppins', sans-serif;
@@ -531,7 +711,7 @@ animate();
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
-  border-top: 1px solid #b3c7ff; /* slightly more blue border */
+  border-top: 1px solid #b3c7ff; 
   padding-top: 20px;
   font-size: 14px;
   color: #000;
@@ -544,7 +724,7 @@ animate();
     flex-direction: column;
     gap: 40px;
     text-align: center;
-    justify-content: center; /* center on mobile */
+    justify-content: center; 
   }
 
   .footer-column {
@@ -557,7 +737,7 @@ animate();
   }
 }
 
-</style>
+</style> -->
 
 
 <!-- ONE PAGE CONTENT (unchanged) -->

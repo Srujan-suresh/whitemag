@@ -954,9 +954,10 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 <style>
 
   .energy-footer {
-  width: 150vw;
-  margin-left: -50px; /* same as sidebar width */
+  width: 100%;          /* ✅ FIX */
+  margin-left: 0;      /* ✅ FIX */
 }
+
 
   .energy-footer {
   position: relative;
@@ -1083,10 +1084,60 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   --accent: #f2f2ee;
   --glow: rgba(242,242,238,0.3);
 
-
-
 }
+/* ===============================
+   Mobile Responsive Footer
+================================ */
+@media (max-width: 768px) {
 
+  .energy-footer {
+    padding: 70px 16px;
+  }
+
+  .energy-logo {
+    max-width: 170px;
+  }
+
+  .energy-tagline {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+  /* Nav becomes stacked */
+  .energy-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+  }
+
+  .energy-nav a {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  /* Disable hover underline weirdness on touch */
+  .energy-nav a::after {
+    display: none;
+  }
+
+  .energy-socials {
+    margin: 25px 0;
+  }
+
+  .energy-socials a {
+    font-size: 20px;
+    margin: 0 12px;
+  }
+
+  .energy-copy {
+    font-size: 11px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+}
+}
 </style>
 
 <!-- JS FILES --> <script src="js/jquery.min.js"></script> 
@@ -1098,4 +1149,4 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 <script src='js/fancybox.min.js'></script> 
 <script src="js/scripts.js"></script>
 </body>
-</html>
+</html> 

@@ -588,6 +588,14 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       text-align: left;            /* optional, looks more editorial */
     }
   }
+
+   /* Push paragraph slightly right on laptops/desktops */
+  @media (max-width: 768px) {
+    .shift-right-desktop {
+      transform: translateX(40px); /* adjust value as needed */
+      text-align: left;            /* optional, looks more editorial */
+    }
+  }
 </style>
 
 

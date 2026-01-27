@@ -385,10 +385,33 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
   <div class="studio-inner">
     <div class="studio-container">
-      <h1 class="studio-title" style="  font-family: 'Anton', sans-serif;
-">OUR SERVICES</h1>
-      <!-- <p class="studio-subtitle">We provide a free day to experience our benefits of digital world</p> -->
-    </div>
+  <h1 class="studio-title">
+    OUR <span class="break-mobile">SERVICES</span>
+  </h1>
+</div>
+<style>.studio-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 64px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* Mobile-only line break */
+.break-mobile {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .break-mobile {
+    display: block; /* forces next line on mobile */
+  }
+
+  .studio-title {
+    font-size: 36px;
+  }
+}
+</style>
   </div>
 </header>
 
@@ -757,16 +780,22 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   display: block;
 }
 
-/* Mobile adjustment */
+/* ===== Mobile Fix ===== */
 @media (max-width: 768px) {
-  .demo-video-wrapper {
-    aspect-ratio: 16 / 9;
-  }
 
   .demo-title {
-    font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 16px;
   }
-}
+
+  .demo-video-wrapper {
+    aspect-ratio: 16 / 9;
+    min-height: unset;       /* ✅ REMOVE tall video */
+  }
+
+  .demo-video {
+    object-position: center; /* ✅ prevent bad cropping */
+  }
 </style>
 
 

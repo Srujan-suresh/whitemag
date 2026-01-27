@@ -366,7 +366,7 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 
 
 
-
+<!-- 
 <div id="custom-cursor" style="
   width: 40px;           
   height: 40px;
@@ -382,8 +382,8 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 <script>
   const cursor = document.getElementById('custom-cursor');
 
-  let mouseX = 0, mouseY = 0;  // real mouse position
-  let posX = 0, posY = 0;      // cursor displayed position
+  let mouseX = 0, mouseY = 0;  
+  let posX = 0, posY = 0;     
 
   document.addEventListener('mousemove', e => {
     mouseX = e.clientX;
@@ -404,8 +404,68 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
   body, a, button, input, textarea {
     cursor: none !important;
   }
+</style> -->
+
+
+
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+
+<style>
+  #cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #1c1c1c;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
+}
+
+#cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #1c1c1c;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+body, a, button, input, textarea {
+  cursor: none !important;
+}
+
 </style>
 
+<script>
+  const ring = document.getElementById('cursor-ring');
+  const dot = document.getElementById('cursor-dot');
+
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // dot sticks directly to cursor
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+  });
+
+  function animate() {
+    ringX += (mouseX - ringX) * 0.12;
+    ringY += (mouseY - ringY) * 0.12;
+
+    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
 
  <div class="all-cases-link"><a href="contact.html" style="font-size:20px; font-weight:600; color:#fff; text-decoration:none;"><span>CONTACT US</span></a>  </div>  <!-- end all-cases-link -->
   <header class="page-header">

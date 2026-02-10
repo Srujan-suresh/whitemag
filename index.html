@@ -59,6 +59,7 @@ html, body {
     z-index: -1;
 }
 
+/* Desktop / large screens */
 .home-bg-video video {
     position: absolute;
     top: 50%; 
@@ -67,8 +68,20 @@ html, body {
     height: 110%;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    filter: brightness(0.75); /* mild dark so text later looks clean */
+    filter: brightness(0.75);
 }
+
+/* Mobile / smaller screens */
+@media (max-width: 768px) {
+    .home-bg-video video {
+        width: 100%;      /* full width */
+        height: 50vh;     /* exactly half viewport height */
+        top: 0;           /* align top of video */
+        left: 50%;
+        transform: translateX(-50%); /* only horizontal centering */
+    }
+}
+
 
 /* ==== MUSIC BUTTON ==== */
 #music-control-small {
@@ -283,134 +296,7 @@ body, a, button, input, textarea {
     </div>
 </section>
 
-<!-- ===== WHY CHOOSE US ===== -->
-<section id="why-choose-us">
-  <div class="why-container">
 
-    <h2 class="why-title">WHY CHOOSE US</h2>
-
-    <div class="why-grid">
-
-      <div class="why-item">
-  <div class="why-icon">
-    <i class="fa-solid fa-clapperboard"></i> <!-- Clapperboard icon -->
-  </div>
-    <h3>70+ PROJECTS</h3> 
-</div>
-
-<div class="why-item highlighted">
-  <div class="why-icon">
-    <i class="fa-solid fa-users"></i> <!-- Group icon -->
-  </div>
-    <h3>30+ ARTISTS</h3>
-</div>
-
-<div class="why-item">
-  <div class="why-icon">
-    <i class="fa-solid fa-camera"></i> <!-- Camera icon -->
-  </div>
-    <h3>300+ SHOTS</h3>
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-<style>
-/* ===== WHY CHOOSE US — CINEMATIC B&W ===== */
-/* ===== WHY CHOOSE US — LIGHT (OPPOSITE OF FOOTER) ===== */
-#why-choose-us {
-  background: #ffffff;
-  padding: 60px 5% 60px;
-  text-align: center;
-  color: #111;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Title */
-.why-title {
-  font-size: 48px;
-  letter-spacing: 3px;
-  font-weight: 800;
-  margin-bottom: 80px;
-  color: #111;
-}
-
-/* Grid */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Cards — WHITE */
-.why-item {
-  padding: 60px 40px;
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 15px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover */
-.why-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-}
-
-/* Icons — BLACK */
-.why-icon {
-  font-size: 60px;
-  margin-bottom: 30px;
-  color: #111;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.why-item:hover .why-icon {
-  transform: scale(1.25);
-}
-
-/* Heading */
-.why-item h3 {
-  font-size: 22px;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #111;
-}
-
-/* Text */
-.why-item p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #444;
-}
-
-/* Highlight card (still subtle, no color) */
-.why-item.highlighted {
-  border-color: #111;
-  box-shadow: 0 35px 90px rgba(0,0,0,0.18);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-item {
-    padding: 50px 30px;
-  }
-}
-
-</style>
 
 <!-- ===== FOOTER ===== -->
 <!-- <footer id="site-footer">

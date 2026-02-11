@@ -980,60 +980,145 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<!-- Include Poppins font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-<!-- Include Poppins font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-<section style="width: 100%; background: white; color: #111; font-family: 'Poppins', sans-serif; padding: 60px 20px; box-sizing: border-box;">
-  <div style="max-width: 1200px; margin: 0 auto;">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <h2 style="font-weight: 600; font-size: 2.75rem; margin-bottom: 50px; text-align: center; color: #222;">
-      Why Choose Us?
-    </h2>
+<section class="why-section">
+  <div class="why-container">
 
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+    <!-- <h2 class="why-title">
+      Why Choose <span>Us?</span>
+    </h2> -->
 
-      <!-- Card 1 -->
-      <div style="flex: 1 1 380px; background: #fafafa; border-radius: 12px; box-shadow: 0 6px 15px rgb(0 0 0 / 0.08); padding: 30px; display: flex; align-items: flex-start; gap: 20px; transition: box-shadow 0.3s ease;">
-        
-        <p style="font-weight: 400; font-size: 1.125rem; line-height: 1.5; margin: 0;">
-          Commitment to quality, timely delivery, and creative excellence that brings your vision to life.
-        </p>
+    <!-- TOP 2x2 GRID -->
+    <div class="why-grid">
+
+      <div class="why-card">
+        Choose us for our commitment to quality, timely delivery, and creative excellence that brings your vision to life.
       </div>
 
-      <!-- Card 2 -->
-      <div style="flex: 1 1 380px; background: #fafafa; border-radius: 12px; box-shadow: 0 6px 15px rgb(0 0 0 / 0.08); padding: 30px; display: flex; align-items: flex-start; gap: 20px; transition: box-shadow 0.3s ease;">
-       
-        <p style="font-weight: 400; font-size: 1.125rem; line-height: 1.5; margin: 0;">
-          Industry expertise, cutting-edge technology, and a passionate team delivering beyond expectations.
-        </p>
+      <div class="why-card">
+        We combine industry expertise, cutting-edge technology, and a passionate team to deliver results that exceed expectations.
       </div>
 
-      <!-- Card 3 -->
-      <div style="flex: 1 1 380px; background: #fafafa; border-radius: 12px; box-shadow: 0 6px 15px rgb(0 0 0 / 0.08); padding: 30px; display: flex; align-items: flex-start; gap: 20px; transition: box-shadow 0.3s ease;">
-        
-        <p style="font-weight: 400; font-size: 1.125rem; line-height: 1.5; margin: 0;">
-          Building long-term partnerships based on trust, innovation, and performance.
-        </p>
+      <div class="why-card">
+        Because we don’t just complete projects — we build long-term partnerships based on trust, innovation, and performance.
       </div>
 
-      <!-- Card 4 - Square with shield image -->
-<div style="flex: 0 0 320px; height: 320px; background: #fafafa; border-radius: 12px; box-shadow: 0 6px 15px rgb(0 0 0 / 0.08); padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; transition: box-shadow 0.3s ease;">
-  
-  <!-- Shield image placeholder -->
-  <img src="images/5.png" alt="Security Shield" style="width: 420px; height: 240px; object-fit: contain;"/>
-
-  <p style="font-weight: 400; font-size: 1.125rem; line-height: 1.5; text-align: center; margin: 0;">
-    TPN-certified company committed to secure workflows and innovative solutions.
-  </p>
-</div>
-
+      <div class="why-card">
+        We are a TPN-certified company committed to secure workflows, innovative solutions, and consistent results that exceed client expectations.
+      </div>
 
     </div>
+
+    <!-- IMAGE UNDER GRID -->
+    <div class="why-image">
+      <img src="images/5.png" alt="Security Certification">
+    </div>
+
+    <!-- BOTTOM 2x2 FEATURE BOXES -->
+    <div class="feature-grid">
+
+      <div class="feature-box">
+        Dedicated Support
+      </div>
+
+      <div class="feature-box">
+        Outstanding Quality
+      </div>
+
+      <div class="feature-box">
+        Quick Turnaround
+      </div>
+
+      <div class="feature-box">
+        Cost Efficient
+      </div>
+
+    </div>
+
   </div>
 </section>
+
+<style>
+.why-section {
+  background: #ffffff;
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 60px;
+}
+
+.why-title span {
+  color: #b68c3a;
+}
+
+/* 2x2 GRID */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.why-card {
+  background: #0e0e0e;
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 25px;
+  line-height: 1.6;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* IMAGE SECTION */
+.why-image {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.why-image img {
+  max-width: 320px;
+  height: auto;
+}
+
+/* FEATURE GRID */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.feature-box {
+  background: #f5f5f5;
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: #b22222;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .why-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
 
 
 

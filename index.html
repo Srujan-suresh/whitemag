@@ -238,7 +238,7 @@ body, a, button, input, textarea {
 
 <body>
 
-
+<main>
 
 <div class="home-wrap">
 
@@ -296,7 +296,7 @@ body, a, button, input, textarea {
     </div>
 </section>
 
-
+</main>
 
 <!-- ===== FOOTER ===== -->
 <!-- <footer id="site-footer">
@@ -339,40 +339,39 @@ body, a, button, input, textarea {
 </footer> -->
 
 
-<div class="energy-scope">
-  <footer class="energy-footer">
-    <div class="energy-overlay"></div>
-    <div class="energy-glow"></div>
+<footer class="energy-footer">
+  <div class="energy-overlay"></div>
+  <div class="energy-glow"></div>
 
-    <div class="energy-content">
-      <img src="images/logo.png" style="height: 200px;" class="energy-logo" alt="PhantomFX">
+  <div class="energy-content">
+    <img src="images/logo.png" style="height: 200px;" class="energy-logo" alt="PhantomFX">
 
-      <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
+    <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
 
-      <nav class="energy-nav">
-       <a href="index.html">Home</a>
+    <nav class="energy-nav">
+      <a href="index.html">Home</a>
       <a href="studio.html">Studio</a>
       <a href="showcases.html">Services</a>
       <a href="career.html">Careers</a>
       <a href="contact.html">Contact</a>
-      </nav>
+    </nav>
 
-      <div class="energy-socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+    <div class="energy-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
 
-       <!-- FOOT IMAGE SECTION -->
+    <!-- FOOT IMAGE SECTION -->
 <div class="foot-image">
   <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" style="height: 80px;" alt="Security Illustration">
 </div>
 
-      <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In LA</span>
-    </div>
-  </footer>
-</div>
+
+    <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In LA</span>
+  </div>
+</footer>
 
 <style>
 /* FOOT IMAGE */
@@ -405,16 +404,7 @@ body, a, button, input, textarea {
 }
 
 
-
-  .energy-scope {
-  --accent: #f2f2ee;
-  --glow: rgba(242,242,238,0.3);
-
-  isolation: isolate; /* critical */
-}
-
-/* footer base */
-.energy-scope .energy-footer {
+  .energy-footer {
   position: relative;
   background: url("images/hii.jpg") center / cover no-repeat;
   padding: 120px 20px;
@@ -422,23 +412,122 @@ body, a, button, input, textarea {
   color: #fff;
 }
 
-/* dark overlay */
-.energy-scope .energy-overlay {
+/* cinematic dark pass */
+.energy-overlay {
   position: absolute;
   inset: 0;
   background:
     radial-gradient(circle at center, rgba(0,0,0,0.3), rgba(0,0,0,0.8) 70%),
     linear-gradient(to bottom, rgba(0,0,0,0.4), #000);
-  z-index: 1;
 }
 
-/* === ENERGY FOOTER HARD FIX === */
+/* moving energy glow */
+.energy-glow {
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  top: -20%;
+  left: -20%;
+  background:
+    radial-gradient(circle at 50% 50%, var(--glow), transparent 60%);
+  animation: drift 14s linear infinite;
+  pointer-events: none;
+}
 
-.energy-footer {
+@keyframes drift {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.energy-content {
   position: relative;
-  z-index: 50;
-  min-height: 420px;
+  z-index: 2;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
 }
+
+.energy-logo {
+  max-width: 240px;
+  filter: drop-shadow(0 0 22px var(--glow));
+}
+
+.energy-tagline {
+  margin: 18px 0 30px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  opacity: 0.9;
+  color: var(--accent);
+}
+
+/* nav */
+.energy-nav a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+
+.energy-nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.energy-nav a:hover::after {
+  width: 120%;
+}
+
+/* socials */
+.energy-socials {
+  margin: 30px 0;
+}
+
+.energy-socials a {
+  margin: 0 10px;
+  color: var(--accent);
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.energy-socials a:hover {
+  text-shadow: 0 0 12px var(--glow);
+}
+
+.energy-copy {
+  font-size: 12px;
+  opacity: 0.6;
+}
+:root {
+  /* --accent: #7df9ff;
+  --glow: rgba(125, 249, 255, 0.45);
+
+  --accent: #4fd1c5;
+     --glow: rgba(79, 209, 197, 0.4); */
+
+    
+  /* --accent: #e6ebef;           
+  --glow: rgba(230,235,239,0.35); */
+
+
+  /* --accent: #cfd8dc;
+  --glow: rgba(207,216,220,0.3); */
+
+  
+  --accent: #f2f2ee;
+  --glow: rgba(242,242,238,0.3);
 
 /* kill global nav rules */
 .energy-footer nav {
@@ -451,123 +540,6 @@ body, a, button, input, textarea {
   transition: none !important;
 }
 
-/* protect links */
-.energy-footer a {
-  position: relative;
-}
-
-/* ensure overlays render correctly */
-.energy-footer .energy-overlay,
-.energy-footer .energy-glow {
-  pointer-events: none;
-}
-
-
-/* glow */
-.energy-scope .energy-glow {
-  position: absolute;
-  width: 140%;
-  height: 140%;
-  top: -20%;
-  left: -20%;
-  background:
-    radial-gradient(circle at 50% 50%, var(--glow), transparent 60%);
-  animation: drift 14s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-  will-change: transform;
-}
-
-@keyframes drift {
-  to { transform: rotate(360deg); }
-}
-
-/* content */
-.energy-scope .energy-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-}
-
-/* logo */
-.energy-scope .energy-logo {
-  max-width: 240px;
-  display: inline-block;
-  filter: drop-shadow(0 0 22px var(--glow));
-}
-
-/* tagline */
-.energy-scope .energy-tagline {
-  margin: 18px 0 30px;
-  font-size: 14px;
-  letter-spacing: 5px;
-  opacity: 0.9;
-  color: var(--accent);
-}
-
-/* nav */
-.energy-scope .energy-nav {
-  margin: 0;
-}
-
-.energy-scope .energy-nav a {
-  margin: 0 16px;
-  font-size: 14px;
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-}
-
-.energy-scope .energy-nav a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -8px;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--accent), transparent);
-  transform: translateX(-50%);
-  transition: 0.3s;
-}
-
-.energy-scope .energy-nav a:hover::after {
-  width: 120%;
-}
-
-/* socials */
-.energy-scope .energy-socials {
-  margin: 30px 0;
-}
-
-.energy-scope .energy-socials a {
-  margin: 0 10px;
-  font-size: 18px;
-  color: var(--accent);
-  transition: 0.3s;
-}
-
-.energy-scope .energy-socials a:hover {
-  text-shadow: 0 0 12px var(--glow);
-}
-
-/* copyright */
-.energy-scope .energy-copy {
-  font-size: 12px;
-  opacity: 0.6;
-}
-
-/* mobile safety */
-@media (max-width: 600px) {
-  .energy-scope .energy-nav a {
-    display: inline-block;
-    margin: 8px 10px;
-  }
-
-  .energy-scope .energy-logo {
-    max-width: 180px;
-  }
 }
 
 </style>

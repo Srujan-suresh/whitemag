@@ -486,11 +486,11 @@ body, a, button, input, textarea {
   <!-- end inner -->
   </header>
   <!-- end page-header -->
-	 <section class="contact">
+	<section class="contact">
     <div class="container">
     	<div class="row">
     	<div class="col-lg-5">
-    		<h3 class="section-title" >OUR CURRENT <br>OPENINGS</h3>
+    		<h3 class="section-title">OUR CURRENT <br>OPENINGS</h3>
     	</div>
     	<!-- end col-5 -->
     	
@@ -512,7 +512,7 @@ body, a, button, input, textarea {
     line-height: 1.2;
   }
   .hr-box .location {
-    color: #8f9b83; /* subtle greenish gray */
+    color: #000; /* subtle greenish gray */
     font-weight: 400;
     margin-bottom: 10px;
     font-size: 14px;
@@ -526,8 +526,34 @@ body, a, button, input, textarea {
   .hr-box a:hover {
     text-decoration: underline;
   }
+
+  /* No openings message */
+  .no-openings {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  }
+
+  .no-openings i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #000;
+  }
+
+  .no-openings p {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+  }
 </style>
-</head>
+
+<!-- Font Awesome CDN for icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <body>
 
 <!-- <div class="hr-box">
@@ -535,6 +561,11 @@ body, a, button, input, textarea {
   <div class="location">LA – <br />Hopes College</div>
   <a href="career1.html">More Details →</a>
 </div> -->
+
+<div class="no-openings">
+  <i class="fa-solid fa-briefcase"></i>
+  <p>There are no openings right now.<br>We’ll be right back!</p>
+</div>
 
 </body>
         </div>
@@ -551,12 +582,13 @@ body, a, button, input, textarea {
 <!-- end main -->
 
 
+
 <footer class="energy-footer">
   <div class="energy-overlay"></div>
   <div class="energy-glow"></div>
 
   <div class="energy-content">
-    <img src="images/logo.png" class="energy-logo" alt="PhantomFX">
+    <img src="images/logo.png" style="height: 100px;" class="energy-logo" alt="PhantomFX">
 
     <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
 
@@ -577,7 +609,7 @@ body, a, button, input, textarea {
 
      <!-- FOOT IMAGE SECTION -->
 <div class="foot-image">
-  <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" alt="Security Illustration">
+  <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" style="height: 80px;" alt="Security Illustration">
 </div>
 
     <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In LA</span>

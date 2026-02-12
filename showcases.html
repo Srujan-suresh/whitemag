@@ -748,6 +748,177 @@ body, a, button, input, textarea {
 
 
 
+
+
+</main>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section id="why-choose-us">
+  <div class="why-container">
+
+    <!-- <h2 class="why-title">WHY CHOOSE US</h2> -->
+
+    <div class="why-grid">
+
+      <div class="why-item">
+  <div class="why-icon">
+    <i class="fa-solid fa-clapperboard"></i> <!-- Clapperboard icon -->
+  </div>
+    <h3>70+ PROJECTS</h3> 
+</div>
+
+<div class="why-item highlighted">
+  <div class="why-icon">
+    <i class="fa-solid fa-users"></i> <!-- Group icon -->
+  </div>
+    <h3>30+ ARTISTS</h3>
+</div>
+
+<div class="why-item">
+  <div class="why-icon">
+<i class="fa-solid fa-film"></i>
+  </div>
+    <h3>300+ SHOTS</h3>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* ===== WHY CHOOSE US — Scoped ===== */
+#why-choose-us {
+  background: #ffffff;
+  padding: 60px 5%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+}
+
+#why-choose-us .why-title {
+  font-size: 48px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  margin-bottom: 80px;
+  color: #111;
+}
+
+#why-choose-us .why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#why-choose-us .why-item {
+  padding: 40px 20px;
+  background: transparent;   /* remove white box */
+  border: none;              /* remove border */
+  border-radius: 0;          /* remove rounded corners */
+  box-shadow: none;          /* remove shadow */
+}
+
+/* Remove hover shadow */
+#why-choose-us .why-item:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+
+
+
+#why-choose-us .why-icon {
+  font-size: 60px;
+  margin-bottom: 30px;
+  color: #111;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#why-choose-us .why-item:hover .why-icon {
+  transform: scale(1);
+}
+
+#why-choose-us .why-item h3 {
+  font-size: 22px !important;        /* stronger specificity */
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 800 !important;       /* override other rules */
+  text-transform: uppercase;
+  color: #111 !important;            /* ensure color sticks */
+}
+
+/* Remove highlight styling */
+#why-choose-us .why-item.highlighted {
+  border: none;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #why-choose-us .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #why-choose-us .why-item {
+    padding: 50px 30px;
+  }
+}
+
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".why-item h3");
+
+  items.forEach(item => {
+    const text = item.innerText; // e.g., "70+ PROJECTS"
+    const match = text.match(/\d+/); // extract the number
+    if (!match) return;
+
+    const target = parseInt(match[0]);
+    const plus = text.includes("+") ? "+" : "";
+    const label = text.replace(/\d+\+?\s*/, ""); // remove number for later
+
+    let count = 0;
+    const speed = 200; // lower = faster
+    const increment = target / speed;
+
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        item.innerText = `${Math.ceil(count)}${plus} ${label}`;
+        requestAnimationFrame(updateCount);
+      } else {
+        item.innerText = `${target}${plus} ${label}`;
+      }
+    };
+
+    // Animate only when item is in viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(item);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(item);
+  });
+});
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+
+
+
 <section class="demo-reel-section">
   <h2 class="demo-title">Demo Reel</h2>
 
@@ -984,12 +1155,17 @@ body, a, button, input, textarea {
 </script>
 
 
+
+
+
+
+
 <footer class="energy-footer">
   <div class="energy-overlay"></div>
   <div class="energy-glow"></div>
 
   <div class="energy-content">
-    <img src="images/logo.png" class="energy-logo" alt="PhantomFX">
+    <img src="images/logo.png" style="height: 100px;" class="energy-logo" alt="PhantomFX">
 
     <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
 
@@ -1010,7 +1186,7 @@ body, a, button, input, textarea {
 
      <!-- FOOT IMAGE SECTION -->
 <div class="foot-image">
-  <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" alt="Security Illustration">
+  <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" style="height: 80px;" alt="Security Illustration">
 </div>
 
     <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In LA</span>

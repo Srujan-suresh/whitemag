@@ -831,30 +831,34 @@ body, a, button, input, textarea {
 <section class="why-section">
   <div class="why-container">
 
-    <h2 class="why-title">Why Choose <span>Us</span>?</h2>
+<h2 class="why-title" style="text-align: center;">
+  Why Choose <span>Us</span>?
+</h2>
 
-    <!-- TEXT CONTENT (NO BOXES) -->
-    <div class="why-text">
+   <div class="why-text">
+  <p>
+    Choose us for our commitment to quality, timely delivery, and creative excellence that brings your vision to life.
+    <strong>We combine industry expertise, cutting-edge technology, and a team to deliver results that exceed expectations.</strong>
+    We don’t just complete projects — we build long-term partnerships based on trust, innovation, and performance.
+    <strong>Our approach focuses on reliability, innovation, and long-term value creation.</strong>
+    As a TPN-certified company, we are committed to secure workflows and high production standards.
+    <strong>We maintain disciplined execution and consistent results that exceed client expectations.</strong>
+  </p>
+</div>
 
-      <p>
-        Choose us for our commitment to quality, timely delivery, and creative excellence that brings your vision to life.
-        <strong>We combine industry expertise, cutting-edge technology, and a passionate team to deliver results that exceed expectations.</strong>
-      </p>
+<style>
+  .why-text p {
+    text-align: justify;
+    text-align-last: justify;
+  }
+  strong {
+    display: inline;
+  }
+</style>
 
-      <p>
-        We don’t just complete projects — we build long-term partnerships based on trust, innovation, and performance.
-        <strong>Our approach focuses on reliability, innovation, and long-term value creation.</strong>
-      </p>
-
-      <p>
-        As a TPN-certified company, we are committed to secure workflows and high production standards.
-        <strong>We maintain disciplined execution and consistent results that exceed client expectations.</strong>
-      </p>
-
-    </div>
 
     <!-- NEW SECURITY SECTION -->
-<h2 class="why-title" style="margin-top: 60px;">Secure Workflow & Data Protection</h2>
+<h2 class="why-title" style="margin-top: 60px;text-align: center;">Secure Workflow & Data Protection</h2>
 
 <div class="security-grid">
 
@@ -863,7 +867,9 @@ body, a, button, input, textarea {
       <i class="fa-solid fa-lock"></i>
     </div>
     <h4>Secure File Storage</h4>
-    <p>Controlled permissions ensure that all assets remain protected at every stage of production.</p>
+    <p>
+      Controlled permissions ensure that all assets remain protected at every stage of production.
+    </p>
   </div>
 
   <div class="security-item">
@@ -871,7 +877,9 @@ body, a, button, input, textarea {
       <i class="fa-solid fa-share-nodes"></i>
     </div>
     <h4>Secure Data Transfer</h4>
-    <p>Secure methods are used for sharing assets and final deliveries, keeping sensitive information safe.</p>
+    <p>
+      Secure methods are used for sharing assets and final deliveries, keeping sensitive information safe.
+    </p>
   </div>
 
   <div class="security-item">
@@ -879,20 +887,32 @@ body, a, button, input, textarea {
       <i class="fa-solid fa-server"></i>
     </div>
     <h4>Protected Workstations & Servers</h4>
-    <p>Workstations and servers are safeguarded with updated security systems, and regular monitoring ensures data integrity and confidentiality.</p>
+    <p>
+      Workstations and servers are safeguarded with security systems, and regular monitoring ensures data integrity and confidentiality.
+    </p>
   </div>
 
 </div>
 
 <!-- FINAL NOTE -->
-<p style="margin-top: 20px;">
-  Our team follows industry-standard practices to protect client content and maintain a secure working environment at all times.
+<p class="final-note">
+  Our team follows industry-standard practices to protect client content and maintain a secure environment at all times.
 </p>
+
+<style>
+  /* Justify all paragraph text */
+  .security-item p,
+  .final-note {
+    text-align: justify;
+    text-align-last: justify; /* Makes last line justified too */
+  }
+</style>
+
 
 
     <!-- IMAGE (KEPT) -->
     <div class="why-image">
-      <img src="images/5.png" alt="Security Certification">
+      <img src="images/5 copy.jpg.jpeg" alt="Security Certification">
     </div>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -1193,7 +1213,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="energy-glow"></div>
 
   <div class="energy-content">
-    <img src="images/logo.png" class="energy-logo" alt="PhantomFX">
+    <img src="images/logo.png" style="height: 100px;" class="energy-logo" alt="PhantomFX">
 
     <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
 
@@ -1214,7 +1234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- FOOT IMAGE SECTION -->
 <div class="foot-image">
-  <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" alt="Security Illustration">
+  <img src="images/TPNPoweredByMPA_BlueLogoTransparent_1280wide-1 copy.jpg.jpeg" style="height: 80px;" alt="Security Illustration">
 </div>
 
 

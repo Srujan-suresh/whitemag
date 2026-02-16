@@ -176,10 +176,10 @@
 
   <div class="logo" style="width: 100%; text-align: center; margin-bottom: 30px;">
     <a href="index.html">
-      <img src="images/logo.png" 
+      <img src="images/WhiteMag_Studio_Final Logo_Hi_Res_DP_White.png" 
            alt="Logo" 
-           class="zoom-logo"
-           style="width: 80%; height: auto; display: block; margin: 0 auto;">
+           class="zoom-logo" 
+           style="height :180px;width: 220px; height: auto; display: block; margin: 0 auto;">
     </a>
   </div>
 
@@ -926,7 +926,9 @@ body, a, button, input, textarea {
 
   <div class="feature-item">
   <div class="feature-icon">
-    <img src="images/5 copy.jpg.jpeg" alt="Cost Efficient Icon">
+        <!-- <img src="images/5 copy.jpg.jpeg" alt="Cost Efficient Icon"> -->
+
+    <i class="fa-solid fa-shield-halved"></i>
   </div>
   <h4>Security</h4>
   </div>
@@ -1010,23 +1012,25 @@ body, a, button, input, textarea {
 
 
 .feature-grid {
-  display: flex;               
-  justify-content: space-between;  
-  flex-wrap: nowrap;           
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;          /* allows wrapping */
   text-align: center;
   margin-top: 60px;
 }
 
 .feature-item {
-  display: flex;           /* stack icon + text vertically */
+  display: flex;
   flex-direction: column;
-  align-items: center;     /* center horizontally */
-  flex: 1;                 /* equal width */
+  align-items: center;
+  flex: 0 0 18%;            /* 5 items in one row on large screens */
+  min-width: 150px;
 }
 
 .feature-icon {
   font-size: 38px;
-  color: #000000;   /* Black icons */
+  color: #000000;
   margin-bottom: 18px;
 }
 
@@ -1037,18 +1041,29 @@ body, a, button, input, textarea {
 }
 
 
-/* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 992px) {
+  .feature-item {
+    flex: 0 0 40%;
+  }
+}
+@media (max-width: 576px) {
   .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .feature-item {
+    flex: 0 0 100%;
+  }
+
+  .feature-icon {
+    font-size: 34px;
+  }
+
+  .feature-item h4 {
+    font-size: 16px;
   }
 }
 
-@media (max-width: 600px) {
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 </style>
 
@@ -1218,7 +1233,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="energy-glow"></div>
 
   <div class="energy-content">
-    <img src="images/logo.png" style="height: 200px;" class="energy-logo" alt="PhantomFX">
+    <img src="images/logo.png" style="height: 180px;width: 150px;" class="energy-logo" alt="PhantomFX">
 
     <p class="energy-tagline">WE CRAFT CINEMATIC REALITIES</p>
 
@@ -1231,9 +1246,9 @@ document.addEventListener("DOMContentLoaded", () => {
     </nav>
 
     <div class="energy-socials">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
       <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+      <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
 

@@ -382,8 +382,17 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
     <div class="studio-container">
       <h1 class="studio-title" style="  font-family: 'Anton', sans-serif;
 ">STUDIO</h1>
-      <!-- <p class="studio-subtitle">We provide a free day to experience our benefits of digital world</p> -->
     </div>
+    <style>
+      @media (max-width: 768px) {
+  .studio-title {
+    text-align: right;
+    margin-bottom: 50px;
+    margin-right: 25px; /* optional for some breathing room */
+  }
+}
+
+    </style>
   </div>
 </header>
 
@@ -861,6 +870,16 @@ body, a, button, input, textarea {
 <h2 class="why-title" style="margin-top: 60px; text-align: center;">
   Secure Workflow & Data Protection
 </h2>
+
+<style>
+  @media (max-width: 768px) {
+  .why-title {
+    font-size: 28px;
+    margin-top: 40px;   /* reduce spacing for mobile */
+  }
+}
+
+</style>
 
 <div class="security-text">
   <p>

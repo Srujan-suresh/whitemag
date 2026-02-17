@@ -383,20 +383,24 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
       <h1 class="studio-title" style="  font-family: 'Anton', sans-serif;
 ">STUDIO</h1>
     </div>
-    <style>
-      @media (max-width: 768px) {
-  .studio-title {
-    text-align: right;
-    margin-bottom: 50px;
-    margin-right: 25px; /* optional for some breathing room */
-  }
-}
-
-    </style>
   </div>
 </header>
 
+
+
 <style>/* ===== STUDIO HEADER SECTION ===== */
+
+.studio-title {
+  font-family: 'Anton', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .studio-title {
+    margin-top: 220px; /* adjust value as needed */
+  }
+}
+
+
 .studio-header {
   position: relative;
   width: 100%;

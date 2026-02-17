@@ -1062,14 +1062,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 @media (max-width: 768px) {
   .featured-title {
-    font-size: 0.8rem;
+    font-size: 1.6rem;
   }
 }
 
 
 @media (max-width: 480px) {
   .featured-title {
-    font-size: 0.4rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -1180,6 +1180,29 @@ document.addEventListener("DOMContentLoaded", () => {
       height: auto;
     }
   }
+  @media (max-width: 768px) {
+  .slider-box {
+    height: auto !important;      /* Override fixed height */
+    padding-top: 56.25% !important; /* 16:9 aspect ratio box */
+    position: relative !important; /* For absolute children */
+  }
+
+  .beer-slider {
+    position: absolute !important;
+    top: 0; left: 0; width: 100%; height: 100%;
+  }
+
+  .beer-slider img,
+  .beer-reveal img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 </style>
 
 <script>

@@ -621,7 +621,15 @@ body, a, button, input, textarea {
   /* Push paragraph slightly right on laptops/desktops */
   @media (min-width: 992px) {
     .shift-right-desktop {
-      transform: translateX(80px); /* adjust value as needed */
+      transform: translateX(150px); /* adjust value as needed */
+      text-align: left;            /* optional, looks more editorial */
+    }
+  }
+
+  /* Push paragraph slightly right on laptops/desktops */
+  @media (min-width: 992px) {
+    .section-title {
+      transform: translateX(30px); /* adjust value as needed */
       text-align: left;            /* optional, looks more editorial */
     }
   }
@@ -635,10 +643,12 @@ body, a, button, input, textarea {
 
     @media (max-width: 768px) {
     .section-title {
-      transform: translateX(20px); /* adjust value as needed */
+      transform: translateX(36px); /* adjust value as needed */
       text-align: left;            /* optional, looks more editorial */
     }
   }
+
+  
     
   }
 </style>

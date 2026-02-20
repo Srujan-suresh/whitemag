@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#75dab4"/>
-<title>White Mag Studio | Best VFX Studio In LA</title>
+<title>White Mag Studio | Best VFX Studio in LA & India</title>
 <meta name="author" content="Themezinho">
 <meta name="description" content="Tourog | Creative Agensy for Digital Age">
 <meta name="keywords" content="creative, works, showcase, portfolio, highlight, projects, modern, tourog, digital, studio, css, animation, transition, freelancers">
@@ -34,6 +34,7 @@
 <link href="ico/android-chrome-192x192.png" rel="shortcut icon">
 
 <!-- CSS FILES -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/fontawesome.min.css">
 <link rel="stylesheet" href="css/fancybox.min.css">
 <link rel="stylesheet" href="css/hamburger.min.css">
@@ -538,157 +539,141 @@ document.querySelectorAll('.inline-menu ul li a').forEach(link => {
 </script>
 
 <style>
-  /* Removed cursor styles */
+/* Import fonts in <head> before this */
+body {
+  font-family: 'Poppins', sans-serif;
+}
 
-  .services-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    background: radial-gradient(circle at top, #f9f9f9, #fff 80%);
-    color: #000;
-    overflow: hidden;
-  }
+/* Services Section */
+.services-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background: radial-gradient(circle at top, #f9f9f9, #ffffff 80%);
+  overflow: hidden;
+  color: #000;
+}
 
-  .container {
-    position: relative;
-    z-index: 2;
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+font-family: 'Fjalla One', sans-serif;  font-size: 2.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.service-box {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 35px 25px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.service-box:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 0 20px rgba(120, 120, 120, 0.4),
+    0 0 40px rgba(120, 120, 120, 0.25);
+}
+
+.service-box h6 {
+font-family: 'Fjalla One', sans-serif;  font-size: 1.3rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.service-box p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: center;
+  hyphens: auto;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .service-box p {
+    text-align: left;
   }
 
   .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-
-  .section-subtitle {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.8;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-  }
-
-  .service-box {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    border-radius: 15px;
-    padding: 30px 25px;
-    position: relative;
-    transition: transform 0.8s ease, box-shadow 0.8s ease, background 0.8s ease;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Dark glow hover */
-  .service-box:hover {
-    transform: scale(1.03);
-    background: rgba(0, 0, 0, 0.05);
-    box-shadow:
-      0 0 10px gray,
-      0 0 20px gray,
-      0 0 40px gray,
-      0 0 60px gray,
-      0 0 80px gray;
-  }
-
-  .service-box .num {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: 600;
-  }
-
-  .service-box h6 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #111;
-  }
-
-  .service-box p {
-    color: #444;
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
+}
 </style>
 
-<!-- Services Section --><section class="services-section" data-aos="fade-up">
+<section class="services-section">
   <div class="container">
 
-    <h3 class="section-title" data-aos="fade-up" data-aos-delay="100" style="  font-family: 'Anton', sans-serif;
-">
+    <h3 class="section-title">
       OUR CORE SERVICES
     </h3>
 
-    <h5 class="section-subtitle" data-aos="fade-up" data-aos-delay="200" style="text-align: center;">
+    <p class="section-subtitle">
       At WhiteMag Studio, we craft visual experiences that blend creativity and
-      technology bringing imagination to life through cinematic visuals and
+      technology, bringing imagination to life through cinematic visuals and
       cutting-edge artistry.
-    </h5>
+    </p>
 
     <div class="services-grid">
 
-      <div class="service-box" data-aos="fade-up" data-aos-delay="200">
+      <div class="service-box">
         <h6>Rotoscoping & Paint</h6>
-        <p style="text-align: center;">   High-precision matte generation, paint fixes, beauty clean-ups, and marker removals executed with seamless detail and production-grade accuracy.</p>
+        <p>
+          High-precision matte generation, paint fixes, beauty clean-ups,
+          and marker removals executed with seamless detail and production-grade accuracy.
+        </p>
       </div>
 
-      <div class="service-box" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-box">
         <h6>Compositing Services</h6>
-        <p style="text-align: center;">          Layering reality and imagination with finesse. Our compositing artists integrate CG, live-action, and FX to craft believable, cinematic frames.</p>
+        <p>
+          Layering reality and imagination with finesse. Our compositing artists
+          integrate CG, live-action, and FX to craft believable cinematic frames.
+        </p>
       </div>
 
-      <div class="service-box" data-aos="fade-up" data-aos-delay="400">
+      <div class="service-box">
         <h6>Matchmoving & Camera Tracking</h6>
-        <p style="text-align: center;">   Frame-accurate 3D camera tracking and object matching to ensure CG elements align perfectly with the physical world.</p>
+        <p>
+          Frame-accurate 3D camera tracking and object matching to ensure CG elements
+          align perfectly with the physical world.
+        </p>
       </div>
 
-      <div class="service-box" data-aos="fade-up" data-aos-delay="500">
+      <div class="service-box">
         <h6>Green Screen / Chroma Keying</h6>
-        <p style="text-align: center;">Precision keying and spill suppression for flawless background replacements, virtual production integration and green screen shoots.</p>
+        <p>
+          Precision keying and spill suppression for flawless background replacements
+          and seamless virtual production integration.
+        </p>
       </div>
-
-      <!-- <div class="service-box" data-aos="fade-up" data-aos-delay="600">
-        <h6>Additional VFX Enhancements</h6>
-        <p style="text-align: center;">Advanced visual effects techniques including cleanup, tracking and seamless integration to elevate every project to cinematic quality.</p>
-      </div> -->
-      <style>
-  .service-box {
-    max-width: 300px;
-    margin: 20px auto;
-  }
-
-  .service-box p {
-    text-align: center;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    word-break: break-word;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 480px) {
-    .service-box p {
-      text-align: left !important;
-    }
-  }
-</style>
 
     </div>
   </div>
@@ -927,9 +912,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
 <section class="demo-reel-section">
-  <h2 class="demo-title" style="  font-family: 'Anton', sans-serif;
-">Demo Reel</h2>
+  <h2 class="demo-title" style="  font-family: 'Fjalla One', sans-serif;
+">DEMO REEL</h2>
 
   <div class="demo-video-wrapper">
     <video class="demo-video" autoplay muted loop playsinline>
@@ -952,8 +938,7 @@ document.addEventListener("DOMContentLoaded", () => {
 .demo-title {
   font-size: 48px;
   font-weight: 700;
-  font-family: 'Anton', sans-serif;
-  color: #000;
+font-family: 'Fjalla One', sans-serif;  color: #000;
   margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -1028,9 +1013,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Section Title -->
     <div class="section-title text-center mb-5">
-<h2 class="featured-title" style="  font-family: 'Anton', sans-serif;
+<h2 class="featured-title" style="  font-family: 'Fjalla One', sans-serif;
 ">
-  Our Featured Work
+ OUR FEATURED WORK
 </h2>
 <style>
   .featured-title {
@@ -1270,7 +1255,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 
-    <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In LA</span>
+    <span class="energy-copy">© 2026 WhiteMag Studio-Best VFX Studio In LA & India</span>
   </div>
 </footer>
 

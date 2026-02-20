@@ -644,17 +644,24 @@ body, a, button, input, textarea {
           }
         }
 
-        @media (max-width: 768px) {
-          .shift-right-desktop {
-            transform: translateX(36px);
-            text-align: left;
-          }
+       
+        /* Desktop & tablet: justify with last line centered */
+@media (min-width: 768px) {
+    .section-title,
+    .section-subtitle {
+        text-align: justify;
+        text-align-last: center;
+    }
+}
 
-          .section-title {
-            transform: translateX(6px);
-            text-align: left;
-          }
-        }
+/* Mobile: fully center text */
+@media (max-width: 767px) {
+    .section-title,
+    .section-subtitle {
+        text-align: center;
+        text-align-last: center;
+    }
+}
       </style>
 
     </div>
@@ -669,7 +676,7 @@ body, a, button, input, textarea {
 
  <!-- Section Title -->
 <div class="services-title-block">
-  <h3 class="new-title">Our Services</h3>
+  <h3 class="new-title">OUR SERVICES</h3>
   <p class="new-subtitle">
     Delivering high-end creative solutions from concept to final screen — blending artistry, technology, and cinematic precision.
   </p>
